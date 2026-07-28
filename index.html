@@ -1,44 +1,425 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UPYA | Empowering Youth, Transforming Communities</title>
-<style>
-:root{--blue:#1E40AF;--blue2:#102b73;--gold:#FFD700;--ink:#10213f;--muted:#667085;--bg:#f5f7fc;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
-nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e6eaf2}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--blue);font-size:22px}.logo{width:49px;height:49px;border-radius:50%;background:var(--blue);border:5px solid var(--gold);display:grid;place-items:center;color:#fff}.brand small{display:block;font-size:10px;color:#667085;letter-spacing:1px}.links{display:flex;gap:19px;font-weight:700;font-size:14px}.links a:hover{color:var(--blue)}.btn{display:inline-block;border-radius:9px;padding:12px 18px;font-weight:800;border:2px solid var(--blue);cursor:pointer}.primary{background:var(--blue);color:#fff}.gold{background:var(--gold);border-color:var(--gold);color:#15213b}.outline{color:#fff;border-color:#fff}
-.hero{background:linear-gradient(115deg,#0b245e,#1E40AF 58%,#315cc8);color:#fff;padding:92px 0 78px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}.eyebrow{color:var(--gold);font-weight:900;letter-spacing:2px;font-size:13px}.hero h1{font-size:clamp(44px,7vw,78px);line-height:1.02;margin:13px 0}.hero p{font-size:19px;color:#e7edff;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.platform-card{background:#fff;color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 24px 60px #06133366}.platform-card h3{color:var(--blue);margin:0 0 8px}.status{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #e7eaf2}.status b{color:var(--blue)}
-section{padding:78px 0}.heading{text-align:center;max-width:760px;margin:0 auto 42px}.heading h2{font-size:36px;color:var(--blue);margin:0 0 8px}.heading p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #e5eaf3;border-radius:18px;padding:26px;box-shadow:0 8px 25px #10213f0d}.icon{width:54px;height:54px;border-radius:15px;background:#e8eeff;display:grid;place-items:center;font-size:24px;margin-bottom:15px}.card h3{margin:0 0 7px}.card p{color:var(--muted);margin:0}
-.alt{background:#fff}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{display:flex;gap:14px;background:var(--bg);padding:20px;border-radius:15px;border-left:5px solid var(--gold)}.feature b{display:block;font-size:17px}.feature span{color:var(--muted);font-size:14px}
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:210px;gap:15px}.photo{border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(135deg,#173b91,#6b86d6);display:flex;align-items:end;padding:20px;color:#fff;font-weight:800;box-shadow:0 10px 25px #10213f20}.photo:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#071633b8)}.photo span{position:relative}.photo:nth-child(1){grid-row:span 2;background:linear-gradient(135deg,#173b91,#d8ae00)}.photo:nth-child(2){background:linear-gradient(135deg,#3559b5,#18306e)}.photo:nth-child(3){background:linear-gradient(135deg,#c99e00,#1E40AF)}.photo:nth-child(4){background:linear-gradient(135deg,#0f7a57,#1E40AF)}.photo:nth-child(5){background:linear-gradient(135deg,#243b7d,#e2b800)}.photo:nth-child(4){grid-column:span 2}
-.impact{background:var(--blue);color:#fff}.impact .heading h2{color:#fff}.impact .heading p{color:#dce5ff}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.stat{padding:25px;text-align:center;border:1px solid #ffffff35;border-radius:16px}.stat strong{display:block;font-size:38px;color:var(--gold)}
-.forms{display:grid;grid-template-columns:1fr 1fr;gap:24px}.form{background:#fff;border-radius:18px;padding:28px;box-shadow:0 8px 25px #10213f0d}.form h3{margin-top:0;color:var(--blue)}input,select,textarea{width:100%;padding:13px;border:1px solid #d9dfeb;border-radius:8px;margin:7px 0 14px;font:inherit}textarea{min-height:100px}
-.news{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.tag{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:1px}.news .card{border-top:6px solid var(--gold)}
-.cta{background:linear-gradient(115deg,#0b245e,#1E40AF);color:#fff;padding:44px;border-radius:24px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0;font-size:34px}.cta p{margin:7px 0 0;color:#dce5ff}
-footer{background:#071938;color:#d8e1f6;padding:55px 0 24px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.foot h3{color:var(--gold)}.foot a{display:block;margin:8px 0}.copy{text-align:center;border-top:1px solid #ffffff22;margin-top:32px;padding-top:18px;color:#9daccc}.toast{display:none;position:fixed;right:18px;bottom:18px;background:#10213f;color:#fff;padding:15px 20px;border-radius:11px;z-index:99}
-@media(max-width:850px){.links{display:none}.hero-grid,.forms,.foot{grid-template-columns:1fr}.cards,.features,.news{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.photo:nth-child(1){grid-row:span 1;grid-column:span 2}.photo:nth-child(4){grid-column:span 2}}
-@media(max-width:540px){.cards,.features,.news{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;grid-auto-rows:180px}.photo:nth-child(1),.photo:nth-child(4){grid-column:auto}.hero{padding:68px 0}.hero h1{font-size:48px}.heading h2{font-size:30px}.cta{display:block}.cta .btn{margin-top:18px}}
-</style></head><body>
-<nav><div class="wrap nav"><a class="brand" href="#"><span class="logo">U</span><span>UPYA<small>UWEZO PAMOJA YOUTHS ASSOCIATION</small></span></a><div class="links"><a href="#about">About</a><a href="#programs">Programs</a><a href="#platform">Platform</a><a href="#gallery">Gallery</a><a href="#news">News</a></div><a class="btn gold" href="#join">Join UPYA</a></div></nav>
-<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">EMPOWERING YOUTH • TRANSFORMING COMMUNITIES</div><h1>Creating opportunities. Building better futures.</h1><p>UPYA is a youth-led association that empowers, equips, mentors and nurtures young people through practical programs, collaboration and community action.</p><div class="actions"><a class="btn gold" href="#join">Become a Member</a><a class="btn outline" href="#programs">Explore Programs</a></div></div><aside class="platform-card"><h3>UPYA Digital Platform</h3><p>A modern, secure and user-friendly space for members, volunteers, partners and supporters.</p><div class="status"><span>Membership portal</span><b>Ready</b></div><div class="status"><span>Volunteer registration</span><b>Open</b></div><div class="status"><span>Event registration</span><b>Available</b></div><div class="status"><span>Projects & impact</span><b>Updated</b></div></aside></div></header>
-<section id="about"><div class="wrap"><div class="heading"><h2>About UPYA</h2><p>Uwezo Pamoja Youths Association brings young people together to learn, lead, innovate and create lasting positive change.</p></div><div class="cards"><article class="card"><div class="icon">🎯</div><h3>Our Mission</h3><p>To empower, equip, mentor and nurture tomorrow’s world.</p></article><article class="card"><div class="icon">🌍</div><h3>Our Vision</h3><p>A generation of empowered youth transforming communities into centers of lasting positive change.</p></article><article class="card"><div class="icon">🤝</div><h3>Our Values</h3><p>Teamwork, integrity, transparency, accountability and equity.</p></article></div></div></section>
-<section id="programs" class="alt"><div class="wrap"><div class="heading"><h2>Our Programs</h2><p>Programs that develop skills, encourage participation and strengthen communities.</p></div><div class="cards"><article class="card"><div class="icon">🎓</div><h3>Education & Mentorship</h3><p>Career guidance, student mentorship, leadership and academic support.</p></article><article class="card"><div class="icon">💡</div><h3>Entrepreneurship</h3><p>Financial literacy, business skills and pathways from ideas to income.</p></article><article class="card"><div class="icon">🗣️</div><h3>Youth Dialogue</h3><p>Debates, civic education and safe spaces for youth voices.</p></article><article class="card"><div class="icon">🌱</div><h3>Environment</h3><p>Tree planting and sustainable community action.</p></article><article class="card"><div class="icon">🛡️</div><h3>Social Awareness</h3><p>Education and awareness on issues affecting young people.</p></article><article class="card"><div class="icon">🎥</div><h3>Media & Storytelling</h3><p>Sharing youth stories, opportunities and community impact.</p></article></div></div></section>
-<section id="platform"><div class="wrap"><div class="heading"><h2>The New UPYA Platform Will Feature</h2><p>Digital tools designed to make membership, participation and support easier.</p></div><div class="features">
-<div class="feature"><div class="icon">👤</div><div><b>Secure Membership Portal</b><span>Profiles, account access and membership status.</span></div></div>
-<div class="feature"><div class="icon">📝</div><div><b>Online Membership Registration</b><span>Simple digital applications for new members.</span></div></div>
-<div class="feature"><div class="icon">💳</div><div><b>Membership Activation</b><span>Activation after membership payment verification.</span></div></div>
-<div class="feature"><div class="icon">🪪</div><div><b>Digital Cards & Certificates</b><span>Access membership cards and participation certificates.</span></div></div>
-<div class="feature"><div class="icon">❤️</div><div><b>Donations & Sponsorship</b><span>Support programs and community projects online.</span></div></div>
-<div class="feature"><div class="icon">🙋</div><div><b>Volunteer Registration</b><span>Register skills and areas of interest.</span></div></div>
-<div class="feature"><div class="icon">📅</div><div><b>Event Registration</b><span>Discover and register for UPYA events.</span></div></div>
-<div class="feature"><div class="icon">👥</div><div><b>Partner Portal</b><span>Connect partners and stakeholders with UPYA.</span></div></div>
-<div class="feature"><div class="icon">📊</div><div><b>Impact Dashboard</b><span>Follow projects, achievements and outcomes.</span></div></div>
-<div class="feature"><div class="icon">📚</div><div><b>Resource Centre & News</b><span>Opportunities, learning resources and updates.</span></div></div>
-</div></div></section>
-<section id="gallery" class="alt"><div class="wrap"><div class="heading"><h2>UPYA Gallery</h2><p>A visual space for mentorship, events, youth conversations, community projects and achievements. These are professional placeholders that can be replaced with real UPYA photos.</p></div><div class="gallery"><div class="photo"><span>Student Mentorship & Leadership</span></div><div class="photo"><span>Youth Empowerment Forum</span></div><div class="photo"><span>Community Outreach</span></div><div class="photo"><span>Environmental Action & Tree Planting</span></div><div class="photo"><span>UPYA Events & Celebrations</span></div></div></div></section>
-<section class="impact"><div class="wrap"><div class="heading"><h2>UPYA Impact Dashboard</h2><p>Verified figures will be updated by administrators as the association grows.</p></div><div class="stats"><div class="stat"><strong>—</strong><span>Members</span></div><div class="stat"><strong>—</strong><span>Youth Reached</span></div><div class="stat"><strong>—</strong><span>Programs Delivered</span></div><div class="stat"><strong>—</strong><span>Community Projects</span></div></div></div></section>
-<section id="join"><div class="wrap"><div class="heading"><h2>Join and Get Involved</h2><p>Register as a member or volunteer. This prototype saves submissions only in the current browser.</p></div><div class="forms"><form class="form" onsubmit="sendForm(event,'Membership')"><h3>Membership Registration</h3><input required placeholder="Full name"><input required type="email" placeholder="Email address"><input required placeholder="Phone number"><select required><option value="">Membership category</option><option>Student Member</option><option>Youth Member</option><option>Associate Member</option><option>Supporter</option></select><textarea placeholder="Why would you like to join UPYA?"></textarea><button class="btn primary">Submit Application</button></form><form class="form" onsubmit="sendForm(event,'Volunteer')"><h3>Volunteer Registration</h3><input required placeholder="Full name"><input required type="email" placeholder="Email address"><input required placeholder="Phone number"><select required><option value="">Area of interest</option><option>Mentorship</option><option>Events</option><option>Environment</option><option>Media & Communication</option><option>Community Outreach</option></select><textarea placeholder="Your skills or experience"></textarea><button class="btn primary">Register as Volunteer</button></form></div></div></section>
-<section id="news" class="alt"><div class="wrap"><div class="heading"><h2>Latest News & Opportunities</h2><p>Keep up with UPYA activities, events and opportunities.</p></div><div class="news"><article class="card"><span class="tag">UPYA UPDATE</span><h3>Welcome to the UPYA Digital Platform</h3><p>We are building a connected platform for members, partners, volunteers and supporters.</p></article><article class="card"><span class="tag">MENTORSHIP</span><h3>Supporting Students and Young Leaders</h3><p>UPYA continues to create spaces for guidance, learning and leadership.</p></article><article class="card"><span class="tag">OPPORTUNITIES</span><h3>Volunteer With UPYA</h3><p>Use your skills, ideas and time to contribute to positive change.</p></article></div></div></section>
-<section><div class="wrap"><div class="cta"><div><h2>Partner with UPYA</h2><p>Support youth empowerment, mentorship and community transformation.</p></div><a class="btn gold" href="#join">Become a Partner</a></div></div></section>
-<footer><div class="wrap"><div class="foot"><div><div class="brand" style="color:#fff"><span class="logo">U</span><span>UPYA<small style="color:#aebbd8">UWEZO PAMOJA YOUTHS ASSOCIATION</small></span></div><p>Empowering youth and transforming communities through mentorship, opportunity, collaboration and action.</p></div><div><h3>Explore</h3><a href="#about">About UPYA</a><a href="#programs">Programs</a><a href="#platform">Digital Platform</a><a href="#gallery">Gallery</a></div><div><h3>Contact</h3><p><b>Editable contact details</b></p><p>Nyamgun Junction, Seme<br>Kisumu County, Kenya</p><p>Social: <b>@UPYA.kenya</b></p></div></div><div class="copy">© 2026 Uwezo Pamoja Youths Association (UPYA). All rights reserved.</div></div></footer>
-<div class="toast" id="toast">Thank you! Your application has been received.</div>
-<script>function sendForm(e,t){e.preventDefault();let a=JSON.parse(localStorage.getItem('upyaForms')||'[]');a.push({type:t,date:new Date().toISOString()});localStorage.setItem('upyaForms',JSON.stringify(a));e.target.reset();let x=document.getElementById('toast');x.style.display='block';setTimeout(()=>x.style.display='none',3500)}</script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UPYA — Uwezo Pamoja Youths Association</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --primary:#1E40AF;
+      --accent:#FFD700;
+      --muted:#f6f7fb;
+      --dark:#0f172a;
+      --card-shadow: 0 8px 30px rgba(2,6,23,0.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial; color:#0b1220; background:var(--muted); -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    /* NAVBAR */
+    .navbar{
+      position:fixed; top:0; left:0; right:0;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 22px; gap:12px;
+      background:linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+      backdrop-filter: blur(6px);
+      z-index:9999;
+    }
+    .logo-wrap{display:flex;align-items:center;gap:10px;}
+    .logo-wrap img{max-height:26px; width:auto; object-fit:contain; display:block;}
+    .nav-links{display:flex;gap:16px; align-items:center}
+    .nav-links a{
+      color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 8px; border-radius:6px; transition:all .18s;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,0.06); color:var(--accent)}
+    .hamburger{display:none; color:#fff; font-size:20px; background:transparent; border:none}
+
+    /* HERO */
+    .hero{
+      height:100vh; min-height:520px;
+      background-image: url("upya/1762834764360.jpg");
+      background-size:cover; background-position:center;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      position:relative;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.45));
+      z-index:1;
+    }
+    .hero-inner{position:relative; z-index:2; color:#fff; padding:20px; max-width:920px}
+    .hero h1{font-size: clamp(28px, 5vw, 48px); margin:0 0 12px; line-height:1.02; font-weight:800; letter-spacing:0.4px}
+    .hero p{margin:0 0 18px; font-size:clamp(14px,2vw,18px); font-weight:400; opacity:0.95}
+    .btn{display:inline-block; padding:12px 22px; background:var(--accent); color:#111; border-radius:8px; font-weight:700; text-decoration:none; transition: transform .15s, box-shadow .15s}
+    .btn:hover{transform: translateY(-4px); box-shadow:0 10px 30px rgba(255,215,0,0.12)}
+
+    /* SECTIONS */
+    section{padding:72px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    h2.section-title{font-size:26px;margin:0 0 12px;color:var(--dark);text-align:center}
+    p.lead{max-width:880px;margin:0 auto 18px;color:#334155;text-align:center}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+    @media(min-width:860px){ .about-grid{grid-template-columns:1fr 420px} }
+    .about-card{background:#fff;border-radius:12px;padding:20px;box-shadow:var(--card-shadow)}
+
+    /* OBJECTIVES */
+    .objectives-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+    .objective{background:linear-gradient(180deg,#fff,#fffbeb);padding:16px;border-radius:10px;box-shadow:0 6px 16px rgba(2,6,23,0.05);border-left:4px solid var(--accent)}
+
+    /* EVENTS */
+    .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .event-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);display:flex;flex-direction:column}
+    .event-thumb{width:100%;height:160px;object-fit:cover;display:block}
+    .event-body{padding:14px}
+    .event-body h3{margin:0 0 8px;font-size:18px;color:var(--primary);font-weight:700}
+    .event-meta{color:#334155;font-weight:600;font-size:13px;margin-bottom:8px}
+    .event-desc{color:#475569;font-size:14px;line-height:1.45}
+
+    /* GALLERY BY EVENT */
+    .event-gallery{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.05);margin-bottom:18px}
+    .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:12px}
+    .photo-grid img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .18s}
+    .photo-grid img:hover{transform:scale(1.04)}
+
+    /* EXECUTIVES */
+    .executive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+    .exec-card{background:#fff;padding:18px;border-radius:12px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,0.05)}
+    .exec-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block}
+
+    /* TESTIMONIALS */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .testimonial{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.04);font-style:italic;color:#0f172a}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:860px){ .contact-grid{grid-template-columns:1fr 420px} }
+    .contact-form input,.contact-form textarea{width:100%;padding:12px;border:1px solid #e6e9ef;border-radius:8px;margin-bottom:10px}
+    .contact-form button{background:var(--primary);color:#fff;padding:12px;border:0;border-radius:8px;font-weight:700;cursor:pointer}
+
+    /* FOOTER */
+    footer{background:var(--dark);color:#fff;padding:22px;text-align:center}
+
+    /* LIGHTBOX */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:99999}
+    #lightbox img{max-width:94%;max-height:90%;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+
+    /* RESPONSIVE */
+    @media(max-width:760px){
+      .nav-links{display:none}
+      .hamburger{display:block}
+      .hero{background-position:center 35%}
+      .hero h1{font-size:26px}
+      .photo-grid img{height:110px}
+    }
+
+    /* small fade-up */
+    .fade-up{animation:fadeUp .9s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="logo-wrap" data-aos="fade-down">
+      <a href="#home"><img src="Saved Pictures/1757253126804.jpg" alt="UPYA Logo"></a>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#executives">Executives</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#membership">Membership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" role="region" aria-label="Hero">
+    <div class="hero-inner hero-content" data-aos="fade-up">
+      <h1>Uwezo Pamoja Youths Association</h1>
+      <p>Defining the undefined.</p>
+      <a class="btn" href="#events">Explore Events</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="container">
+      <h2 id="about-title" class="section-title" data-aos="fade-up">About UPYA</h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="120">
+        Uwezo Pamoja Youths Association (UPYA) is a youth-led community organisation dedicated to empowering young people,
+        nurturing leaders, and creating positive community impact through mentorship, training and service.
+      </p>
+
+      <div class="about-grid" style="margin-top:20px">
+        <div class="about-card" data-aos="fade-right">
+          <h3 style="margin-top:0">Mission</h3>
+          <p>To empower, equip, mentor and nurture tomorrow's world.</p>
+          <h3 style="margin-top:10px">Vision</h3>
+          <p>Creating an environment that cultivates positive impact to the community.</p>
+        </div>
+
+        <div data-aos="fade-left" style="display:flex;align-items:center;justify-content:center">
+          <img src="rrdownload/Slide2.JPG" alt="About UPYA" style="width:100%;max-width:420px;border-radius:10px;object-fit:cover;box-shadow:0 10px 30px rgba(2,6,23,0.08)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section id="objectives" aria-labelledby="obj-title">
+    <div class="container">
+      <h2 id="obj-title" class="section-title" data-aos="zoom-in">Our Objectives & Core Values</h2>
+      <p class="lead" data-aos="zoom-in" data-aos-delay="120">Teamwork • Integrity • Transparency • Accountability • Equity</p>
+
+      <div class="objectives-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="objective"><strong>Empowerment</strong><div style="margin-top:6px;color:#475569">Build skills, confidence and opportunities for youth.</div></div>
+        <div class="objective"><strong>Mentorship</strong><div style="margin-top:6px;color:#475569">Guidance from experienced leaders and peers.</div></div>
+        <div class="objective"><strong>Community Impact</strong><div style="margin-top:6px;color:#475569">Projects that create real improvement in people’s lives.</div></div>
+        <div class="objective"><strong>Innovation</strong><div style="margin-top:6px;color:#475569">Support creative and practical youth-led solutions.</div></div>
+        <div class="objective"><strong>Collaboration</strong><div style="margin-top:6px;color:#475569">Work with partners for sustainable change.</div></div>
+        <div class="objective"><strong>Equity</strong><div style="margin-top:6px;color:#475569">Fair access and opportunity for all youths.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" aria-labelledby="events-title">
+    <div class="container">
+      <h2 id="events-title" class="section-title" data-aos="fade-up">Upcoming Events</h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="120">Join us — community events, mentorship and talent showcases.</p>
+
+      <div class="events-grid" data-aos="fade-up" data-aos-delay="200">
+        <article class="event-card">
+          <img class="event-thumb" src="IMG-20251125-WA0134.jpg" alt="Football match" onclick="openLightbox(this)">
+          <div class="event-body">
+            <h3>Know GBV Stop GBV</h3>
+            <div class="event-meta">NOV, 29th, 2025 • Seme PapKadundo</div>
+            <div class="event-desc">Together we PLAY, together we HEAL, together we RISE, and together we move as ONE.</div>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img class="event-thumb" src="rrdownload/Presentation1.jpg" alt="GBV Awareness talk" onclick="openLightbox(this)">
+          <div class="event-body">
+            <h3>GBV Awareness</h3>
+            <div class="event-meta">NOV 21, 2025 • GOOGLE MEET</div>
+            <div class="event-desc">When youth rise, violence falls. UPYA continues the journey to end Gbv.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <h2 id="gallery-title" class="section-title" data-aos="fade-up">Gallery — Events & Moments</h2>
+
+        <div class="event-gallery" data-aos="fade-up" data-aos-delay="120">
+        <h3 style="margin:0">Innovation and collaboration — Maseno University (NOV 2025)</h3>
+        <p style="margin:6px 0 10px;color:#475569">“A collaborative engagement where we interacted with young innovators, exchanged ideas, and explored new partnership opportunities.”</p>
+        <div class="photo-grid">
+          <img src="download/IMG_20251126_184635_688.jpg" alt="collaboration" onclick="openLightbox(this)">
+          <img src="download/IMG-20251126-WA0162.jpg" alt="collaboration" onclick="openLightbox(this)">
+          <img src="download/IMG-20251126-WA0167.jpg" alt="collaboration" onclick="openLightbox(this)">
+          <img src="download/IMG_20251126_184633_953.jpg" alt="collaboration" onclick="openLightbox(this)">
+        </div>
+      </div>
+      <div class="event-gallery" data-aos="fade-up" data-aos-delay="120">
+        <h3 style="margin:0">Student mentorship — Nyamgun Secondary-Seme (OCT 2025)</h3>
+        <p style="margin:6px 0 10px;color:#475569">Mentors, workshops and group coaching.</p>
+        <div class="photo-grid">
+          <img src="IMG_20251002_161252_798.jpg" alt="mentorship1" onclick="openLightbox(this)">
+          <img src="IMG_20251002_154512_473.jpg" alt="mentorship2" onclick="openLightbox(this)">
+          <img src="IMG_20251002_174846_957.jpg" alt="mentorship3" onclick="openLightbox(this)">
+          <img src="upya/1762834745954.jpg" alt="mentorship4" onclick="openLightbox(this)">
+        </div>
+      </div>
+
+      <div class="event-gallery" data-aos="fade-up" data-aos-delay="120">
+        <h3 style="margin:0">UPYA anniversary — Living World childrens home-Seme (APRIL 2025)</h3>
+        <p style="margin:6px 0 10px;color:#475569">Celebrating a year of existence.</p>
+        <div class="photo-grid">
+          <img src="upya/1762834796345 - Copy.jpg" alt="Anniversary" onclick="openLightbox(this)">
+          <img src="upya/1762834811764.jpg" alt="Anniversary" onclick="openLightbox(this)">
+          <img src="upya/1762834791770.jpg" alt="Anniversary" onclick="openLightbox(this)">
+          <img src="upya/1762834764360.jpg" alt="Anniversary" onclick="openLightbox(this)">
+        </div>
+      </div>
+
+      <div class="event-gallery" data-aos="fade-up" data-aos-delay="200">
+        <h3 style="margin:0">Civic Education - Kisumu County Assembly (MAY 2024)</h3>
+        <p style="margin:6px 0 10px;color:#475569">We successfully organized a youth mentorship and civic education trip to the Kisumu County Assembly. The youths gained first-hand knowledge on governance processes and leadership skills. Thank you to all who participated.</p>
+        <div class="photo-grid">
+          <img src="upya/1762834874868.jpg" alt="civic 1" onclick="openLightbox(this)">
+          <img src="upya/1762834878374 - Copy.jpg" alt="civic 2" onclick="openLightbox(this)">
+          <img src="upya/1762834882081 - Copy.jpg" alt="civic 3" onclick="openLightbox(this)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeLightbox()" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="Open image">
+  </div>
+
+  <!-- EXECUTIVES -->
+  <section id="executives" aria-labelledby="exec-title">
+    <div class="container">
+      <h2 id="exec-title" class="section-title" data-aos="fade-up">Executive Team</h2>
+      <div class="executive-grid" data-aos="fade-up" data-aos-delay="120">
+        <div class="exec-card">
+          <img src="images/exec1.jpg" alt="Hillary Onyango">
+          <h4 style="margin:8px 0 6px">Hillary Onyango</h4>
+          <div style="color:#475569;font-weight:600">Chairperson</div>
+        </div>
+
+        <div class="exec-card">
+          <img src="images/exec2.jpg" alt="Brian Chiambe">
+          <h4 style="margin:8px 0 6px">Brian Chiambe</h4>
+          <div style="color:#475569;font-weight:600">Secretary</div>
+        </div>
+
+        <div class="exec-card">
+          <img src="images/exec3.jpg" alt="Dennis Ouma">
+          <h4 style="margin:8px 0 6px">Dennis Ouma</h4>
+          <div style="color:#475569;font-weight:600">Treasurer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-labelledby="test-title">
+    <div class="container">
+      <h2 id="test-title" class="section-title" data-aos="fade-up">What Visitors Say</h2>
+      <div class="testimonials-grid" data-aos="fade-up" data-aos-delay="120">
+        <div class="testimonial">"UPYA helped me discover my academic potential." — Emmanuel</div>
+        <div class="testimonial">"Great community spirit and practical training." — John</div>
+        <div class="testimonial">"Events are well organized and inclusive." — Achieng</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership" aria-labelledby="mem-title">
+    <div class="container">
+      <h2 id="mem-title" class="section-title" data-aos="fade-up">Become a Member</h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="120">Join UPYA — fill the membership form to sign up.</p>
+      <div style="text-align:center" data-aos="zoom-in" data-aos-delay="220">
+        <a class="btn" href="https://forms.gle/9vmDchs1tJ2LTuoJ6" target="_blank" rel="noopener">Fill Membership Form</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title" class="section-title" data-aos="fade-up">Contact & Socials</h2>
+
+      <div class="contact-grid" style="margin-top:18px">
+        <div data-aos="fade-right">
+          <p><strong>Email:</strong> <a href="mailto:upya.kenyaorg@gmail.com">upya.kenyaorg@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/254742717363" target="_blank">+254 742 717 363</a></p>
+
+          <p style="margin-top:12px">Follow us:</p>
+          <div style="display:flex;gap:12px;margin-top:8px;align-items:center">
+            <a href="https://www.facebook.com/profile.php?id=100082027299079" target="_blank" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook" style="color:#1877F2;font-size:22px"></i></a>
+            <a href="https://www.instagram.com/upya_kenya?igsh=bGx5NWcxem9objMx" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" style="color:#E4405F;font-size:22px"></i></a>
+            <a href="https://www.youtube.com/channel/UC7xyWqAL0dP5264__O-zVxA" target="_blank" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube" style="color:#FF0000;font-size:22px"></i></a>
+            <a href="http://tiktok.com/@upya_ke" target="_blank" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok" style="color:#000000;font-size:22px"></i></a>
+            <a href="https://wa.me/254742717364" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" style="color:#25D366;font-size:22px"></i></a>
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <form class="contact-form" onsubmit="alert('Demo form — replace with mailer or backend'); return false;">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Uwezo Pamoja Youths Association (UPYA). All rights reserved.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    function toggleMenu(){
+      const nav = document.querySelector('.nav-links');
+      if (!nav) return;
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.gap = '10px';
+      nav.style.background = 'rgba(0,0,0,0.7)';
+      nav.style.padding = '10px';
+      nav.style.position = 'absolute';
+      nav.style.right = '12px';
+      nav.style.top = '58px';
+      nav.style.borderRadius = '8px';
+    }
+
+    // Lightbox
+    function openLightbox(el){
+      const src = el.src || el.getAttribute('data-src');
+      const lb = document.getElementById('lightbox');
+      const im = document.getElementById('lightbox-img');
+      im.src = src;
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      lb.setAttribute('aria-hidden','false');
+    }
+    function closeLightbox(){
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+      document.body.style.overflow = '';
+      lb.setAttribute('aria-hidden','true');
+    }
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+    // Smooth scroll
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const href = a.getAttribute('href');
+        if(!href || href==='#') return;
+        const target = document.querySelector(href);
+        if(target){
+          const headerHeight = document.querySelector('.navbar').offsetHeight;
+          const top = target.offsetTop - headerHeight;
+          window.scrollTo({top, behavior:'smooth'});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
