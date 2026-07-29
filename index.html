@@ -40,27 +40,75 @@
 
     /* HERO */
     .hero{
-      height:100vh; min-height:520px;
-      background-image: url("upya/1762834764360.jpg");
-      background-size:cover; background-position:center;
-      display:flex; align-items:center; justify-content:center; text-align:center;
-      position:relative;
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.45));
-      z-index:1;
-    }
-    .hero-inner{position:relative; z-index:2; color:#fff; padding:20px; max-width:920px}
-    .hero h1.hero h1{
-    font-family:'Cinzel',serif;
-    font-size:60px;
-    color:#FFD700;
-    text-shadow:2px 2px 8px rgba(0,0,0,.6);
+    background:url("images/hero.jpg") center/cover no-repeat;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
 }
-    .hero p{margin:0 0 18px; font-size:clamp(14px,2vw,18px); font-weight:400; opacity:0.95}
-    .btn{display:inline-block; padding:12px 22px; background:var(--accent); color:#111; border-radius:8px; font-weight:700; text-decoration:none; transition: transform .15s, box-shadow .15s}
-    .btn:hover{transform: translateY(-4px); box-shadow:0 10px 30px rgba(255,215,0,0.12)}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:800px;
+    padding:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:4rem;
+    font-weight:700;
+    line-height:1.2;
+    color:#FFD700;
+    text-shadow:3px 3px 10px rgba(0,0,0,.6);
+}
+
+.hero p{
+    font-family:"Poppins",sans-serif;
+    font-size:1.3rem;
+    margin:20px 0 30px;
+    color:#fff;
+}
+
+.btn{
+    display:inline-block;
+    background:#1E40AF;
+    color:#fff;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#FFD700;
+    color:#102b73;
+}
+    <section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>Uwezo Pamoja Youths Association</h1>
+
+        <p>Empowering • Equipping • Mentoring • Nurturing Tomorrow's World</p>
+
+        <a href="#programs" class="btn">Explore Programs</a>
+
+    </div>
+
+</section>
 
     /* SECTIONS */
     section{padding:72px 16px}
