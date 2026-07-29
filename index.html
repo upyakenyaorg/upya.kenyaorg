@@ -3,240 +3,82 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>UPYA | Uwezo Pamoja Youths Association</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-body{
-background:#F8FAFC;
-overflow-x:hidden;
-}
-
-:root{
---primary:#0F4C81;
---secondary:#10B981;
---gold:#F4B400;
---dark:#081C2D;
---light:#F8FAFC;
-}
-
-.navbar{
-background:rgba(8,28,45,.95);
-backdrop-filter:blur(12px);
-}
-
-.navbar-brand{
-font-weight:800;
-font-size:28px;
-color:white!important;
-}
-
-.nav-link{
-color:white!important;
-margin-left:18px;
-font-weight:500;
-transition:.4s;
-}
-
-.nav-link:hover{
-color:var(--gold)!important;
-}
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url("images/hero.jpg") center/cover;
-}
-
-.hero h1{
-font-size:65px;
-font-weight:800;
-}
-
-.hero span{
-color:var(--gold);
-}
-
-.hero p{
-font-size:20px;
-margin-top:20px;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.hero-btn{
-margin-top:35px;
-}
-
-.btn-main{
-background:var(--gold);
-padding:15px 35px;
-border-radius:40px;
-color:#111;
-font-weight:700;
-text-decoration:none;
-margin:10px;
-transition:.4s;
-display:inline-block;
-}
-
-.btn-main:hover{
-transform:translateY(-5px);
-}
-
-.btn-outline{
-border:2px solid white;
-padding:15px 35px;
-border-radius:40px;
-text-decoration:none;
-color:white;
-margin:10px;
-font-weight:700;
-transition:.4s;
-display:inline-block;
-}
-
-.btn-outline:hover{
-background:white;
-color:#111;
-}
-
-.stats{
-margin-top:-80px;
-position:relative;
-z-index:10;
-}
-
-.stat-box{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-text-align:center;
-transition:.4s;
-}
-
-.stat-box:hover{
-transform:translateY(-10px);
-}
-
-.stat-box i{
-font-size:45px;
-color:var(--secondary);
-margin-bottom:15px;
-}
-
-.stat-box h2{
-font-weight:800;
-color:var(--primary);
-}
-
-.section-title{
-text-align:center;
-font-weight:800;
-font-size:42px;
-margin-bottom:20px;
-color:var(--primary);
-}
-
-.section-sub{
-text-align:center;
-color:#666;
-max-width:700px;
-margin:auto;
-margin-bottom:60px;
-}
-
-.program-card{
-background:white;
-border-radius:20px;
-padding:35px;
-text-align:center;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-transition:.4s;
-height:100%;
-}
-
-.program-card:hover{
-transform:translateY(-12px);
-}
-
-.program-card i{
-font-size:55px;
-color:var(--secondary);
-margin-bottom:20px;
-}
-
-footer{
-background:var(--dark);
-color:white;
-padding:50px 0;
-margin-top:80px;
-}
-
-footer a{
-color:white;
-text-decoration:none;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar navbar-expand-lg fixed-top">
 
 <div class="container">
 
-<a class="navbar-brand" href="#">UPYA</a>
+<a class="navbar-brand" href="#">
+<img src="images/logo.png" width="55">
+<span>UPYA</span>
+</a>
 
-<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
+<button class="navbar-toggler" type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<i class="fas fa-bars text-white"></i>
+
 </button>
 
 <div class="collapse navbar-collapse" id="menu">
 
 <ul class="navbar-nav ms-auto">
 
-<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">Programs</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#programs">Programs</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#events">Events</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#membership">Membership</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">Volunteer</a></li>
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
 
-<li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+<li class="nav-item">
 
-<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+<a href="#" class="btn btn-warning rounded-pill ms-lg-3">
+
+Donate
+
+</a>
+
+</li>
 
 </ul>
 
@@ -246,89 +88,45 @@ text-decoration:none;
 
 </nav>
 
-<section class="hero">
+<!-- HERO -->
 
-<div class="container">
+<section id="home" class="hero">
 
-<h1>Empowering <span>Youth</span><br>Changing Communities</h1>
+<div class="overlay"></div>
+
+<div class="container hero-content">
+
+<h1>
+
+Empowering Youth.<br>
+
+<span>Transforming Communities.</span>
+
+</h1>
 
 <p>
-Uwezo Pamoja Youths Association (UPYA) is committed to empowering, equipping, mentoring and nurturing tomorrow's world through leadership, innovation, entrepreneurship and community service.
+
+Uwezo Pamoja Youths Association empowers, equips,
+
+mentors and nurtures tomorrow's world through
+
+innovation, leadership and community service.
+
 </p>
 
-<div class="hero-btn">
+<div class="mt-4">
 
-<a href="#" class="btn-main">Become a Member</a>
+<a href="#membership" class="btn btn-warning btn-lg rounded-pill">
 
-<a href="#" class="btn-outline">Donate Today</a>
+Become a Member
 
-</div>
+</a>
 
-</div>
+<a href="#about" class="btn btn-outline-light btn-lg rounded-pill ms-3">
 
-</section>
+Learn More
 
-<section class="stats">
-
-<div class="container">
-
-<div class="row g-4">
-
-<div class="col-md-3">
-
-<div class="stat-box">
-
-<i class="fa-solid fa-users"></i>
-
-<h2>500+</h2>
-
-<p>Members</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="stat-box">
-
-<i class="fa-solid fa-handshake"></i>
-
-<h2>35+</h2>
-
-<p>Partners</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="stat-box">
-
-<i class="fa-solid fa-diagram-project"></i>
-
-<h2>80+</h2>
-
-<p>Projects</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="stat-box">
-
-<i class="fa-solid fa-heart"></i>
-
-<h2>5,000+</h2>
-
-<p>Youths Reached</p>
-
-</div>
-
-</div>
+</a>
 
 </div>
 
@@ -336,940 +134,32 @@ Uwezo Pamoja Youths Association (UPYA) is committed to empowering, equipping, me
 
 </section>
 
-  <!-- ================= ABOUT SECTION ================= -->
+<!-- ABOUT -->
 
 <section id="about" class="py-5">
 
 <div class="container">
 
-<h2 class="section-title">About UPYA</h2>
+<h2 class="section-title">
 
-<p class="section-sub">
-Uwezo Pamoja Youths Association (UPYA) is a youth-led community organization dedicated to empowering young people through mentorship, entrepreneurship, leadership development, civic engagement and sustainable community service.
+About UPYA
+
+</h2>
+
+<p class="lead text-center">
+
+UPYA is a youth-led organization dedicated to empowering young people through education, entrepreneurship, sports, mentorship and community service.
+
 </p>
-
-<div class="row align-items-center mt-5">
-
-<div class="col-lg-6 mb-4">
-
-<img src="images/about.jpg"
-class="img-fluid rounded-4 shadow"
-alt="UPYA">
-
-</div>
-
-<div class="col-lg-6">
-
-<h3 style="color:var(--primary);font-weight:700;">
-Who We Are
-</h3>
-
-<p>
-UPYA believes that every young person has unlimited potential.
-We exist to empower, equip, mentor and nurture tomorrow's world by creating opportunities for growth, innovation and community transformation.
-</p>
-
-<div class="row mt-4">
-
-<div class="col-6">
-
-<div class="p-3 rounded-4 shadow-sm bg-white">
-
-<h5 style="color:var(--secondary);">Mission</h5>
-
-<p>
-To empower, equip, mentor and nurture tomorrow's world.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-6">
-
-<div class="p-3 rounded-4 shadow-sm bg-white">
-
-<h5 style="color:var(--gold);">Vision</h5>
-
-<p>
-A generation of empowered youth transforming communities into centers of lasting positive change.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
-
-<!-- ================= CORE VALUES ================= -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="section-title">Our Core Values</h2>
-
-<p class="section-sub">
-These principles guide every project, decision and partnership.
-</p>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-handshake"></i>
-
-<h4>Teamwork</h4>
-
-<p>
-Working together to achieve lasting impact.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-<h4>Integrity</h4>
-
-<p>
-Doing what is right with honesty and accountability.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-eye"></i>
-
-<h4>Transparency</h4>
-
-<p>
-Building trust through openness and responsibility.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-people-group"></i>
-
-<h4>Equity</h4>
-
-<p>
-Equal opportunities for every young person.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-lightbulb"></i>
-
-<h4>Innovation</h4>
-
-<p>
-Encouraging creativity and practical solutions.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-earth-africa"></i>
-
-<h4>Community Impact</h4>
-
-<p>
-Creating sustainable change for generations.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= PROGRAMS ================= -->
-
-<section id="programs" class="py-5">
-
-<div class="container">
-
-<h2 class="section-title">Our Programs</h2>
-
-<p class="section-sub">
-
-UPYA empowers communities through impactful youth-centered programs.
-
-</p>
-
-<div class="row g-4">
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
-<h4>Education & Mentorship</h4>
-
-<p>
-
-Career guidance, academic mentorship, leadership training and life skills.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-briefcase"></i>
-
-<h4>Entrepreneurship</h4>
-
-<p>
-
-Helping young people create businesses, employment and financial independence.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-seedling"></i>
-
-<h4>Environmental Action</h4>
-
-<p>
-
-Tree planting, clean-up campaigns and climate awareness initiatives.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-futbol"></i>
-
-<h4>Sports Development</h4>
-
-<p>
-
-Sports tournaments promoting peace, unity and talent development.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-landmark"></i>
-
-<h4>Civic Education</h4>
-
-<p>
-
-Building responsible citizens through governance and leadership education.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<i class="fa-solid fa-heart"></i>
-
-<h4>Community Service</h4>
-
-<p>
-
-Giving back through volunteering, outreach and humanitarian initiatives.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-  <!-- ================= EVENTS SECTION ================= -->
-
-<section id="events" class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="section-title">Upcoming Events</h2>
-
-<p class="section-sub">
-Join us as we inspire, empower and transform communities through impactful events.
-</p>
-
-<div class="row g-4">
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<img src="images/event1.jpg" class="img-fluid rounded mb-3">
-
-<h4>Back to School Mentorship</h4>
-
-<p>
-Career guidance, leadership and life skills for students.
-</p>
-
-<p><strong>Date:</strong> August 2026</p>
-
-<a href="#" class="btn btn-warning rounded-pill px-4">Register</a>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<img src="images/event2.jpg" class="img-fluid rounded mb-3">
-
-<h4>Youth Football Tournament</h4>
-
-<p>
-Promoting peace, talent and unity through sports.
-</p>
-
-<p><strong>Date:</strong> August 2026</p>
-
-<a href="#" class="btn btn-success rounded-pill px-4">Join Event</a>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<img src="images/event3.jpg" class="img-fluid rounded mb-3">
-
-<h4>Entrepreneurship Summit</h4>
-
-<p>
-Learn business, innovation and financial literacy.
-</p>
-
-<p><strong>Date:</strong> September 2026</p>
-
-<a href="#" class="btn btn-primary rounded-pill px-4">Reserve Seat</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= IMPACT SECTION ================= -->
-
-<section class="py-5">
-
-<div class="container">
-
-<h2 class="section-title">Our Impact</h2>
-
-<p class="section-sub">
-Every number represents lives transformed through UPYA initiatives.
-</p>
-
-<div class="row text-center g-4">
-
-<div class="col-md-3">
-
-<div class="program-card">
-
-<h1 style="color:#10B981;font-size:55px;">5,000+</h1>
-
-<h5>Youths Reached</h5>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="program-card">
-
-<h1 style="color:#0F4C81;font-size:55px;">80+</h1>
-
-<h5>Projects</h5>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="program-card">
-
-<h1 style="color:#F4B400;font-size:55px;">500+</h1>
-
-<h5>Members</h5>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="program-card">
-
-<h1 style="color:#10B981;font-size:55px;">35+</h1>
-
-<h5>Partners</h5>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= EXECUTIVE TEAM ================= -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="section-title">Executive Team</h2>
-
-<p class="section-sub">
-Meet the passionate leaders serving the UPYA community.
-</p>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<img src="images/chairperson.jpg"
-class="rounded-circle mb-3"
-width="150">
-
-<h4>Hillary Onyango</h4>
-
-<p>Chairperson</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<img src="images/secretary.jpg"
-class="rounded-circle mb-3"
-width="150">
-
-<h4>Brian Chiambe</h4>
-
-<p>Secretary</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="program-card">
-
-<img src="images/treasurer.jpg"
-class="rounded-circle mb-3"
-width="150">
-
-<h4>Dennis Ouma</h4>
-
-<p>Treasurer</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= GALLERY ================= -->
-
-<section class="py-5">
-
-<div class="container">
-
-<h2 class="section-title">Gallery</h2>
-
-<p class="section-sub">
-Moments that inspire hope and transformation.
-</p>
-
-<div class="row g-3">
-
-<div class="col-md-3">
-
-<img src="images/gallery1.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-<div class="col-md-3">
-
-<img src="images/gallery2.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-<div class="col-md-3">
-
-<img src="images/gallery3.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-<div class="col-md-3">
-
-<img src="images/gallery4.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="section-title">Testimonials</h2>
-
-<div class="row g-4">
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<p>
-
-⭐⭐⭐⭐⭐
-
-</p>
-
-<p>
-
-"UPYA changed my life through mentorship and leadership training."
-
-</p>
-
-<h5>- Emmanuel</h5>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<p>
-
-⭐⭐⭐⭐⭐
-
-</p>
-
-<p>
-
-"I gained confidence to start my own business."
-
-</p>
-
-<h5>- Achieng'</h5>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="program-card">
-
-<p>
-
-⭐⭐⭐⭐⭐
-
-</p>
-
-<p>
-
-"The football tournament united our community."
-
-</p>
-
-<h5>- Dennis</h5>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-  <!-- ================= MEMBERSHIP ================= -->
-
-<section id="membership" class="py-5">
-
-<div class="container">
-
-<h2 class="section-title">Become a Member</h2>
-
-<p class="section-sub">
-Join a growing network of young leaders transforming communities across Kenya.
-</p>
-
-<div class="row">
-
-<div class="col-lg-6">
-
-<form class="shadow p-4 rounded-4 bg-white">
-
-<div class="mb-3">
-<input type="text" class="form-control" placeholder="Full Name">
-</div>
-
-<div class="mb-3">
-<input type="email" class="form-control" placeholder="Email Address">
-</div>
-
-<div class="mb-3">
-<input type="tel" class="form-control" placeholder="Phone Number">
-</div>
-
-<div class="mb-3">
-<select class="form-select">
-<option>Select County</option>
-<option>Kisumu</option>
-<option>Siaya</option>
-<option>Homa Bay</option>
-<option>Migori</option>
-<option>Other</option>
-</select>
-</div>
-
-<button class="btn btn-warning w-100">
-Register Membership
-</button>
-
-</form>
-
-</div>
-
-<div class="col-lg-6">
-
-<div class="program-card">
-
-<i class="fa-solid fa-id-card fa-4x text-warning mb-3"></i>
-
-<h3>Digital Membership Card</h3>
-
-<p>
-
-Every registered member receives a unique digital membership card and access to future UPYA opportunities.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= DONATE ================= -->
-
-<section class="py-5 bg-light">
-
-<div class="container text-center">
-
-<h2 class="section-title">Support Our Mission</h2>
-
-<p class="section-sub">
-
-Your donation helps empower youth through education, entrepreneurship and community projects.
-
-</p>
-
-<a href="#" class="btn btn-success btn-lg rounded-pill px-5">
-
-<i class="fa-solid fa-heart"></i>
-
-Donate Now
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="py-5">
-
-<div class="container">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="row">
-
-<div class="col-lg-6">
-
-<h4>Office</h4>
-
-<p>Nyamgun Junction, Seme, Kisumu County</p>
-
-<p>
-
-<i class="fa-solid fa-phone"></i>
-
-+254 742 717 363
-
-</p>
-
-<p>
-
-<i class="fa-solid fa-envelope"></i>
-
-upya.kenyaorg@gmail.com
-
-</p>
-
-</div>
-
-<div class="col-lg-6">
-
-<form>
-
-<input class="form-control mb-3" placeholder="Name">
-
-<input class="form-control mb-3" placeholder="Email">
-
-<textarea class="form-control mb-3" rows="5" placeholder="Message"></textarea>
-
-<button class="btn btn-primary">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SOCIAL MEDIA ================= -->
-
-<section class="py-5 text-center bg-dark text-white">
-
-<div class="container">
-
-<h2>Follow UPYA</h2>
-
-<p>Stay connected through our official social media platforms.</p>
-
-<div class="mt-4">
-
-<a href="https://facebook.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-facebook"></i>
-</a>
-
-<a href="https://instagram.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://x.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-x-twitter"></i>
-</a>
-
-<a href="https://tiktok.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-tiktok"></i>
-</a>
-
-<a href="https://youtube.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-youtube"></i>
-</a>
-
-<a href="https://linkedin.com/" class="text-white fs-2 mx-3">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="https://wa.me/254742717363" class="text-white fs-2 mx-3">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<div class="row">
-
-<div class="col-lg-4">
-
-<h4>UPYA</h4>
-
-<p>
-
-Empowering, Equipping, Mentoring and Nurturing Tomorrow's World.
-
-</p>
-
-</div>
-
-<div class="col-lg-4">
-
-<h4>Quick Links</h4>
-
-<p><a href="#">Home</a></p>
-
-<p><a href="#">About</a></p>
-
-<p><a href="#">Programs</a></p>
-
-<p><a href="#">Events</a></p>
-
-<p><a href="#">Membership</a></p>
-
-</div>
-
-<div class="col-lg-4">
-
-<h4>Contact</h4>
-
-<p>Email: upya.kenyaorg@gmail.com</p>
-
-<p>Phone: +254 742 717 363</p>
-
-<p>Nyamgun Junction, Kisumu County</p>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="text-center">
-
-© 2026 Uwezo Pamoja Youths Association (UPYA). All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<script src="script.js"></script>
 
+</body>
 </html>
+
