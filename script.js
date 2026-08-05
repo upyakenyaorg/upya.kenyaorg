@@ -1,34 +1,180 @@
 // =========================
-// UPYA Website Script
+// UPYA WEBSITE SCRIPT
 // =========================
 
-// Sticky Navbar
+// Loading Screen
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
 
-window.addEventListener("scroll", function () {
+    setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+    }, 1200);
+});
 
-const navbar = document.querySelector(".navbar");
+// =========================
+// Navbar Background
+// =========================
 
-if(window.scrollY > 80){
+window.addEventListener("scroll", () => {
 
-navbar.style.background="#081C2D";
+    const nav = document.querySelector(".navbar");
 
-navbar.style.padding="10px 0";
+    if (window.scrollY > 80) {
 
-navbar.style.boxShadow="0 8px 20px rgba(0,0,0,.2)";
+        nav.style.background = "#0F4C81";
 
-}else{
+        nav.style.boxShadow = "0 10px 25px rgba(0,0,0,.2)";
 
-navbar.style.background="rgba(8,28,45,.92)";
+    } else {
 
-navbar.style.padding="15px 0";
+        nav.style.background = "rgba(15,76,129,.88)";
 
-navbar.style.boxShadow="none";
+        nav.style.boxShadow = "none";
+
+    }
+
+});
+
+// =========================
+// Counter Animation
+// =========================
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const update = () => {
+
+        const target = +counter.dataset.target;
+
+        const count = +counter.innerText;
+
+        const speed = target / 120;
+
+        if(count < target){
+
+            counter.innerText = Math.ceil(count + speed);
+
+            setTimeout(update,20);
+
+        }
+
+        else{
+
+            counter.innerText = target + "+";
+
+        }
+
+    }
+
+    update();
+
+});
+
+// =========================
+// Fade Up Animation
+// =========================
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
 
 }
 
 });
 
-// Smooth Scrolling
+});
+
+document.querySelectorAll(".fade-up").forEach(el=>{
+
+observer.observe(el);
+
+});
+
+// =========================
+// Gallery Lightbox
+// =========================
+
+const gallery = document.querySelectorAll(".gallery-img");
+
+gallery.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+const lightbox = document.createElement("div");
+
+lightbox.style.position="fixed";
+
+lightbox.style.top="0";
+
+lightbox.style.left="0";
+
+lightbox.style.width="100%";
+
+lightbox.style.height="100%";
+
+lightbox.style.background="rgba(0,0,0,.9)";
+
+lightbox.style.display="flex";
+
+lightbox.style.justifyContent="center";
+
+lightbox.style.alignItems="center";
+
+lightbox.style.zIndex="99999";
+
+lightbox.innerHTML=`
+
+<img src="${img.src}"
+
+style="max-width:90%;
+
+max-height:90%;
+
+border-radius:15px;">`;
+
+document.body.appendChild(lightbox);
+
+lightbox.onclick=()=>{
+
+lightbox.remove();
+
+}
+
+});
+
+});
+
+// =========================
+// Back To Top
+// =========================
+
+const topBtn=document.querySelector('.fa-arrow-up').parentElement;
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.display="flex";
+
+}
+
+else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+// =========================
+// Smooth Scroll
+// =========================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
@@ -52,129 +198,63 @@ behavior:"smooth"
 
 });
 
-// Fade-in Animation
+// =========================
+// Mobile Menu Close
+// =========================
 
-const observer=new IntersectionObserver(entries=>{
+const navLinks=document.querySelectorAll(".nav-link");
 
-entries.forEach(entry=>{
+const menu=document.querySelector(".navbar-collapse");
 
-if(entry.isIntersecting){
+navLinks.forEach(link=>{
 
-entry.target.classList.add("show");
+link.addEventListener("click",()=>{
 
-}
+if(menu.classList.contains("show")){
 
-});
-
-});
-
-document.querySelectorAll("section").forEach(sec=>{
-
-sec.classList.add("hidden");
-
-observer.observe(sec);
-
-});
-
-// Back To Top Button
-
-const topBtn=document.createElement("button");
-
-topBtn.innerHTML='<i class="fas fa-arrow-up"></i>';
-
-topBtn.id="topBtn";
-
-document.body.appendChild(topBtn);
-
-topBtn.style.position="fixed";
-
-topBtn.style.bottom="25px";
-
-topBtn.style.right="25px";
-
-topBtn.style.width="50px";
-
-topBtn.style.height="50px";
-
-topBtn.style.borderRadius="50%";
-
-topBtn.style.border="none";
-
-topBtn.style.background="#F4B400";
-
-topBtn.style.color="white";
-
-topBtn.style.fontSize="20px";
-
-topBtn.style.cursor="pointer";
-
-topBtn.style.display="none";
-
-topBtn.style.zIndex="999";
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>300){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
+new bootstrap.Collapse(menu).toggle();
 
 }
 
 });
 
-topBtn.onclick=()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
 });
+
+// =========================
+// Dark Mode
+// =========================
+
+const darkBtn=document.createElement("button");
+
+darkBtn.innerHTML='<i class="fas fa-moon"></i>';
+
+darkBtn.className="btn btn-dark";
+
+darkBtn.style.position="fixed";
+
+darkBtn.style.bottom="160px";
+
+darkBtn.style.right="20px";
+
+darkBtn.style.zIndex="999";
+
+darkBtn.style.borderRadius="50%";
+
+darkBtn.style.width="55px";
+
+darkBtn.style.height="55px";
+
+document.body.appendChild(darkBtn);
+
+darkBtn.onclick=()=>{
+
+document.body.classList.toggle("dark-mode");
 
 };
 
-// Animated Counter
-
-const counters=document.querySelectorAll(".counter");
-
-counters.forEach(counter=>{
-
-counter.innerText="0";
-
-const update=()=>{
-
-const target=+counter.getAttribute("data-target");
-
-const count=+counter.innerText;
-
-const speed=80;
-
-const increment=Math.ceil(target/speed);
-
-if(count<target){
-
-counter.innerText=count+increment;
-
-setTimeout(update,25);
-
-}else{
-
-counter.innerText=target;
-
-}
-
-};
-
-update();
-
-});
-
-// Footer Year
+// =========================
+// Current Year
+// =========================
 
 const year=document.getElementById("year");
 
@@ -183,3 +263,9 @@ if(year){
 year.innerHTML=new Date().getFullYear();
 
 }
+
+// =========================
+// Welcome Message
+// =========================
+
+console.log("Welcome to UPYA Website");
