@@ -37,41 +37,66 @@ window.addEventListener("scroll", () => {
 });
 
 // =========================
-// Counter Animation
+// Animated Counter
 // =========================
 
 const counters = document.querySelectorAll(".counter");
 
-counters.forEach(counter => {
+const speed = 100;
+
+const animateCounter = (counter) => {
+
+    const target = +counter.getAttribute("data-target");
 
     const update = () => {
 
-        const target = +counter.dataset.target;
+        const current = +counter.innerText.replace("+","");
 
-        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
 
-        const speed = target / 120;
+        if (current < target) {
 
-        if(count < target){
+            counter.innerText = current + increment;
 
-            counter.innerText = Math.ceil(count + speed);
+            requestAnimationFrame(update);
 
-            setTimeout(update,20);
-
-        }
-
-        else{
+        } else {
 
             counter.innerText = target + "+";
 
         }
 
-    }
+    };
 
     update();
 
-});
+};
 
+// Start animation only when visible
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            animateCounter(entry.target);
+
+            counterObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+}, { threshold: 0.5 });
+
+counters.forEach(counter => {
+
+    counter.innerText = "0";
+
+    counterObserver.observe(counter);
+
+});
 // =========================
 // Fade Up Animation
 // =========================
