@@ -36,38 +36,43 @@ window.addEventListener("scroll", () => {
 
 });
 
-// =========================
+// ===========================
 // Animated Counter
-// =========================
-const counters = document.querySelectorAll(".counter");
+// ===========================
 
-const speed = 80;
+document.addEventListener("DOMContentLoaded", function () {
 
-counters.forEach(counter=>{
+    const counters = document.querySelectorAll(".counter");
 
-function update(){
+    const speed = 80;
 
-const target = +counter.getAttribute("data-target");
+    counters.forEach(counter => {
 
-const count = +counter.innerText;
+        function update() {
 
-const increment = Math.ceil(target/speed);
+            const target = +counter.getAttribute("data-target");
 
-if(count < target){
+            const count = +counter.innerText;
 
-counter.innerText = count + increment;
+            const increment = Math.ceil(target / speed);
 
-setTimeout(update,20);
+            if (count < target) {
 
-}else{
+                counter.innerText = count + increment;
 
-counter.innerText = target + "+";
+                setTimeout(update, 20);
 
-}
+            } else {
 
-}
+                counter.innerText = target + "+";
 
-update();
+            }
+
+        }
+
+        update();
+
+    });
 
 });
 // =========================
