@@ -285,3 +285,65 @@ currentSlide=(currentSlide+1)%slides.length;
 slides[currentSlide].classList.add("active");
 
 },5000);
+
+// =========================
+// IMPACT COUNTER
+// =========================
+
+const counters = document.querySelectorAll(".counter");
+
+const startCounters = () => {
+
+    counters.forEach(counter => {
+
+        const target = +counter.getAttribute("data-target");
+
+        let count = 0;
+
+        const increment = target / 150;
+
+        const updateCounter = () => {
+
+            count += increment;
+
+            if (count < target) {
+
+                counter.innerText = Math.floor(count);
+
+                requestAnimationFrame(updateCounter);
+
+            } else {
+
+                counter.innerText = target + "+";
+
+            }
+
+        };
+
+        updateCounter();
+
+    });
+
+};
+
+const impactSection = document.querySelector(".bg-primary");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            startCounters();
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.5
+});
+
+observer.observe(impactSection);
