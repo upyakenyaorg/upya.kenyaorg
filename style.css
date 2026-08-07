@@ -502,3 +502,89 @@ font-size:18px;
 margin:0;
 
 }
+
+/* ================= PROGRAMS ================= */
+
+.programs{
+
+background:#F8FAFC;
+
+padding:100px 0;
+
+}
+
+.program-card{
+
+background:white;
+
+padding:40px 30px;
+
+border-radius:25px;
+
+text-align:center;
+
+height:100%;
+
+transition:.4s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.program-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+}
+
+.program-icon{
+
+width:90px;
+
+height:90px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:38px;
+
+color:white;
+
+margin-bottom:25px;
+
+transition:.4s;
+
+}
+
+.program-card:hover .program-icon{
+
+transform:rotate(12deg) scale(1.12);
+
+}
+
+.program-card h4{
+
+font-weight:700;
+
+margin-bottom:15px;
+
+color:#0F4C81;
+
+}
+
+.program-card p{
+
+color:#666;
+
+line-height:1.8;
+
+}
