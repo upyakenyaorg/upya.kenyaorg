@@ -1,243 +1,134 @@
-// =========================
+// ===============================
 // UPYA WEBSITE SCRIPT
-// =========================
+// ===============================
 
-// Loading Screen
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
+// HERO SLIDER
 
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-    }, 1200);
-});
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
 
-// =========================
-// Navbar Background
-// =========================
+function showSlide(index){
 
-window.addEventListener("scroll", () => {
+    slides.forEach(slide=>{
+        slide.classList.remove("active");
+    });
 
-    const nav = document.querySelector(".navbar");
+    slides[index].classList.add("active");
 
-    if (window.scrollY > 80) {
+}
 
-        nav.style.background = "#0F4C81";
+setInterval(()=>{
 
-        nav.style.boxShadow = "0 10px 25px rgba(0,0,0,.2)";
+    currentSlide++;
 
-    } else {
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
 
-        nav.style.background = "rgba(15,76,129,.88)";
+    showSlide(currentSlide);
 
-        nav.style.boxShadow = "none";
+},5000);
+
+// ===============================
+// NAVBAR SCROLL EFFECT
+// ===============================
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 80){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
 
     }
 
 });
 
-// =========================
-// IMPACT COUNTER
-// =========================
+// ===============================
+// SMOOTH SCROLL
+// ===============================
 
-const counters = document.querySelectorAll(".counter");
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-const startCounters = () => {
+    anchor.addEventListener("click",function(e){
 
-    counters.forEach(counter => {
+        e.preventDefault();
 
-        const target = +counter.getAttribute("data-target");
+        const target=document.querySelector(this.getAttribute("href"));
 
-        let count = 0;
+        if(target){
 
-        const increment = target / 150;
+            target.scrollIntoView({
 
-        const updateCounter = () => {
+                behavior:"smooth"
 
-            count += increment;
-
-            if (count < target) {
-
-                counter.innerText = Math.floor(count);
-
-                requestAnimationFrame(updateCounter);
-
-            } else {
-
-                counter.innerText = target + "+";
-
-            }
-
-        };
-
-        updateCounter();
-
-    });
-
-};
-
-const impactSection = document.querySelector(".bg-primary");
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            startCounters();
-
-            observer.unobserve(entry.target);
+            });
 
         }
 
     });
 
-}, {
-    threshold: 0.5
 });
 
-observer.observe(impactSection);
-// =========================
-// Fade Up Animation
-// =========================
+// ===============================
+// FADE IN ANIMATION
+// ===============================
 
-const observer = new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver((entries)=>{
 
-entries.forEach(entry=>{
+    entries.forEach(entry=>{
 
-if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
-entry.target.classList.add("active");
+            entry.target.classList.add("show");
 
-}
+        }
 
-});
+    });
 
 });
 
-document.querySelectorAll(".fade-up").forEach(el=>{
+document.querySelectorAll(".fade").forEach(el=>{
 
-observer.observe(el);
-
-});
-
-// =========================
-// Gallery Lightbox
-// =========================
-
-const gallery = document.querySelectorAll(".gallery-img");
-
-gallery.forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-const lightbox = document.createElement("div");
-
-lightbox.style.position="fixed";
-
-lightbox.style.top="0";
-
-lightbox.style.left="0";
-
-lightbox.style.width="100%";
-
-lightbox.style.height="100%";
-
-lightbox.style.background="rgba(0,0,0,.9)";
-
-lightbox.style.display="flex";
-
-lightbox.style.justifyContent="center";
-
-lightbox.style.alignItems="center";
-
-lightbox.style.zIndex="99999";
-
-lightbox.innerHTML=`
-
-<img src="${img.src}"
-
-style="max-width:90%;
-
-max-height:90%;
-
-border-radius:15px;">`;
-
-document.body.appendChild(lightbox);
-
-lightbox.onclick=()=>{
-
-lightbox.remove();
-
-}
+    observer.observe(el);
 
 });
 
-});
+// ===============================
+// ACTIVE NAVIGATION
+// ===============================
 
-// =========================
-// Back To Top
-// =========================
-
-const topBtn=document.querySelector('.fa-arrow-up').parentElement;
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>500){
+let current="";
 
-topBtn.style.display="flex";
+sections.forEach(section=>{
 
-}
+const sectionTop=section.offsetTop-120;
 
-else{
+if(pageYOffset>=sectionTop){
 
-topBtn.style.display="none";
-
-}
-
-});
-
-// =========================
-// Smooth Scroll
-// =========================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-anchor.addEventListener("click",function(e){
-
-e.preventDefault();
-
-const target=document.querySelector(this.getAttribute("href"));
-
-if(target){
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
+current=section.getAttribute("id");
 
 }
 
 });
-
-});
-
-// =========================
-// Mobile Menu Close
-// =========================
-
-const navLinks=document.querySelectorAll(".nav-link");
-
-const menu=document.querySelector(".navbar-collapse");
 
 navLinks.forEach(link=>{
 
-link.addEventListener("click",()=>{
+link.classList.remove("active");
 
-if(menu.classList.contains("show")){
+if(link.getAttribute("href")==="#"+current){
 
-new bootstrap.Collapse(menu).toggle();
+link.classList.add("active");
 
 }
 
@@ -245,41 +136,9 @@ new bootstrap.Collapse(menu).toggle();
 
 });
 
-// =========================
-// Dark Mode
-// =========================
-
-const darkBtn=document.createElement("button");
-
-darkBtn.innerHTML='<i class="fas fa-moon"></i>';
-
-darkBtn.className="btn btn-dark";
-
-darkBtn.style.position="fixed";
-
-darkBtn.style.bottom="160px";
-
-darkBtn.style.right="20px";
-
-darkBtn.style.zIndex="999";
-
-darkBtn.style.borderRadius="50%";
-
-darkBtn.style.width="55px";
-
-darkBtn.style.height="55px";
-
-document.body.appendChild(darkBtn);
-
-darkBtn.onclick=()=>{
-
-document.body.classList.toggle("dark-mode");
-
-};
-
-// =========================
-// Current Year
-// =========================
+// ===============================
+// CURRENT YEAR
+// ===============================
 
 const year=document.getElementById("year");
 
@@ -288,24 +147,3 @@ if(year){
 year.innerHTML=new Date().getFullYear();
 
 }
-
-// =========================
-// Welcome Message
-// =========================
-
-console.log("Welcome to UPYA Website");
-const slides=document.querySelectorAll(".hero-slide");
-
-let currentSlide=0;
-
-setInterval(()=>{
-
-slides[currentSlide].classList.remove("active");
-
-currentSlide=(currentSlide+1)%slides.length;
-
-slides[currentSlide].classList.add("active");
-
-},5000);
-
-
