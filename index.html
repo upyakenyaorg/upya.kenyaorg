@@ -1,2311 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UPYA | Uwezo Pamoja Youths Association</title>
+  <title>UPYA | Uwezo Pamoja Youths Association</title>
 
-<meta name="description" content="Uwezo Pamoja Youths Association - Empowering youth, transforming communities.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Icons -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
-
-/* =====================================================
-   UPYA WEBSITE
-   FRESH VERSION
-===================================================== */
-
-:root{
-    --blue:#145DA0;
-    --dark-blue:#083B66;
-    --green:#087443;
-    --gold:#F4B400;
-    --orange:#F59E0B;
-    --white:#ffffff;
-    --light:#F5F8FC;
-    --dark:#102A43;
-    --text:#52606D;
-    --shadow:0 15px 40px rgba(8,59,102,.10);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    color:var(--dark);
-    background:var(--light);
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:9999;
-    padding:15px 0;
-    transition:.4s;
-}
-
-.navbar.scrolled{
-    background:rgba(8,59,102,.97);
-    box-shadow:0 5px 25px rgba(0,0,0,.15);
-}
-
-.nav-container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo-area img{
-    width:55px;
-    height:55px;
-    object-fit:contain;
-}
-
-.logo-text{
-    color:white;
-    font-weight:800;
-    font-size:22px;
-}
-
-.logo-text span{
-    display:block;
-    color:var(--gold);
-    font-size:10px;
-    letter-spacing:1.5px;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:5px;
-}
-
-.nav-links a{
-    color:white;
-    font-size:13px;
-    font-weight:600;
-    padding:10px 12px;
-    border-radius:6px;
-    transition:.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color:var(--gold);
-}
-
-.nav-donate{
-    background:var(--gold)!important;
-    color:#111!important;
-    padding:10px 18px!important;
-    border-radius:30px!important;
-}
-
-.menu-btn{
-    display:none;
-    background:none;
-    border:0;
-    color:white;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-}
-
-.hero-slides{
-    position:absolute;
-    inset:0;
-}
-
-.hero-slide{
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transform:scale(1.08);
-    transition:opacity 1.5s ease;
-}
-
-.hero-slide.active{
-    opacity:1;
-    animation:heroZoom 7s linear;
-}
-
-@keyframes heroZoom{
-    from{transform:scale(1.05)}
-    to{transform:scale(1.15)}
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        90deg,
-        rgba(3,24,42,.90),
-        rgba(3,24,42,.58),
-        rgba(3,24,42,.25)
-    );
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    color:white;
-    padding-top:80px;
-    max-width:850px;
-}
-
-.hero-tag{
-    display:inline-block;
-    color:var(--gold);
-    font-weight:800;
-    letter-spacing:3px;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:'Montserrat',sans-serif;
-    font-size:clamp(42px,6vw,76px);
-    line-height:1.05;
-    font-weight:800;
-    margin-bottom:25px;
-}
-
-.hero h1 span{
-    color:var(--gold);
-}
-
-.hero p{
-    max-width:720px;
-    font-size:18px;
-    line-height:1.8;
-    color:#edf5fa;
-    margin-bottom:32px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:14px 25px;
-    border-radius:30px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn-gold{
-    background:var(--gold);
-    color:#111;
-}
-
-.btn-gold:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(244,180,0,.3);
-}
-
-.btn-outline{
-    border:2px solid white;
-    color:white;
-}
-
-.btn-outline:hover{
-    background:white;
-    color:var(--dark-blue);
-}
-
-/* =====================================================
-   GENERAL SECTIONS
-===================================================== */
-
-section{
-    padding:95px 0;
-}
-
-.section-heading{
-    text-align:center;
-    max-width:750px;
-    margin:0 auto 50px;
-}
-
-.section-label{
-    color:var(--green);
-    font-weight:800;
-    letter-spacing:2px;
-    font-size:13px;
-}
-
-.section-heading h2{
-    font-family:'Montserrat',sans-serif;
-    font-size:42px;
-    margin:10px 0 15px;
-    color:var(--dark-blue);
-}
-
-.section-heading p{
-    color:var(--text);
-    line-height:1.8;
-}
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-    background:white;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about-image{
-    min-height:430px;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-}
-
-.about-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.about-content h2{
-    font-family:'Montserrat',sans-serif;
-    font-size:42px;
-    color:var(--dark-blue);
-    margin:10px 0 20px;
-}
-
-.about-content p{
-    color:var(--text);
-    line-height:1.9;
-    margin-bottom:20px;
-}
-
-/* =====================================================
-   MISSION VISION
-===================================================== */
-
-.mv-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    margin-top:30px;
-}
-
-.mv-card{
-    padding:30px;
-    border-radius:20px;
-    background:white;
-    box-shadow:var(--shadow);
-    border-top:5px solid var(--green);
-    transition:.3s;
-}
-
-.mv-card:hover{
-    transform:translateY(-8px);
-}
-
-.mv-card.vision{
-    border-color:var(--gold);
-}
-
-.mv-icon{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--green);
-    color:white;
-    font-size:22px;
-    margin-bottom:15px;
-}
-
-.vision .mv-icon{
-    background:var(--gold);
-    color:#111;
-}
-
-.mv-card h3{
-    margin-bottom:10px;
-}
-
-/* =====================================================
-   VALUES
-===================================================== */
-
-.values{
-    background:#eef6f1;
-}
-
-.values-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:15px;
-}
-
-.value-card{
-    background:white;
-    padding:28px 15px;
-    text-align:center;
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    transition:.3s;
-}
-
-.value-card:hover{
-    transform:translateY(-8px);
-}
-
-.value-card i{
-    color:var(--green);
-    font-size:28px;
-    margin-bottom:15px;
-}
-
-.value-card h4{
-    font-size:15px;
-}
-
-/* =====================================================
-   IMPACT
-===================================================== */
-
-.impact{
-    background:
-    linear-gradient(135deg,rgba(8,59,102,.97),rgba(8,116,67,.94));
-    color:white;
-}
-
-.impact .section-heading h2{
-    color:white;
-}
-
-.impact .section-heading p{
-    color:#dbeafe;
-}
-
-.impact-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.impact-card{
-    text-align:center;
-    padding:35px 15px;
-    background:rgba(255,255,255,.10);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-}
-
-.impact-card i{
-    color:var(--gold);
-    font-size:35px;
-    margin-bottom:15px;
-}
-
-.impact-number{
-    font-size:45px;
-    font-weight:800;
-}
-
-.impact-card p{
-    color:#e2e8f0;
-}
-
-/* =====================================================
-   PROGRAMS
-===================================================== */
-
-.programs{
-    background:white;
-}
-
-.program-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.program-card{
-    background:white;
-    border-radius:22px;
-    padding:35px 28px;
-    box-shadow:var(--shadow);
-    border:1px solid #edf2f7;
-    transition:.4s;
-}
-
-.program-card:hover{
-    transform:translateY(-10px);
-    border-color:var(--gold);
-}
-
-.program-icon{
-    width:65px;
-    height:65px;
-    border-radius:18px;
-    background:var(--green);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    margin-bottom:20px;
-}
-
-.program-card h3{
-    color:var(--dark-blue);
-    margin-bottom:12px;
-}
-
-.program-card p{
-    color:var(--text);
-    line-height:1.7;
-}
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-.events{
-    background:var(--light);
-}
-
-.event-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.event-card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:.4s;
-}
-
-.event-card:hover{
-    transform:translateY(-8px);
-}
-
-.event-image{
-    height:230px;
-    position:relative;
-    background:#dbeafe;
-}
-
-.event-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.event-date{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:var(--gold);
-    color:#111;
-    padding:10px 15px;
-    border-radius:12px;
-    text-align:center;
-    font-weight:800;
-}
-
-.event-date strong{
-    display:block;
-    font-size:25px;
-}
-
-.event-content{
-    padding:25px;
-}
-
-.event-content h3{
-    color:var(--dark-blue);
-    margin-bottom:12px;
-}
-
-.event-content p{
-    color:var(--text);
-    line-height:1.7;
-}
-
-.event-info{
-    margin:15px 0;
-}
-
-.event-info div{
-    margin:7px 0;
-    color:#52606d;
-    font-size:14px;
-}
-
-.event-info i{
-    color:var(--green);
-    width:20px;
-}
-
-/* =====================================================
-   GALLERY
-===================================================== */
-
-.gallery{
-    background:white;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.gallery-item{
-    height:230px;
-    overflow:hidden;
-    border-radius:15px;
-    cursor:pointer;
-    position:relative;
-}
-
-.gallery-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.gallery-item:hover img{
-    transform:scale(1.1);
-}
-
-.gallery-item::after{
-    content:"\f00e";
-    font-family:"Font Awesome 6 Free";
-    font-weight:900;
-    position:absolute;
-    inset:0;
-    background:rgba(8,59,102,.5);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    opacity:0;
-    transition:.3s;
-}
-
-.gallery-item:hover::after{
-    opacity:1;
-}
-
-/* =====================================================
-   LEADERSHIP
-===================================================== */
-
-.leaders{
-    background:#f1f7f4;
-}
-
-.leader-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.leader-card{
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:22px;
-    box-shadow:var(--shadow);
-}
-
-.leader-photo{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    margin:0 auto 18px;
-    border:5px solid #e7f3ec;
-}
-
-.leader-card h3{
-    color:var(--dark-blue);
-}
-
-.leader-card p{
-    color:var(--green);
-    font-weight:600;
-}
-
-/* =====================================================
-   TESTIMONIALS
-===================================================== */
-
-.testimonials{
-    background:white;
-}
-
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.testimonial{
-    background:#f8fafc;
-    padding:30px;
-    border-radius:20px;
-    border-left:5px solid var(--gold);
-}
-
-.testimonial i{
-    color:var(--gold);
-    font-size:25px;
-    margin-bottom:15px;
-}
-
-.testimonial p{
-    color:var(--text);
-    line-height:1.8;
-}
-
-/* =====================================================
-   MEMBERSHIP / DONATE
-===================================================== */
-
-.action{
-    background:
-    linear-gradient(135deg,#083B66,#087443);
-    color:white;
-    text-align:center;
-}
-
-.action h2{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.action p{
-    max-width:700px;
-    margin:0 auto 25px;
-    line-height:1.8;
-    color:#e2e8f0;
-}
-
-.action-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact{
-    background:white;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
-
-.contact-info h3{
-    color:var(--dark-blue);
-    margin-bottom:20px;
-}
-
-.contact-item{
-    display:flex;
-    gap:15px;
-    margin-bottom:20px;
-    align-items:center;
-}
-
-.contact-item i{
-    width:45px;
-    height:45px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    background:#e8f5ee;
-    color:var(--green);
-}
-
-.contact-item p{
-    color:var(--text);
-}
-
-.contact-form{
-    background:#f8fafc;
-    padding:30px;
-    border-radius:20px;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:14px;
-    border:1px solid #d9e2ec;
-    border-radius:10px;
-    margin-bottom:15px;
-    font-family:inherit;
-}
-
-.contact-form textarea{
-    height:140px;
-    resize:none;
-}
-
-.contact-form button{
-    border:0;
-    cursor:pointer;
-    width:100%;
-}
-
-/* =====================================================
-   SOCIAL MEDIA
-===================================================== */
-
-.socials{
-    display:flex;
-    gap:10px;
-    margin-top:25px;
-}
-
-.socials a{
-    width:43px;
-    height:43px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    background:#edf2f7;
-    color:var(--dark-blue);
-    transition:.3s;
-}
-
-.socials a:hover{
-    background:var(--green);
-    color:white;
-    transform:translateY(-4px);
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-    background:#061f33;
-    color:white;
-    padding:50px 0 20px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:35px;
-}
-
-.footer-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:15px;
-}
-
-.footer-logo img{
-    width:55px;
-}
-
-footer h3{
-    margin-bottom:15px;
-}
-
-footer p,
-footer a{
-    color:#b9c8d6;
-    line-height:1.8;
-}
-
-footer a:hover{
-    color:var(--gold);
-}
-
-.copyright{
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:20px;
-    text-align:center;
-    color:#8da3b5;
-    font-size:13px;
-}
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#topBtn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:45px;
-    height:45px;
-    border:0;
-    border-radius:50%;
-    background:var(--gold);
-    color:#111;
-    cursor:pointer;
-    display:none;
-    z-index:999;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:900px){
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:85px;
-        left:5%;
-        width:90%;
-        background:#083B66;
-        padding:20px;
-        border-radius:15px;
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .nav-links.show{
-        display:flex;
-    }
-
-    .nav-links a{
-        text-align:center;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .about-grid,
-    .mv-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .values-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .program-grid,
-    .event-grid,
-    .leader-grid,
-    .testimonial-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
-@media(max-width:600px){
-
-    section{
-        padding:70px 0;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .section-heading h2,
-    .about-content h2{
-        font-size:32px;
-    }
-
-    .values-grid,
-    .impact-grid,
-    .program-grid,
-    .event-grid,
-    .leader-grid,
-    .testimonial-grid,
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .gallery-item{
-        height:170px;
-    }
-
-    .logo-text{
-        font-size:18px;
-    }
-
-}
-
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= PRELOADER ================= -->
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<header class="navbar" id="navbar">
-
-<div class="container nav-container">
-
-<a href="#home" class="logo-area">
-
-<!-- CHANGE THIS TO YOUR ACTUAL LOGO -->
-<img src="images/logo.png" alt="UPYA Logo">
-
-<div class="logo-text">
-UPYA
-<span>UWEZO PAMOJA YOUTHS ASSOCIATION</span>
+<div id="loader">
+  <div class="loader-logo">UPYA</div>
+  <div class="loader-line"></div>
+  <p>Uwezo Pamoja Youths Association</p>
 </div>
 
-</a>
 
-<nav class="nav-links" id="navLinks">
+<!-- ================= NAVBAR ================= -->
 
-<a href="#home" class="active">Home</a>
-<a href="#about">About</a>
-<a href="#programs">Programs</a>
-<a href="#impact">Impact</a>
-<a href="#events">Events</a>
-<a href="#gallery">Gallery</a>
-<a href="#leaders">Leadership</a>
-<a href="#membership">Membership</a>
-<a href="#contact">Contact</a>
+<header class="navbar">
 
-<a href="#donate" class="nav-donate">
-<i class="fas fa-heart"></i> Donate
-</a>
+  <a href="#home" class="logo">
+    <img src="images/upya-logo.png" alt="UPYA Logo">
+    <div>
+      <strong>UPYA</strong>
+      <small>Uwezo Pamoja Youths Association</small>
+    </div>
+  </a>
 
-</nav>
+  <nav id="navMenu">
 
-<button class="menu-btn" id="menuBtn">
-<i class="fas fa-bars"></i>
-</button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#impact">Impact</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#membership">Membership</a>
+    <a href="#contact">Contact</a>
 
-</div>
+    <a href="#donate" class="nav-donate">
+      <i class="fa-solid fa-heart"></i>
+      Donate
+    </a>
+
+  </nav>
+
+  <button class="menu-btn" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<section id="home" class="hero">
 
-<div class="hero-slides">
+  <div class="hero-overlay"></div>
 
-<!-- Replace these with your own photos -->
+  <div class="hero-content">
 
-<div class="hero-slide active"
-style="background-image:url('images/hero1.jpg')">
-</div>
+    <span class="hero-tag">
+      <i class="fa-solid fa-circle"></i>
+      YOUTH • COMMUNITY • IMPACT
+    </span>
 
-<div class="hero-slide"
-style="background-image:url('images/hero2.jpg')">
-</div>
+    <h1>
+      Empowering Youth.<br>
+      <span>Transforming Communities.</span>
+    </h1>
 
-<div class="hero-slide"
-style="background-image:url('images/hero3.jpg')">
-</div>
+    <p>
+      Uwezo Pamoja Youths Association empowers, equips, mentors
+      and nurtures tomorrow's world through leadership, education,
+      entrepreneurship, sports and community service.
+    </p>
 
-</div>
+    <div class="hero-buttons">
 
-<div class="hero-overlay"></div>
+      <a href="#membership" class="btn btn-gold">
+        Become a Member
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
 
-<div class="container">
+      <a href="#programs" class="btn btn-outline">
+        Explore Programs
+      </a>
 
-<div class="hero-content">
+    </div>
 
-<span class="hero-tag">
-WELCOME TO UPYA
-</span>
+    <div class="hero-stats">
 
-<h1>
-Empowering Youth.<br>
-<span>Transforming Communities.</span>
-</h1>
+      <div>
+        <strong>6+</strong>
+        <span>Programs</span>
+      </div>
 
-<p>
-Uwezo Pamoja Youths Association is a youth-led organization committed to empowering, equipping, mentoring and nurturing tomorrow's world.
-</p>
+      <div>
+        <strong>100+</strong>
+        <span>Youth Reached</span>
+      </div>
 
-<div class="hero-buttons">
+      <div>
+        <strong>10+</strong>
+        <span>Community Activities</span>
+      </div>
 
-<a href="#membership" class="btn btn-gold">
-<i class="fas fa-users"></i>
-Become A Member
-</a>
+    </div>
 
-<a href="#programs" class="btn btn-outline">
-Explore Our Programs
-<i class="fas fa-arrow-right"></i>
-</a>
+  </div>
 
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="about-grid">
-
-<div class="about-image">
-
-<img src="images/about.jpg" alt="UPYA Community Activities">
-
-</div>
-
-<div class="about-content">
-
-<span class="section-label">WHO WE ARE</span>
-
-<h2>Building Tomorrow's Leaders Today</h2>
-
-<p>
-Uwezo Pamoja Youths Association (UPYA) is a youth-led community organization dedicated to empowering young people and creating positive change within our communities.
-</p>
-
-<p>
-Through mentorship, education, entrepreneurship, sports, civic engagement, innovation and community service, we create opportunities for young people to discover their potential and become responsible leaders.
-</p>
-
-<div class="mv-grid">
-
-<div class="mv-card">
-
-<div class="mv-icon">
-<i class="fas fa-bullseye"></i>
-</div>
-
-<h3>Our Mission</h3>
-
-<p>
-To empower, equip, mentor and nurture tomorrow's world.
-</p>
-
-</div>
-
-<div class="mv-card vision">
-
-<div class="mv-icon">
-<i class="fas fa-eye"></i>
-</div>
-
-<h3>Our Vision</h3>
-
-<p>
-A generation of empowered youth transforming communities into centres of lasting positive change.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+  <div class="scroll-down">
+    <span>Scroll to explore</span>
+    <i class="fa-solid fa-arrow-down"></i>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     VALUES
-===================================================== -->
+<!-- ================= ABOUT ================= -->
 
-<section class="values">
+<section id="about" class="section about">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <div class="section-heading">
 
-<span class="section-label">WHAT GUIDES US</span>
+      <span>WHO WE ARE</span>
 
-<h2>Our Core Values</h2>
+      <h2>
+        Building Tomorrow's
+        <em>Leaders Today.</em>
+      </h2>
 
-<p>
-The principles that guide our work, decisions and relationships.
-</p>
+      <p>
+        Uwezo Pamoja Youths Association (UPYA) is a youth-led
+        community organization dedicated to empowering, equipping,
+        mentoring and nurturing young people through education,
+        leadership, innovation, entrepreneurship, sports and
+        community service.
+      </p>
 
-</div>
+    </div>
 
-<div class="values-grid">
 
-<div class="value-card">
-<i class="fas fa-people-group"></i>
-<h4>Teamwork</h4>
-</div>
+    <div class="about-grid">
 
-<div class="value-card">
-<i class="fas fa-shield-heart"></i>
-<h4>Integrity</h4>
-</div>
+      <div class="about-image">
 
-<div class="value-card">
-<i class="fas fa-eye"></i>
-<h4>Transparency</h4>
-</div>
+        <img src="images/about.jpg" alt="UPYA Community">
 
-<div class="value-card">
-<i class="fas fa-scale-balanced"></i>
-<h4>Accountability</h4>
-</div>
+        <div class="experience-card">
+          <strong>UPYA</strong>
+          <span>Youth-led. Community-focused.</span>
+        </div>
 
-<div class="value-card">
-<i class="fas fa-equals"></i>
-<h4>Equity</h4>
-</div>
+      </div>
 
-</div>
 
-</div>
+      <div class="about-content">
+
+        <h3>Our Purpose</h3>
+
+        <p>
+          We believe that young people are not simply leaders of
+          tomorrow — they are partners in creating change today.
+          UPYA creates platforms where young people can discover
+          their potential, develop skills and contribute meaningfully
+          to their communities.
+        </p>
+
+
+        <div class="mission-vision">
+
+          <div class="mv-card">
+
+            <div class="mv-icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <div>
+              <h4>Our Mission</h4>
+
+              <p>
+                To empower, equip, mentor and nurture tomorrow's world.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="mv-card">
+
+            <div class="mv-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div>
+              <h4>Our Vision</h4>
+
+              <p>
+                A generation of empowered youth transforming
+                communities into centres of lasting positive change.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <h3 class="values-title">Our Core Values</h3>
+
+        <div class="values">
+
+          <span>Teamwork</span>
+          <span>Integrity</span>
+          <span>Transparency</span>
+          <span>Accountability</span>
+          <span>Equity</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     IMPACT
-===================================================== -->
+<!-- ================= PROGRAMS ================= -->
 
-<section class="impact" id="impact">
+<section id="programs" class="section programs">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <div class="section-heading center">
 
-<span class="section-label" style="color:#FFD700;">
-OUR IMPACT
-</span>
+      <span>WHAT WE DO</span>
 
-<h2>Creating Change That Matters</h2>
+      <h2>
+        Empowering Youth
+        <em>Through Action.</em>
+      </h2>
 
-<p>
-Every activity is an opportunity to empower a young person and strengthen a community.
-</p>
+      <p>
+        Our programs are designed to develop skills, inspire
+        leadership, promote innovation and create opportunities
+        that transform lives and communities.
+      </p>
 
-</div>
-
-<div class="impact-grid">
-
-<div class="impact-card">
-<i class="fas fa-users"></i>
-<div class="impact-number" data-target="100">0</div>
-<p>Youth Reached</p>
-</div>
-
-<div class="impact-card">
-<i class="fas fa-chalkboard-user"></i>
-<div class="impact-number" data-target="20">0</div>
-<p>Mentorship Sessions</p>
-</div>
-
-<div class="impact-card">
-<i class="fas fa-hands-helping"></i>
-<div class="impact-number" data-target="15">0</div>
-<p>Community Activities</p>
-</div>
-
-<div class="impact-card">
-<i class="fas fa-handshake"></i>
-<div class="impact-number" data-target="10">0</div>
-<p>Partners & Supporters</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- =====================================================
-     PROGRAMS
-===================================================== -->
+    <div class="program-grid">
 
-<section class="programs" id="programs">
 
-<div class="container">
+      <div class="program-card">
 
-<div class="section-heading">
+        <div class="program-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
 
-<span class="section-label">WHAT WE DO</span>
+        <h3>Education & Mentorship</h3>
 
-<h2>Our Programs</h2>
+        <p>
+          Career guidance, academic support, leadership mentoring
+          and life skills development.
+        </p>
 
-<p>
-We turn ideas into action through practical programs designed to empower young people and strengthen communities.
-</p>
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-</div>
+      </div>
 
-<div class="program-grid">
 
-<div class="program-card">
+      <div class="program-card">
 
-<div class="program-icon">
-<i class="fas fa-graduation-cap"></i>
-</div>
+        <div class="program-icon">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
 
-<h3>Education & Mentorship</h3>
+        <h3>Entrepreneurship</h3>
 
-<p>
-Academic support, career guidance, leadership development, life skills and student mentorship.
-</p>
+        <p>
+          Business training, financial literacy and support for
+          youth-led enterprises.
+        </p>
 
-</div>
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-<div class="program-card">
+      </div>
 
-<div class="program-icon">
-<i class="fas fa-briefcase"></i>
-</div>
 
-<h3>Entrepreneurship</h3>
+      <div class="program-card">
 
-<p>
-Business skills, financial literacy, innovation and support for youth-led income generating ideas.
-</p>
+        <div class="program-icon">
+          <i class="fa-solid fa-futbol"></i>
+        </div>
 
-</div>
+        <h3>Sports Development</h3>
 
-<div class="program-card">
+        <p>
+          Using sports to promote unity, discipline, teamwork
+          and talent development.
+        </p>
 
-<div class="program-icon">
-<i class="fas fa-futbol"></i>
-</div>
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-<h3>Sports & Talent</h3>
+      </div>
 
-<p>
-Using sports and talent to promote unity, discipline, health, teamwork and youth development.
-</p>
 
-</div>
+      <div class="program-card">
 
-<div class="program-card">
+        <div class="program-icon">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
 
-<div class="program-icon">
-<i class="fas fa-tree"></i>
-</div>
+        <h3>Environment</h3>
 
-<h3>Environment</h3>
+        <p>
+          Tree planting, environmental conservation and climate
+          awareness campaigns.
+        </p>
 
-<p>
-Tree planting, environmental conservation and youth-led climate action.
-</p>
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-</div>
+      </div>
 
-<div class="program-card">
 
-<div class="program-icon">
-<i class="fas fa-landmark"></i>
-</div>
+      <div class="program-card">
 
-<h3>Civic Education</h3>
+        <div class="program-icon">
+          <i class="fa-solid fa-landmark"></i>
+        </div>
 
-<p>
-Equipping young people with knowledge about governance, leadership, rights and responsible citizenship.
-</p>
+        <h3>Civic Education</h3>
 
-</div>
+        <p>
+          Empowering youth with knowledge on governance,
+          democracy and active citizenship.
+        </p>
 
-<div class="program-card">
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-<div class="program-icon">
-<i class="fas fa-laptop"></i>
-</div>
+      </div>
 
-<h3>Digital Skills</h3>
 
-<p>
-Digital literacy, technology skills, online opportunities and youth innovation.
-</p>
+      <div class="program-card">
 
-</div>
+        <div class="program-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
 
-</div>
+        <h3>Digital Skills</h3>
 
-</div>
+        <p>
+          Training in technology, digital literacy, online
+          opportunities and innovation.
+        </p>
+
+        <a href="#contact">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     EVENTS
-===================================================== -->
+<!-- ================= IMPACT ================= -->
 
-<section class="events" id="events">
+<section id="impact" class="impact">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <div class="impact-heading">
 
-<span class="section-label">GET INVOLVED</span>
+      <span>OUR IMPACT</span>
 
-<h2>Upcoming Events</h2>
+      <h2>
+        Small Actions.
+        <strong>Big Change.</strong>
+      </h2>
 
-<p>
-Join us in activities that bring young people and communities together.
-</p>
+      <p>
+        Every mentorship session, community project and youth
+        activity contributes to building stronger communities.
+      </p>
 
-</div>
-
-<div class="event-grid">
-
-<div class="event-card">
-
-<div class="event-image">
-
-<img src="images/event1.jpg" alt="Community Football">
-
-<div class="event-date">
-<strong>08</strong>
-AUG
-</div>
-
-</div>
-
-<div class="event-content">
-
-<h3>Community Football Match</h3>
-
-<div class="event-info">
-
-<div>
-<i class="fas fa-location-dot"></i>
-Malela Primary School
-</div>
-
-<div>
-<i class="fas fa-clock"></i>
-2:00 PM
-</div>
-
-</div>
-
-<p>
-Promoting unity, peace and youth empowerment through community football.
-</p>
-
-<a href="#contact" class="btn btn-gold">
-Get Involved
-</a>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="event-card">
+    <div class="impact-grid">
 
-<div class="event-image">
+      <div class="impact-item">
 
-<img src="images/event2.jpg" alt="Student Mentorship">
+        <i class="fa-solid fa-users"></i>
 
-<div class="event-date">
-<strong>20</strong>
-SEP
-</div>
+        <strong class="counter">100</strong>
 
-</div>
+        <span>Youth Reached</span>
 
-<div class="event-content">
-
-<h3>Back-to-School Mentorship</h3>
-
-<div class="event-info">
-
-<div>
-<i class="fas fa-location-dot"></i>
-Nyamgun Secondary School
-</div>
-
-<div>
-<i class="fas fa-clock"></i>
-9:00 AM
-</div>
-
-</div>
-
-<p>
-Career guidance, leadership talks, motivation and life skills for students.
-</p>
-
-<a href="#membership" class="btn btn-gold">
-Register
-</a>
-
-</div>
-
-</div>
+      </div>
 
 
-<div class="event-card">
+      <div class="impact-item">
 
-<div class="event-image">
+        <i class="fa-solid fa-calendar-check"></i>
 
-<img src="images/event3.jpg" alt="Tree Planting">
+        <strong class="counter">10</strong>
 
-<div class="event-date">
-<strong>05</strong>
-OCT
-</div>
+        <span>Activities</span>
 
-</div>
+      </div>
 
-<div class="event-content">
 
-<h3>Community Tree Planting</h3>
+      <div class="impact-item">
 
-<div class="event-info">
+        <i class="fa-solid fa-school"></i>
 
-<div>
-<i class="fas fa-location-dot"></i>
-Seme Sub-County
-</div>
+        <strong class="counter">3</strong>
 
-<div>
-<i class="fas fa-clock"></i>
-8:30 AM
-</div>
+        <span>Schools Engaged</span>
 
-</div>
+      </div>
 
-<p>
-Join us in protecting our environment through tree planting and climate action.
-</p>
 
-<a href="#contact" class="btn btn-gold">
-Volunteer
-</a>
+      <div class="impact-item">
 
-</div>
+        <i class="fa-solid fa-handshake"></i>
 
-</div>
+        <strong class="counter">5</strong>
 
-</div>
+        <span>Community Partners</span>
 
-</div>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     GALLERY
-===================================================== -->
+<!-- ================= EVENTS ================= -->
 
-<section class="gallery" id="gallery">
+<section id="events" class="section events">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <div class="section-heading">
 
-<span class="section-label">OUR JOURNEY</span>
+      <span>GET INVOLVED</span>
 
-<h2>Moments From UPYA</h2>
+      <h2>
+        Upcoming
+        <em>Events.</em>
+      </h2>
 
-<p>
-A glimpse of our activities, engagements and community moments.
-</p>
+      <p>
+        Join us in creating meaningful experiences and positive
+        change within our communities.
+      </p>
 
-</div>
+    </div>
 
-<div class="gallery-grid">
 
-<div class="gallery-item">
-<img src="images/gallery1.jpg" alt="UPYA Activity">
-</div>
+    <div class="event-grid">
 
-<div class="gallery-item">
-<img src="images/gallery2.jpg" alt="UPYA Activity">
-</div>
 
-<div class="gallery-item">
-<img src="images/gallery3.jpg" alt="UPYA Activity">
-</div>
+      <article class="event-card">
 
-<div class="gallery-item">
-<img src="images/gallery4.jpg" alt="UPYA Activity">
-</div>
+        <div class="event-image">
 
-<div class="gallery-item">
-<img src="images/gallery5.jpg" alt="UPYA Activity">
-</div>
+          <img src="images/football.jpg" alt="Community Football">
 
-<div class="gallery-item">
-<img src="images/gallery6.jpg" alt="UPYA Activity">
-</div>
+          <div class="date">
 
-<div class="gallery-item">
-<img src="images/gallery7.jpg" alt="UPYA Activity">
-</div>
+            <strong>08</strong>
+            <span>AUG</span>
 
-<div class="gallery-item">
-<img src="images/gallery8.jpg" alt="UPYA Activity">
-</div>
+          </div>
 
-</div>
+        </div>
 
-</div>
+        <div class="event-body">
+
+          <span class="event-type">
+            <i class="fa-solid fa-futbol"></i>
+            SPORTS & EMPOWERMENT
+          </span>
+
+          <h3>Community Football Match</h3>
+
+          <p>
+            Malela Primary School • 2:00 PM
+          </p>
+
+          <a href="#contact">
+            Event Details
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="event-card">
+
+        <div class="event-image">
+
+          <img src="images/mentorship.jpg" alt="Mentorship">
+
+          <div class="date">
+
+            <strong>20</strong>
+            <span>SEP</span>
+
+          </div>
+
+        </div>
+
+        <div class="event-body">
+
+          <span class="event-type">
+            <i class="fa-solid fa-user-group"></i>
+            EDUCATION
+          </span>
+
+          <h3>Back to School Mentorship</h3>
+
+          <p>
+            Nyamgun Secondary School • 9:00 AM
+          </p>
+
+          <a href="#contact">
+            Register
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="event-card">
+
+        <div class="event-image">
+
+          <img src="images/tree-planting.jpg" alt="Tree Planting">
+
+          <div class="date">
+
+            <strong>05</strong>
+            <span>OCT</span>
+
+          </div>
+
+        </div>
+
+        <div class="event-body">
+
+          <span class="event-type">
+            <i class="fa-solid fa-leaf"></i>
+            ENVIRONMENT
+          </span>
+
+          <h3>Tree Planting Drive</h3>
+
+          <p>
+            Community Environmental Action
+          </p>
+
+          <a href="#contact">
+            Participate
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     LEADERSHIP
-===================================================== -->
+<!-- ================= MEMBERSHIP ================= -->
 
-<section class="leaders" id="leaders">
+<section id="membership" class="membership">
 
-<div class="container">
+  <div class="container membership-box">
 
-<div class="section-heading">
+    <div>
 
-<span class="section-label">OUR LEADERSHIP</span>
+      <span>JOIN THE MOVEMENT</span>
 
-<h2>Meet The Team</h2>
+      <h2>
+        Your Potential.
+        <strong>Your Community.</strong>
+        Your Impact.
+      </h2>
 
-<p>
-Driven by young leaders committed to creating meaningful change.
-</p>
+      <p>
+        Become part of a growing network of young people committed
+        to making a difference.
+      </p>
 
-</div>
+    </div>
 
-<div class="leader-grid">
+    <a href="https://forms.gle/9vmDchs1tJ2LTuoJ6"
+       target="_blank"
+       class="btn btn-gold">
 
-<div class="leader-card">
+      Become a Member
+      <i class="fa-solid fa-arrow-right"></i>
 
-<img src="images/leader1.jpg"
-class="leader-photo"
-alt="Hillary Onyango">
+    </a>
 
-<h3>Hillary Onyango</h3>
-
-<p>Chairperson</p>
-
-</div>
-
-<div class="leader-card">
-
-<img src="images/leader2.jpg"
-class="leader-photo"
-alt="Brian Chiambe">
-
-<h3>Brian Chiambe</h3>
-
-<p>Secretary</p>
-
-</div>
-
-<div class="leader-card">
-
-<img src="images/leader3.jpg"
-class="leader-photo"
-alt="Dennis Ouma">
-
-<h3>Dennis Ouma</h3>
-
-<p>Treasurer</p>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     TESTIMONIALS
-===================================================== -->
+<!-- ================= DONATE ================= -->
 
-<section class="testimonials">
+<section id="donate" class="donate">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <i class="fa-solid fa-hand-holding-heart donate-icon"></i>
 
-<span class="section-label">VOICES OF IMPACT</span>
+    <h2>Support Youth. Build Communities.</h2>
 
-<h2>What People Say</h2>
+    <p>
+      Your support helps us create opportunities, mentorship
+      programs and community initiatives for young people.
+    </p>
 
-</div>
+    <a href="#contact" class="btn btn-gold">
+      Support UPYA
+      <i class="fa-solid fa-heart"></i>
+    </a>
 
-<div class="testimonial-grid">
-
-<div class="testimonial">
-
-<i class="fas fa-quote-left"></i>
-
-<p>
-“UPYA gave me an opportunity to learn, connect with other young people and believe more in my potential.”
-</p>
-
-</div>
-
-<div class="testimonial">
-
-<i class="fas fa-quote-left"></i>
-
-<p>
-“The mentorship programs are helping young people see possibilities beyond their current circumstances.”
-</p>
-
-</div>
-
-<div class="testimonial">
-
-<i class="fas fa-quote-left"></i>
-
-<p>
-“UPYA brings young people together and turns community ideas into meaningful action.”
-</p>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     MEMBERSHIP / DONATE
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
-<section class="action" id="membership">
+<footer id="contact">
 
-<div class="container">
+  <div class="container footer-grid">
 
-<h2>Be Part of the Change</h2>
 
-<p>
-Whether you become a member, volunteer, partner or supporter, your involvement can help us create greater opportunities for young people.
-</p>
+    <div class="footer-about">
 
-<div class="action-buttons">
+      <img src="images/upya-logo.png" alt="UPYA Logo">
 
-<a href="https://forms.gle/9vmDchs1tJ2LTuoJ6"
-target="_blank"
-class="btn btn-gold">
+      <p>
+        Uwezo Pamoja Youths Association — empowering youth,
+        strengthening communities and creating lasting impact.
+      </p>
 
-<i class="fas fa-user-plus"></i>
-Become a Member
+      <div class="socials">
 
-</a>
+        <a href="#" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
 
-<a href="#donate"
-class="btn btn-outline">
+        <a href="#" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
 
-<i class="fas fa-heart"></i>
-Support UPYA
+        <a href="#" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
 
-</a>
+        <a href="#" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
 
-</div>
+        <a href="#" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
 
-</div>
+        <a href="https://wa.me/254742717363"
+           aria-label="WhatsApp"
+           target="_blank">
 
-</section>
+          <i class="fa-brands fa-whatsapp"></i>
 
+        </a>
 
-<!-- =====================================================
-     DONATE
-===================================================== -->
+      </div>
 
-<section class="action" id="donate" style="background:#F4B400;color:#111;">
+    </div>
 
-<div class="container">
 
-<h2>Support Our Mission</h2>
+    <div class="footer-column">
 
-<p style="color:#333;">
+      <h3>Explore</h3>
 
-Your support helps us create opportunities, organize mentorship programs and implement community initiatives.
+      <a href="#about">About Us</a>
+      <a href="#programs">Programs</a>
+      <a href="#impact">Our Impact</a>
+      <a href="#events">Events</a>
+      <a href="#membership">Membership</a>
 
-</p>
+    </div>
 
-<a href="#contact" class="btn" style="background:#083B66;color:white;">
 
-<i class="fas fa-hand-holding-heart"></i>
-Talk To Us About Supporting UPYA
+    <div class="footer-column">
 
-</a>
+      <h3>Contact</h3>
 
-</div>
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        upya.kenyaorg@gmail.com
+      </p>
 
-</section>
+      <p>
+        <i class="fa-brands fa-whatsapp"></i>
+        +254 742 717 363
+      </p>
 
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Seme, Kisumu County, Kenya
+      </p>
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+    </div>
 
-<section class="contact" id="contact">
 
-<div class="container">
+  </div>
 
-<div class="section-heading">
 
-<span class="section-label">CONTACT US</span>
+  <div class="footer-bottom">
 
-<h2>Let's Work Together</h2>
+    <p>
+      © <span id="year"></span>
+      Uwezo Pamoja Youths Association (UPYA).
+      All Rights Reserved.
+    </p>
 
-<p>
-Have an idea, partnership opportunity or want to support our work? Get in touch.
-</p>
+    <p>
+      Empower • Equip • Mentor • Nurture
+    </p>
 
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-
-<h3>Connect With UPYA</h3>
-
-<div class="contact-item">
-
-<i class="fas fa-envelope"></i>
-
-<p>
-upya.kenyaorg@gmail.com
-</p>
-
-</div>
-
-<div class="contact-item">
-
-<i class="fab fa-whatsapp"></i>
-
-<p>
-+254 742 717 363
-</p>
-
-</div>
-
-<div class="contact-item">
-
-<i class="fas fa-location-dot"></i>
-
-<p>
-Seme, Kisumu County, Kenya
-</p>
-
-</div>
-
-
-<div class="socials">
-
-<a href="https://www.facebook.com/profile.php?id=100082027299079"
-target="_blank"
-title="Facebook">
-
-<i class="fab fa-facebook-f"></i>
-
-</a>
-
-<a href="https://www.instagram.com/upya_kenya"
-target="_blank"
-title="Instagram">
-
-<i class="fab fa-instagram"></i>
-
-</a>
-
-<a href="https://twitter.com/"
-target="_blank"
-title="X / Twitter">
-
-<i class="fab fa-x-twitter"></i>
-
-</a>
-
-<a href="https://www.tiktok.com/@upya_ke"
-target="_blank"
-title="TikTok">
-
-<i class="fab fa-tiktok"></i>
-
-</a>
-
-<a href="https://www.youtube.com/channel/UC7xyWqAL0dP5264__O-zVxA"
-target="_blank"
-title="YouTube">
-
-<i class="fab fa-youtube"></i>
-
-</a>
-
-<a href="https://wa.me/254742717363"
-target="_blank"
-title="WhatsApp">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contact-form">
-
-<form onsubmit="sendMessage(event)">
-
-<input
-type="text"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-placeholder="Your Email"
-required>
-
-<input
-type="text"
-placeholder="Subject"
-required>
-
-<textarea
-placeholder="Your Message"
-required></textarea>
-
-<button class="btn btn-gold" type="submit">
-
-<i class="fas fa-paper-plane"></i>
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-logo">
-
-<img src="images/logo.png" alt="UPYA">
-
-<h3>UPYA</h3>
-
-</div>
-
-<p>
-Uwezo Pamoja Youths Association — empowering, equipping, mentoring and nurturing tomorrow's world.
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<p><a href="#about">About Us</a></p>
-<p><a href="#programs">Programs</a></p>
-<p><a href="#events">Events</a></p>
-<p><a href="#membership">Membership</a></p>
-
-</div>
-
-<div>
-
-<h3>Get Involved</h3>
-
-<p><a href="#membership">Become a Member</a></p>
-<p><a href="#contact">Volunteer</a></p>
-<p><a href="#donate">Donate</a></p>
-<p><a href="#contact">Partner With Us</a></p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© <span id="year"></span>
-Uwezo Pamoja Youths Association (UPYA).
-All Rights Reserved.
-
-</div>
-
-</div>
+  </div>
 
 </footer>
 
 
-<!-- BACK TO TOP -->
-
-<button id="topBtn">
-<i class="fas fa-arrow-up"></i>
-</button>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-/* NAVBAR */
-
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll",function(){
-
-if(window.scrollY > 50){
-
-navbar.classList.add("scrolled");
-
-}else{
-
-navbar.classList.remove("scrolled");
-
-}
-
-});
-
-
-/* MOBILE MENU */
-
-const menuBtn = document.getElementById("menuBtn");
-
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click",function(){
-
-navLinks.classList.toggle("show");
-
-});
-
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll(".nav-links a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-navLinks.classList.remove("show");
-
-});
-
-});
-
-
-/* HERO SLIDER */
-
-const slides = document.querySelectorAll(".hero-slide");
-
-let currentSlide = 0;
-
-setInterval(()=>{
-
-slides[currentSlide].classList.remove("active");
-
-currentSlide++;
-
-if(currentSlide >= slides.length){
-
-currentSlide = 0;
-
-}
-
-slides[currentSlide].classList.add("active");
-
-},5000);
-
-
-/* IMPACT COUNTERS */
-
-const counters = document.querySelectorAll(".impact-number");
-
-let counterStarted = false;
-
-function startCounters(){
-
-if(counterStarted) return;
-
-const impact = document.getElementById("impact");
-
-const position = impact.getBoundingClientRect().top;
-
-if(position < window.innerHeight - 100){
-
-counterStarted = true;
-
-counters.forEach(counter=>{
-
-const target = Number(counter.dataset.target);
-
-let number = 0;
-
-const increment = Math.max(1,Math.ceil(target / 80));
-
-const timer = setInterval(()=>{
-
-number += increment;
-
-if(number >= target){
-
-number = target;
-
-clearInterval(timer);
-
-}
-
-counter.textContent = number + "+";
-
-},25);
-
-});
-
-}
-
-}
-
-window.addEventListener("scroll",startCounters);
-
-startCounters();
-
-
-/* ACTIVE NAVIGATION */
-
-const sections = document.querySelectorAll("section");
-
-const links = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-let current = "";
-
-sections.forEach(section=>{
-
-const top = section.offsetTop - 150;
-
-if(window.scrollY >= top){
-
-current = section.getAttribute("id");
-
-}
-
-});
-
-links.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href") === "#" + current){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-
-
-/* BACK TO TOP */
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY > 500){
-
-topBtn.style.display="flex";
-
-topBtn.style.alignItems="center";
-
-topBtn.style.justifyContent="center";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
-});
-
-topBtn.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-});
-
-
-/* CONTACT FORM */
-
-function sendMessage(event){
-
-event.preventDefault();
-
-alert("Thank you for contacting UPYA. Your message has been received.");
-
-event.target.reset();
-
-}
-
-
-/* YEAR */
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
