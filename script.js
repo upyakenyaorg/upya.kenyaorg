@@ -26,39 +26,69 @@ window.addEventListener("scroll", () => {
 
 });
 
-// =========================
-// Counter Animation
-// =========================
+// ===============================
+// IMPACT COUNTER ANIMATION
+// ===============================
 
 const counters = document.querySelectorAll(".counter");
 
+const counterObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+            const target = Number(counter.getAttribute("data-target"));
+
+            let current = 0;
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function animateCounter(time) {
+
+                const progress = Math.min(
+                    (time - startTime) / duration,
+                    1
+                );
+
+                // Smooth animation
+                current = Math.floor(
+                    progress * target
+                );
+
+                counter.textContent = current;
+
+                if (progress < 1) {
+
+                    requestAnimationFrame(animateCounter);
+
+                } else {
+
+                    counter.textContent = target + "+";
+
+                }
+
+            }
+
+            requestAnimationFrame(animateCounter);
+
+            // Stop observing after animation
+            observer.unobserve(counter);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.5
+
+});
+
 counters.forEach(counter => {
 
-    const update = () => {
-
-        const target = +counter.dataset.target;
-
-        const count = +counter.innerText;
-
-        const speed = target / 120;
-
-        if(count < target){
-
-            counter.innerText = Math.ceil(count + speed);
-
-            setTimeout(update,20);
-
-        }
-
-        else{
-
-            counter.innerText = target + "+";
-
-        }
-
-    }
-
-    update();
+    counterObserver.observe(counter);
 
 });
 
