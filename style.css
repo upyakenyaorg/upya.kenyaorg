@@ -635,64 +635,41 @@ padding:8px;
 font-weight:600;
 
 }
-/* IMPACT SECTION */
+/* ================= IMPACT SECTION ================= */
 
 .impact-section{
-
-background:linear-gradient(135deg,#0F4C81,#155E75);
-
-color:white;
-
-padding:100px 0;
-
+    background: linear-gradient(135deg,#0F4C81,#155E75);
+    color: #fff;
+    padding: 100px 0;
 }
 
 .impact-card{
-
-padding:35px 20px;
-
-border-radius:20px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(10px);
-
-transition:.4s;
-
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.4s;
+    text-align: center;
 }
 
 .impact-card:hover{
-
-transform:translateY(-10px);
-
-background:rgba(255,255,255,.15);
-
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.18);
 }
 
 .impact-card i{
-
-font-size:45px;
-
-color:#FFD700;
-
-margin-bottom:20px;
-
+    font-size: 45px;
+    color: #FFD700;
+    margin-bottom: 15px;
 }
 
 .impact-card h2{
-
-font-size:50px;
-
-font-weight:700;
-
-margin-bottom:10px;
-
+    font-size: 48px;
+    font-weight: 700;
+    margin: 10px 0;
 }
 
 .impact-card p{
-
-font-size:18px;
-
-margin:0;
-
+    font-size: 18px;
+    margin: 0;
 }
