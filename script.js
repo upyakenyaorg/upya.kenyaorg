@@ -2,12 +2,6 @@
 // UPYA WEBSITE SCRIPT
 // =========================
 
-document.addEventListener("DOMContentLoaded", function () {
-    const loader = document.getElementById("loader");
-
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-});
 // =========================
 // Navbar Background
 // =========================
