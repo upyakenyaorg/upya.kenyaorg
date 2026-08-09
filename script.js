@@ -27,68 +27,83 @@ window.addEventListener("scroll", () => {
 });
 
 // ===============================
-// IMPACT COUNTER ANIMATION
+// UPYA IMPACT COUNTERS
 // ===============================
 
-const counters = document.querySelectorAll(".counter");
+document.addEventListener("DOMContentLoaded", function () {
 
-const counterObserver = new IntersectionObserver((entries, observer) => {
+    const counters = document.querySelectorAll(".counter");
 
-    entries.forEach(entry => {
+    const startCounter = (counter) => {
 
-        if (entry.isIntersecting) {
+        const target = parseInt(counter.getAttribute("data-target"));
 
-            const counter = entry.target;
-            const target = Number(counter.getAttribute("data-target"));
+        let number = 0;
 
-            let current = 0;
-            const duration = 1800;
-            const startTime = performance.now();
+        const duration = 2000;
+        const startTime = performance.now();
 
-            function animateCounter(time) {
+        function updateCounter(currentTime) {
 
-                const progress = Math.min(
-                    (time - startTime) / duration,
-                    1
-                );
+            const elapsed = currentTime - startTime;
 
-                // Smooth animation
-                current = Math.floor(
-                    progress * target
-                );
+            const progress = Math.min(elapsed / duration, 1);
 
-                counter.textContent = current;
+            number = Math.floor(progress * target);
 
-                if (progress < 1) {
+            counter.textContent = number;
 
-                    requestAnimationFrame(animateCounter);
+            if (progress < 1) {
 
-                } else {
+                requestAnimationFrame(updateCounter);
 
-                    counter.textContent = target + "+";
+            } else {
 
-                }
+                counter.textContent = target + "+";
 
             }
 
-            requestAnimationFrame(animateCounter);
+        }
 
-            // Stop observing after animation
-            observer.unobserve(counter);
+        requestAnimationFrame(updateCounter);
+    };
+
+
+    const impactSection = document.querySelector("#impact");
+
+    if (!impactSection) {
+        console.log("Impact section not found");
+        return;
+    }
+
+
+    let started = false;
+
+
+    const observer = new IntersectionObserver(function(entries) {
+
+        if (entries[0].isIntersecting && !started) {
+
+            started = true;
+
+            counters.forEach(function(counter) {
+
+                startCounter(counter);
+
+            });
+
+            observer.disconnect();
 
         }
 
+    }, {
+
+        threshold: 0.3
+
     });
 
-}, {
 
-    threshold: 0.5
-
-});
-
-counters.forEach(counter => {
-
-    counterObserver.observe(counter);
+    observer.observe(impactSection);
 
 });
 
