@@ -269,3 +269,36 @@ year.innerHTML=new Date().getFullYear();
 // =========================
 
 console.log("Welcome to UPYA Website");
+// Animated Counter
+
+const counters = document.querySelectorAll(".counter");
+
+const speed = 80;
+
+counters.forEach(counter=>{
+
+function update(){
+
+const target = +counter.getAttribute("data-target");
+
+const count = +counter.innerText;
+
+const increment = Math.ceil(target/speed);
+
+if(count < target){
+
+counter.innerText = count + increment;
+
+setTimeout(update,20);
+
+}else{
+
+counter.innerText = target + "+";
+
+}
+
+}
+
+update();
+
+});
