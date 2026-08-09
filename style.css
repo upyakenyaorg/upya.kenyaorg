@@ -44,13 +44,6 @@ transition:.3s;
 color:#FFC107!important;
 }
 
-/* Hero */
-
-.hero{
-
-position:relative;
-
-background:url("images/hero.jpg") center center/cover;
 /* ================= HERO ================= */
 
 .hero{
