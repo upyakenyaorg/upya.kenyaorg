@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>UPYA | Uwezo Pamoja Youths Association</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- Loading Screen -->
 
-<nav class="navbar navbar-expand-lg fixed-top">
+<div id="loader">
+
+<div class="spinner-border text-warning"></div>
+
+<h3 class="mt-3">Loading UPYA...</h3>
+
+</div>
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
 <div class="container">
 
-<a class="navbar-brand" href="#">
-<img src="images/logo.png" width="55">
-<span>UPYA</span>
+<a class="navbar-brand fw-bold" href="#">
+
+<img src="images/logo.png" width="50">
+
+UPYA
+
 </a>
 
-<button class="navbar-toggler" type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
+<button class="navbar-toggler"
 
-<i class="fas fa-bars text-white"></i>
+type="button"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
 
 </button>
 
-<div class="collapse navbar-collapse" id="menu">
+<div class="collapse navbar-collapse"
+
+id="navbarNav">
 
 <ul class="navbar-nav ms-auto">
 
-<li class="nav-item">
-<a class="nav-link" href="#home">Home</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
 
-<li class="nav-item">
-<a class="nav-link" href="#about">About</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 
-<li class="nav-item">
-<a class="nav-link" href="#programs">Programs</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
 
-<li class="nav-item">
-<a class="nav-link" href="#events">Events</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
 
-<li class="nav-item">
-<a class="nav-link" href="#membership">Membership</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
 
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
 <li class="nav-item">
 
-<a href="#" class="btn btn-warning rounded-pill ms-lg-3">
+<a class="btn btn-warning rounded-pill ms-3"
 
-Donate
+href="#membership">
+
+Join Us
 
 </a>
 
@@ -88,45 +94,73 @@ Donate
 
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 
 <section id="home" class="hero">
 
 <div class="overlay"></div>
 
-<div class="container hero-content">
+<div class="container">
 
-<h1>
+<div class="row align-items-center vh-100">
 
-Empowering Youth.<br>
+<div class="col-lg-7 text-white">
 
-<span>Transforming Communities.</span>
+<h5 class="text-warning mb-3">
+
+WELCOME TO UPYA
+
+</h5>
+
+<h1 class="display-2 fw-bold">
+
+Uwezo Pamoja Youths Association
 
 </h1>
 
-<p>
+<h3 class="mb-4">
 
-Uwezo Pamoja Youths Association empowers, equips,
+Defining the Undefined
 
-mentors and nurtures tomorrow's world through
+</h3>
 
-innovation, leadership and community service.
+<p class="lead">
+
+Empowering, Equipping, Mentoring and Nurturing Tomorrow's World through leadership, innovation and community service.
 
 </p>
 
 <div class="mt-4">
 
-<a href="#membership" class="btn btn-warning btn-lg rounded-pill">
+<a href="#membership"
 
-Become a Member
+class="btn btn-warning btn-lg rounded-pill me-3">
+
+Become A Member
+
+</a>
+
+<a href="#donate"
+
+class="btn btn-outline-light btn-lg rounded-pill">
+
+Donate
 
 </a>
 
-<a href="#about" class="btn btn-outline-light btn-lg rounded-pill ms-3">
+</div>
 
-Learn More
+</div>
 
-</a>
+<div class="col-lg-5 text-center">
+
+<img src="images/logo.png"
+
+class="img-fluid floating-logo"
+
+width="350">
+
+</div>
 
 </div>
 
@@ -134,95 +168,96 @@ Learn More
 
 </section>
 
-<!-- ABOUT -->
+<!-- About -->
 
 <section id="about" class="py-5">
 
 <div class="container">
 
-<h2 class="section-title">
+<div class="text-center mb-5">
 
-About UPYA
+<h6 class="text-warning">
+
+WHO WE ARE
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Building Tomorrow's Leaders Today
 
 </h2>
 
-<p class="lead text-center">
+<p class="lead">
 
-UPYA is a youth-led organization dedicated to empowering young people through education, entrepreneurship, sports, mentorship and community service.
+UPYA is a youth-led community organization committed to empowering young people through mentorship, entrepreneurship, education, sports, innovation and community service.
 
 </p>
 
 </div>
-
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-
-<!-- ================= PROGRAMS ================= -->
-
-<section id="programs">
-
-<div class="container">
-
-<h2 class="section-title">Our Programs</h2>
-
-<p class="lead mb-5">
-Creating opportunities that empower young people to become leaders, innovators and changemakers.
-</p>
 
 <div class="row g-4">
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-user-graduate fa-4x text-primary mb-4"></i>
-<h4>Education & Mentorship</h4>
-<p>Career guidance, mentorship, life skills and leadership development.</p>
-</div>
+<div class="col-lg-4">
+
+<div class="info-card">
+
+<i class="fas fa-bullseye fa-3x text-warning mb-3"></i>
+
+<h3>Mission</h3>
+
+<p>
+
+To empower, equip, mentor and nurture tomorrow's world.
+
+</p>
+
 </div>
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-briefcase fa-4x text-success mb-4"></i>
-<h4>Entrepreneurship</h4>
-<p>Training youth to build businesses and create employment.</p>
-</div>
 </div>
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-tree fa-4x text-warning mb-4"></i>
-<h4>Environment</h4>
-<p>Tree planting, clean-up campaigns and climate action.</p>
-</div>
+<div class="col-lg-4">
+
+<div class="info-card">
+
+<i class="fas fa-eye fa-3x text-primary mb-3"></i>
+
+<h3>Vision</h3>
+
+<p>
+
+A generation of empowered youth transforming communities into centers of lasting positive change.
+
+</p>
+
 </div>
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-futbol fa-4x text-danger mb-4"></i>
-<h4>Sports Development</h4>
-<p>Using sports to promote peace, unity and talent.</p>
-</div>
 </div>
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-handshake fa-4x text-info mb-4"></i>
-<h4>Community Service</h4>
-<p>Giving back through volunteerism and outreach activities.</p>
-</div>
+<div class="col-lg-4">
+
+<div class="info-card">
+
+<i class="fas fa-handshake fa-3x text-success mb-3"></i>
+
+<h3>Core Values</h3>
+
+<ul>
+
+<li>Teamwork</li>
+
+<li>Integrity</li>
+
+<li>Transparency</li>
+
+<li>Accountability</li>
+
+<li>Equity</li>
+
+</ul>
+
 </div>
 
-<div class="col-md-4">
-<div class="card-box text-center">
-<i class="fas fa-lightbulb fa-4x text-secondary mb-4"></i>
-<h4>Innovation Hub</h4>
-<p>Supporting creative ideas and youth-led innovations.</p>
-</div>
 </div>
 
 </div>
@@ -231,41 +266,41 @@ Creating opportunities that empower young people to become leaders, innovators a
 
 </section>
 
-<!-- ================= IMPACT ================= -->
+  <!-- ================= IMPACT STATISTICS ================= -->
 
-<section class="stats">
+<section class="py-5 bg-primary text-white">
 
 <div class="container">
 
-<div class="row">
+<div class="row text-center">
 
-<div class="col-md-3 stat">
+<div class="col-lg-3 col-6 mb-4">
 
-<h2 class="counter" data-target="500">0</h2>
+<h1 class="counter" data-target="500">0</h1>
 
-<p>Members</p>
+<p>Registered Members</p>
 
 </div>
 
-<div class="col-md-3 stat">
+<div class="col-lg-3 col-6 mb-4">
 
-<h2 class="counter" data-target="35">0</h2>
+<h1 class="counter" data-target="35">0</h1>
 
 <p>Partners</p>
 
 </div>
 
-<div class="col-md-3 stat">
+<div class="col-lg-3 col-6 mb-4">
 
-<h2 class="counter" data-target="80">0</h2>
+<h1 class="counter" data-target="80">0</h1>
 
-<p>Projects</p>
+<p>Projects Completed</p>
 
 </div>
 
-<div class="col-md-3 stat">
+<div class="col-lg-3 col-6 mb-4">
 
-<h2 class="counter" data-target="5000">0</h2>
+<h1 class="counter" data-target="5000">0</h1>
 
 <p>Youths Reached</p>
 
@@ -277,29 +312,321 @@ Creating opportunities that empower young people to become leaders, innovators a
 
 </section>
 
-<!-- ================= EVENTS ================= -->
+<!-- ================= PROGRAMS ================= -->
 
-<section id="events">
+<section id="programs" class="py-5">
 
 <div class="container">
 
-<h2 class="section-title">
+<div class="text-center mb-5">
 
-Upcoming Events
+<h6 class="text-warning">
+
+WHAT WE DO
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Our Programs
 
 </h2>
+
+<p class="lead">
+
+Empowering young people through practical programs that create lasting impact.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-user-graduate fa-3x text-primary mb-4"></i>
+
+<h4>Education</h4>
+
+<p>
+
+Mentorship, career guidance and academic empowerment.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-briefcase fa-3x text-success mb-4"></i>
+
+<h4>Entrepreneurship</h4>
+
+<p>
+
+Business training and financial literacy for young entrepreneurs.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-futbol fa-3x text-danger mb-4"></i>
+
+<h4>Sports</h4>
+
+<p>
+
+Building peace, unity and talent through sports activities.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-tree fa-3x text-success mb-4"></i>
+
+<h4>Environment</h4>
+
+<p>
+
+Tree planting and environmental conservation projects.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-scale-balanced fa-3x text-warning mb-4"></i>
+
+<h4>Civic Education</h4>
+
+<p>
+
+Teaching leadership, governance and citizen participation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-handshake fa-3x text-info mb-4"></i>
+
+<h4>Community Service</h4>
+
+<p>
+
+Giving back through volunteering and outreach programs.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-lightbulb fa-3x text-warning mb-4"></i>
+
+<h4>Innovation</h4>
+
+<p>
+
+Supporting creative ideas and youth-led solutions.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="program-card">
+
+<i class="fas fa-laptop-code fa-3x text-primary mb-4"></i>
+
+<h4>Digital Skills</h4>
+
+<p>
+
+Technology training for today's digital economy.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURED PROJECTS ================= -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="text-success">
+
+OUR IMPACT
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Featured Projects
+
+</h2>
+
+</div>
 
 <div class="row g-4">
 
 <div class="col-lg-4">
 
-<div class="card-box">
+<div class="card shadow border-0">
 
-<img src="images/event1.jpg" class="img-fluid rounded mb-3">
+<img src="images/project1.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Youth Mentorship</h4>
+
+<p>
+
+Empowering secondary school students through mentorship and career guidance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<img src="images/project2.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Community Football</h4>
+
+<p>
+
+Promoting peace and youth empowerment through sports tournaments.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<img src="images/project3.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Entrepreneurship Summit</h4>
+
+<p>
+
+Helping young people transform ideas into sustainable businesses.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= UPCOMING EVENTS ================= -->
+
+<section id="events" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="text-warning">
+
+JOIN US
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Upcoming Events
+
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="event-card">
+
+<img src="images/event1.jpg" class="img-fluid">
+
+<div class="p-4">
 
 <h4>Back To School Mentorship</h4>
 
-<p>Preparing students for academic excellence and career success.</p>
+<p>
+
+Helping students prepare for academic success.
+
+</p>
 
 <a href="#" class="btn btn-warning rounded-pill">
 
@@ -311,15 +638,23 @@ Register
 
 </div>
 
+</div>
+
 <div class="col-lg-4">
 
-<div class="card-box">
+<div class="event-card">
 
-<img src="images/event2.jpg" class="img-fluid rounded mb-3">
+<img src="images/event2.jpg" class="img-fluid">
+
+<div class="p-4">
 
 <h4>Youth Football Tournament</h4>
 
-<p>Promoting peace, talent and unity through sports.</p>
+<p>
+
+Uniting communities through sports.
+
+</p>
 
 <a href="#" class="btn btn-success rounded-pill">
 
@@ -331,15 +666,23 @@ Join Event
 
 </div>
 
+</div>
+
 <div class="col-lg-4">
 
-<div class="card-box">
+<div class="event-card">
 
-<img src="images/event3.jpg" class="img-fluid rounded mb-3">
+<img src="images/event3.jpg" class="img-fluid">
 
-<h4>Entrepreneurship Summit</h4>
+<div class="p-4">
 
-<p>Building future entrepreneurs through practical training.</p>
+<h4>Innovation Forum</h4>
+
+<p>
+
+Showcasing youth innovations and entrepreneurship.
+
+</p>
 
 <a href="#" class="btn btn-primary rounded-pill">
 
@@ -355,220 +698,300 @@ Book Seat
 
 </div>
 
+</div>
+
+</section>
+
+  <!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="text-warning">OUR GALLERY</h6>
+
+<h2 class="display-5 fw-bold">Moments That Inspire</h2>
+
+<p class="lead">
+
+Capturing our journey of empowering young people.
+
+</p>
+
+</div>
+
+<div class="row g-3">
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery1.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery2.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery3.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery4.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery5.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery6.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery7.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+<div class="col-lg-3 col-md-6">
+<img src="images/gallery8.jpg" class="img-fluid rounded shadow gallery-img">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LEADERSHIP ================= -->
+
+<section id="leadership" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="text-success">
+
+OUR LEADERSHIP
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Meet Our Executive Team
+
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 text-center">
+
+<img src="images/chairperson.jpg"
+
+class="rounded-circle mx-auto mt-4"
+
+width="170">
+
+<div class="card-body">
+
+<h4>Hillary Onyango</h4>
+
+<h6 class="text-primary">
+
+Chairperson
+
+</h6>
+
+<p>
+
+Leading the vision and strategic direction of UPYA.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 text-center">
+
+<img src="images/secretary.jpg"
+
+class="rounded-circle mx-auto mt-4"
+
+width="170">
+
+<div class="card-body">
+
+<h4>Brian Chiambe</h4>
+
+<h6 class="text-success">
+
+Secretary
+
+</h6>
+
+<p>
+
+Responsible for administration and communication.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 text-center">
+
+<img src="images/treasurer.jpg"
+
+class="rounded-circle mx-auto mt-4"
+
+width="170">
+
+<div class="card-body">
+
+<h4>Dennis Ouma</h4>
+
+<h6 class="text-warning">
+
+Treasurer
+
+</h6>
+
+<p>
+
+Ensuring accountability and financial stewardship.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="py-5 bg-primary text-white">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="display-5 fw-bold">
+
+Success Stories
+
+</h2>
+
+</div>
+
+<div class="row">
+
+<div class="col-lg-4">
+
+<div class="p-4">
+
+<p>
+
+"UPYA transformed my confidence and leadership skills."
+
+</p>
+
+<h5>- Emmanuel</h5>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="p-4">
+
+<p>
+
+"I gained entrepreneurship skills that helped me start my business."
+
+</p>
+
+<h5>- Mercy</h5>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="p-4">
+
+<p>
+
+"The mentorship program changed my life."
+
+</p>
+
+<h5>- Collins</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- ================= PARTNERS ================= -->
 
-<section>
+<section class="py-5">
 
-<div class="container">
+<div class="container text-center">
 
-<h2 class="section-title">
+<h2 class="display-5 fw-bold mb-5">
 
 Our Partners
 
 </h2>
 
-<div class="row text-center align-items-center">
+<div class="row align-items-center">
 
-<div class="col-md-2 col-6 mb-4">
-
+<div class="col">
 <img src="images/partner1.png" class="img-fluid">
-
 </div>
 
-<div class="col-md-2 col-6 mb-4">
-
+<div class="col">
 <img src="images/partner2.png" class="img-fluid">
-
 </div>
 
-<div class="col-md-2 col-6 mb-4">
-
+<div class="col">
 <img src="images/partner3.png" class="img-fluid">
-
 </div>
 
-<div class="col-md-2 col-6 mb-4">
-
+<div class="col">
 <img src="images/partner4.png" class="img-fluid">
-
 </div>
 
-<div class="col-md-2 col-6 mb-4">
-
+<div class="col">
 <img src="images/partner5.png" class="img-fluid">
-
-</div>
-
-<div class="col-md-2 col-6 mb-4">
-
-<img src="images/partner6.png" class="img-fluid">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= EXECUTIVE TEAM ================= -->
-
-<section id="leadership" class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="section-title">Meet Our Leadership</h2>
-
-<p class="lead text-center mb-5">
-
-Dedicated leaders committed to empowering youth and transforming communities.
-
-</p>
-
-<div class="row g-4">
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card-box text-center">
-
-<img src="images/chairperson.jpg"
-class="rounded-circle mb-3"
-width="150"
-height="150">
-
-<h4>Hillary Onyango</h4>
-
-<p class="text-primary fw-bold">Chairperson</p>
-
-<p>
-Provides strategic leadership and oversees the organization's vision.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card-box text-center">
-
-<img src="images/secretary.jpg"
-class="rounded-circle mb-3"
-width="150"
-height="150">
-
-<h4>Brian Chiambe</h4>
-
-<p class="text-success fw-bold">Secretary</p>
-
-<p>
-Coordinates meetings, documentation and communication.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card-box text-center">
-
-<img src="images/treasurer.jpg"
-class="rounded-circle mb-3"
-width="150"
-height="150">
-
-<h4>Dennis Ouma</h4>
-
-<p class="text-warning fw-bold">Treasurer</p>
-
-<p>
-Manages finances and ensures accountability.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card-box text-center">
-
-<img src="images/member.jpg"
-class="rounded-circle mb-3"
-width="150"
-height="150">
-
-<h4>Your Name</h4>
-
-<p class="text-danger fw-bold">Programs Director</p>
-
-<p>
-Leads projects, partnerships and community programs.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= GALLERY ================= -->
-
-<section id="gallery">
-
-<div class="container">
-
-<h2 class="section-title">
-
-Gallery
-
-</h2>
-
-<p class="lead mb-5">
-
-Moments that define our journey.
-
-</p>
-
-<div class="row g-3">
-
-<div class="col-md-3">
-<img src="images/gallery1.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery2.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery3.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery4.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery5.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery6.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery7.jpg" class="img-fluid rounded shadow gallery-img">
-</div>
-
-<div class="col-md-3">
-<img src="images/gallery8.jpg" class="img-fluid rounded shadow gallery-img">
 </div>
 
 </div>
@@ -583,66 +1006,53 @@ Moments that define our journey.
 
 <div class="container">
 
-<h2 class="section-title">
+<div class="row">
+
+<div class="col-lg-6">
+
+<h2 class="display-5 fw-bold">
 
 Become A Member
 
 </h2>
 
-<p class="lead mb-5">
+<p>
 
-Join hundreds of young leaders making a difference.
+Join a growing movement of young people making a difference.
 
 </p>
 
-<div class="row">
+<form>
 
-<div class="col-lg-7">
+<input type="text"
 
-<form class="card-box">
+class="form-control mb-3"
 
-<div class="row">
+placeholder="Full Name">
 
-<div class="col-md-6 mb-3">
+<input type="email"
 
-<input class="form-control" placeholder="First Name">
+class="form-control mb-3"
 
-</div>
+placeholder="Email">
 
-<div class="col-md-6 mb-3">
+<input type="tel"
 
-<input class="form-control" placeholder="Last Name">
+class="form-control mb-3"
 
-</div>
+placeholder="Phone">
 
-</div>
+<textarea
 
-<input class="form-control mb-3" placeholder="Email">
+class="form-control mb-3"
 
-<input class="form-control mb-3" placeholder="Phone Number">
+rows="5"
 
-<select class="form-select mb-3">
-
-<option>Select County</option>
-
-<option>Kisumu</option>
-
-<option>Siaya</option>
-
-<option>Homa Bay</option>
-
-<option>Migori</option>
-
-<option>Other</option>
-
-</select>
-
-<textarea class="form-control mb-3" rows="5"
 placeholder="Why do you want to join UPYA?"></textarea>
 
-<button class="btn btn-warning w-100">
+<button class="btn btn-warning btn-lg">
 
-Submit Membership Application
+Apply Now
 
 </button>
 
@@ -650,31 +1060,11 @@ Submit Membership Application
 
 </div>
 
-<div class="col-lg-5">
+<div class="col-lg-6 text-center">
 
-<div class="card-box text-center">
+<img src="images/member.png"
 
-<i class="fas fa-id-card fa-5x text-warning mb-4"></i>
-
-<h3>Membership Benefits</h3>
-
-<ul class="list-group text-start mt-4">
-
-<li class="list-group-item">✔ Digital Membership Card</li>
-
-<li class="list-group-item">✔ Training Opportunities</li>
-
-<li class="list-group-item">✔ Leadership Development</li>
-
-<li class="list-group-item">✔ Networking Events</li>
-
-<li class="list-group-item">✔ Volunteer Opportunities</li>
-
-<li class="list-group-item">✔ Certificates of Participation</li>
-
-</ul>
-
-</div>
+class="img-fluid">
 
 </div>
 
@@ -684,7 +1074,7 @@ Submit Membership Application
 
 </section>
 
-<!-- ================= DONATE ================= -->
+  <!-- ================= DONATE ================= -->
 
 <section id="donate" class="py-5">
 
@@ -694,65 +1084,77 @@ Submit Membership Application
 
 <div class="col-lg-6">
 
-<h2 class="section-title text-start">Support Our Mission</h2>
+<h2 class="display-5 fw-bold">
 
-<p class="lead text-start">
+Support Our Mission
 
-Every contribution helps us empower young people through mentorship, education, entrepreneurship, sports and community service.
+</h2>
+
+<p class="lead">
+
+Your support enables us to mentor youth, organize community projects, promote education, sports and entrepreneurship.
 
 </p>
 
-<a href="#" class="btn btn-warning btn-lg rounded-pill me-3">
+<div class="mt-4">
 
-<i class="fas fa-hand-holding-heart me-2"></i>
+<a href="https://wa.me/254742717363"
 
-Donate Now
+class="btn btn-success btn-lg me-3">
+
+<i class="fab fa-whatsapp"></i>
+
+Donate via WhatsApp
+
+</a>
+
+<a href="#"
+
+class="btn btn-warning btn-lg">
+
+<i class="fas fa-heart"></i>
+
+M-Pesa
 
 </a>
 
 </div>
 
+</div>
+
 <div class="col-lg-6">
 
-<div class="card-box">
+<div class="card shadow border-0 p-4">
 
-<h4 class="mb-4">Ways to Support</h4>
+<h3 class="mb-4">
 
-<div class="mb-3">
+Donation Details
 
-<i class="fas fa-mobile-alt text-success me-2"></i>
+</h3>
 
-<strong>M-Pesa</strong>
+<p>
 
-<p>Paybill: XXXXXXX</p>
+<strong>M-Pesa Paybill:</strong> XXXXXXX
 
-<p>Account: UPYA</p>
+</p>
 
-</div>
+<p>
 
-<hr>
+<strong>Account:</strong> UPYA
 
-<div class="mb-3">
+</p>
 
-<i class="fab fa-paypal text-primary me-2"></i>
+<p>
 
-<strong>PayPal</strong>
+<strong>Bank:</strong> Your Bank Name
 
-<p>donate@upya.org</p>
+</p>
 
-</div>
+<p>
 
-<hr>
+<strong>PayPal:</strong> donate@upya.org
 
-<div>
-
-<i class="fas fa-university text-warning me-2"></i>
-
-<strong>Bank Transfer</strong>
-
-<p>UPYA Community Account</p>
-
-</div>
+</p>
 
 </div>
 
@@ -770,27 +1172,41 @@ Donate Now
 
 <div class="container">
 
-<h2 class="section-title">Contact Us</h2>
+<div class="text-center mb-5">
+
+<h6 class="text-warning">
+
+GET IN TOUCH
+
+</h6>
+
+<h2 class="display-5 fw-bold">
+
+Contact Us
+
+</h2>
+
+</div>
 
 <div class="row">
 
 <div class="col-lg-6">
 
-<h4>Office Address</h4>
+<h4>Office</h4>
 
 <p>
 
-Nyamgun Junction<br>
+Nyamgun Junction
 
-Seme, Kisumu County<br>
+<br>
 
-Kenya
+Seme, Kisumu County
 
 </p>
 
 <p>
 
-<i class="fas fa-phone text-primary"></i>
+<i class="fas fa-phone"></i>
 
 +254 742 717 363
 
@@ -798,7 +1214,7 @@ Kenya
 
 <p>
 
-<i class="fas fa-envelope text-primary"></i>
+<i class="fas fa-envelope"></i>
 
 upya.kenyaorg@gmail.com
 
@@ -806,29 +1222,59 @@ upya.kenyaorg@gmail.com
 
 <p>
 
-<i class="fas fa-clock text-primary"></i>
+<i class="fas fa-clock"></i>
 
-Monday - Friday
-
-8:00 AM - 5:00 PM
+Mon - Fri : 8:00 AM - 5:00 PM
 
 </p>
+
+<iframe
+
+src="https://www.google.com/maps?q=Nyamgun+Junction+Kisumu&output=embed"
+
+width="100%"
+
+height="300"
+
+style="border:0;"
+
+loading="lazy">
+
+</iframe>
 
 </div>
 
 <div class="col-lg-6">
 
-<form class="card-box">
+<form>
 
-<input class="form-control mb-3" placeholder="Full Name">
+<input type="text"
 
-<input class="form-control mb-3" placeholder="Email">
+class="form-control mb-3"
 
-<input class="form-control mb-3" placeholder="Phone">
+placeholder="Your Name">
 
-<textarea class="form-control mb-3" rows="5" placeholder="Your Message"></textarea>
+<input type="email"
 
-<button class="btn btn-primary w-100">
+class="form-control mb-3"
+
+placeholder="Email">
+
+<input type="tel"
+
+class="form-control mb-3"
+
+placeholder="Phone">
+
+<textarea
+
+class="form-control mb-3"
+
+rows="6"
+
+placeholder="Message"></textarea>
+
+<button class="btn btn-primary btn-lg w-100">
 
 Send Message
 
@@ -846,15 +1292,19 @@ Send Message
 
 <!-- ================= NEWSLETTER ================= -->
 
-<section class="py-5 text-white" style="background:#0F4C81;">
+<section class="py-5 bg-primary text-white">
 
 <div class="container text-center">
 
-<h2>Subscribe To Our Newsletter</h2>
+<h2>
+
+Subscribe To Our Newsletter
+
+</h2>
 
 <p>
 
-Receive updates about projects, events and opportunities.
+Receive updates about our events, opportunities and community projects.
 
 </p>
 
@@ -886,67 +1336,9 @@ Subscribe
 
 </section>
 
-<!-- ================= SOCIAL MEDIA ================= -->
-
-<section class="py-4">
-
-<div class="container text-center">
-
-<h2 class="mb-4">
-
-Connect With Us
-
-</h2>
-
-<a href="https://facebook.com/" class="mx-3 fs-2 text-primary">
-
-<i class="fab fa-facebook"></i>
-
-</a>
-
-<a href="https://instagram.com/" class="mx-3 fs-2 text-danger">
-
-<i class="fab fa-instagram"></i>
-
-</a>
-
-<a href="https://x.com/" class="mx-3 fs-2 text-dark">
-
-<i class="fab fa-x-twitter"></i>
-
-</a>
-
-<a href="https://tiktok.com/" class="mx-3 fs-2 text-dark">
-
-<i class="fab fa-tiktok"></i>
-
-</a>
-
-<a href="https://youtube.com/" class="mx-3 fs-2 text-danger">
-
-<i class="fab fa-youtube"></i>
-
-</a>
-
-<a href="https://linkedin.com/" class="mx-3 fs-2 text-primary">
-
-<i class="fab fa-linkedin"></i>
-
-</a>
-
-<a href="https://wa.me/254742717363" class="mx-3 fs-2 text-success">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-</div>
-
-</section>
-
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer class="bg-dark text-white pt-5">
 
 <div class="container">
 
@@ -954,7 +1346,17 @@ Connect With Us
 
 <div class="col-lg-4">
 
-<h4>UPYA</h4>
+<h3>
+
+UPYA
+
+</h3>
+
+<p>
+
+Defining the Undefined
+
+</p>
 
 <p>
 
@@ -966,21 +1368,25 @@ Empowering, Equipping, Mentoring and Nurturing Tomorrow's World.
 
 <div class="col-lg-4">
 
-<h4>Quick Links</h4>
+<h4>
+
+Quick Links
+
+</h4>
 
 <ul class="list-unstyled">
 
-<li><a href="#home">Home</a></li>
+<li><a href="#home" class="text-white">Home</a></li>
 
-<li><a href="#about">About</a></li>
+<li><a href="#about" class="text-white">About</a></li>
 
-<li><a href="#programs">Programs</a></li>
+<li><a href="#programs" class="text-white">Programs</a></li>
 
-<li><a href="#events">Events</a></li>
+<li><a href="#events" class="text-white">Events</a></li>
 
-<li><a href="#membership">Membership</a></li>
+<li><a href="#membership" class="text-white">Membership</a></li>
 
-<li><a href="#contact">Contact</a></li>
+<li><a href="#contact" class="text-white">Contact</a></li>
 
 </ul>
 
@@ -988,13 +1394,57 @@ Empowering, Equipping, Mentoring and Nurturing Tomorrow's World.
 
 <div class="col-lg-4">
 
-<h4>Contact</h4>
+<h4>
 
-<p>📞 +254 742 717 363</p>
+Follow Us
 
-<p>📧 upya.kenyaorg@gmail.com</p>
+</h4>
 
-<p>📍 Nyamgun Junction, Seme, Kisumu County</p>
+<div class="fs-2">
+
+<a href="https://facebook.com" class="text-white me-3">
+
+<i class="fab fa-facebook"></i>
+
+</a>
+
+<a href="https://instagram.com" class="text-white me-3">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="https://x.com" class="text-white me-3">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+<a href="https://tiktok.com" class="text-white me-3">
+
+<i class="fab fa-tiktok"></i>
+
+</a>
+
+<a href="https://youtube.com" class="text-white me-3">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+<a href="https://linkedin.com" class="text-white me-3">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="https://wa.me/254742717363" class="text-white">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+</div>
 
 </div>
 
@@ -1002,13 +1452,9 @@ Empowering, Equipping, Mentoring and Nurturing Tomorrow's World.
 
 <hr>
 
-<div class="text-center">
+<div class="text-center pb-3">
 
-<p>
-
-© <span id="year"></span> Uwezo Pamoja Youths Association (UPYA). All Rights Reserved.
-
-</p>
+© 2026 Uwezo Pamoja Youths Association (UPYA). All Rights Reserved.
 
 </div>
 
@@ -1019,9 +1465,32 @@ Empowering, Equipping, Mentoring and Nurturing Tomorrow's World.
 <!-- Floating WhatsApp -->
 
 <a href="https://wa.me/254742717363"
+
 class="btn btn-success rounded-circle"
-style="position:fixed;bottom:20px;right:20px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:9999;">
+
+style="position:fixed;bottom:20px;right:20px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:30px;z-index:999;">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
+
+<!-- Back To Top -->
+
+<a href="#home"
+
+class="btn btn-warning rounded-circle"
+
+style="position:fixed;bottom:90px;right:20px;width:55px;height:55px;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:999;">
+
+<i class="fas fa-arrow-up"></i>
+
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
