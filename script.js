@@ -337,3 +337,74 @@ counter.innerText = target + "+";
 update();
 
 });
+// ================= HERO SLIDESHOW =================
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll(".hero-dot");
+
+let currentHeroSlide = 0;
+let heroTimer;
+
+function showHeroSlide(index){
+
+    heroSlides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    heroDots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    heroSlides[index].classList.add("active");
+
+    if(heroDots[index]){
+        heroDots[index].classList.add("active");
+    }
+
+    currentHeroSlide = index;
+}
+
+function nextHeroSlide(){
+
+    let next = currentHeroSlide + 1;
+
+    if(next >= heroSlides.length){
+        next = 0;
+    }
+
+    showHeroSlide(next);
+}
+
+function startHeroSlideshow(){
+
+    heroTimer = setInterval(nextHeroSlide, 6000);
+
+}
+
+function stopHeroSlideshow(){
+
+    clearInterval(heroTimer);
+
+}
+
+heroDots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        stopHeroSlideshow();
+
+        showHeroSlide(index);
+
+        startHeroSlideshow();
+
+    });
+
+});
+
+if(heroSlides.length > 0){
+
+    showHeroSlide(0);
+
+    startHeroSlideshow();
+
+}
