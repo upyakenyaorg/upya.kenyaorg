@@ -970,11 +970,3 @@ color:#666;
 line-height:1.7;
 
 }
-@media(max-width:768px){
-
-    .hero-floating-logo{
-        width:160px;
-        margin-top:25px;
-    }
-
-}
