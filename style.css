@@ -279,31 +279,32 @@ color:#FFC107!important;
     }
 
 }
-/* ================= FLOATING HERO LOGO ================= */
 
-.hero-logo-wrap{
+/* ================= HERO LOGO RIGHT SIDE ================= */
+
+.hero-logo-column{
+
     display:flex;
-    justify-content:center;
+
+    justify-content:flex-end;
+
     align-items:center;
+
+    height:100%;
+
 }
 
 .hero-floating-logo{
 
-    width:280px;
-    max-width:80%;
+    width:300px;
 
-    filter:
-        drop-shadow(0 15px 30px rgba(0,0,0,.45));
+    max-width:100%;
 
-    animation:
-        heroLogoFloat 4s ease-in-out infinite;
+    display:block;
 
-    transition:.4s;
-}
+    animation:heroLogoFloat 4s ease-in-out infinite;
 
-.hero-floating-logo:hover{
-
-    transform:scale(1.08);
+    filter:drop-shadow(0 15px 30px rgba(0,0,0,.5));
 
 }
 
@@ -319,6 +320,27 @@ color:#FFC107!important;
 
     100%{
         transform:translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+    .hero-logo-column{
+
+        justify-content:center;
+
+        margin-top:20px;
+
+    }
+
+    .hero-floating-logo{
+
+        width:180px;
+
     }
 
 }
