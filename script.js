@@ -3,29 +3,24 @@
 // =========================
 
 // =========================
-// Navbar Background
+// NAVBAR SCROLL EFFECT
 // =========================
 
-window.addEventListener("scroll", () => {
+const navbar = document.querySelector(".navbar");
 
-    const nav = document.querySelector(".navbar");
+window.addEventListener("scroll", function(){
 
-    if (window.scrollY > 80) {
+    if(window.scrollY > 50){
 
-        nav.style.background = "#0F4C81";
+        navbar.classList.add("scrolled");
 
-        nav.style.boxShadow = "0 10px 25px rgba(0,0,0,.2)";
+    }else{
 
-    } else {
-
-        nav.style.background = "rgba(15,76,129,.88)";
-
-        nav.style.boxShadow = "none";
+        navbar.classList.remove("scrolled");
 
     }
 
 });
-
 // ===============================
 // UPYA IMPACT COUNTERS
 // ===============================
