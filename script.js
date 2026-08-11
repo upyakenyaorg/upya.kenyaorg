@@ -3,12 +3,12 @@
 // =========================
 
 // =========================
-// NAVBAR SCROLL EFFECT
+// TRANSPARENT NAVBAR
 // =========================
 
 const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", () => {
 
     if(window.scrollY > 50){
 
