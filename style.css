@@ -21,64 +21,104 @@ overflow-x:hidden;
 /* ================= NAVBAR ================= */
 
 .navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
 
-    background:transparent;
-
-    padding:18px 0;
+    background: transparent;
+    padding: 18px 0;
 
     transition:
-        background .4s ease,
-        padding .4s ease,
-        box-shadow .4s ease;
+        background 0.4s ease,
+        padding 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 /* Navbar after scrolling */
 
 .navbar.scrolled{
-    background:rgba(15,76,129,.96);
-    backdrop-filter:blur(12px);
+    background: rgba(15, 76, 129, 0.97);
+    padding: 12px 0;
 
-    padding:10px 0;
-
-    box-shadow:0 5px 25px rgba(0,0,0,.15);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
 }
 
 /* Logo */
 
 .navbar-brand{
-    color:#fff !important;
-    font-size:28px;
-    font-weight:700;
+    color: #fff !important;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .navbar-brand img{
-    width:50px;
-    height:auto;
-    margin-right:8px;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Navigation links */
 
 .nav-link{
-    color:#fff !important;
-    font-weight:500;
-    margin-left:15px;
-    transition:.3s;
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: 0.3s;
 }
+
+/* Link hover */
 
 .nav-link:hover{
-    color:#FFD700 !important;
+    color: #FFD700 !important;
 }
 
-/* Join button */
+/* Small gold line under link */
 
-.navbar .btn{
-    margin-left:15px;
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #FFD700;
+
+    transition: 0.3s;
+}
+
+.nav-link:hover::after{
+    width: 100%;
+}
+
+/* Mobile navbar */
+
+@media(max-width:991px){
+
+    .navbar{
+        padding: 12px 0;
+    }
+
+    .navbar.scrolled{
+        padding: 10px 0;
+    }
+
+    .navbar-collapse{
+        background: rgba(15,76,129,0.98);
+        padding: 20px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .nav-link{
+        margin: 5px 0;
+    }
+
+}
 }
 
 /* ================= HERO SLIDESHOW ================= */
