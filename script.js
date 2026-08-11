@@ -399,6 +399,59 @@ heroDots.forEach((dot,index)=>{
 if(heroSlides.length > 0){
 
     showHeroSlide(0);
+    /* ================= EVENT POPUP ================= */
+
+function openEvent(title, date, location, time, description){
+
+    document.getElementById("modalEventTitle").textContent = title;
+
+    document.getElementById("modalEventDate").textContent = date;
+
+    document.getElementById("modalEventLocation").textContent = location;
+
+    document.getElementById("modalEventTime").textContent = time;
+
+    document.getElementById("modalEventDescription").textContent = description;
+
+    document.getElementById("eventModal").classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeEvent(){
+
+    document.getElementById("eventModal").classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* Close when clicking outside popup */
+
+document.getElementById("eventModal").addEventListener("click", function(e){
+
+    if(e.target === this){
+
+        closeEvent();
+
+    }
+
+});
+
+
+/* Close with ESC */
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+
+        closeEvent();
+
+    }
+
+});
 
     startHeroSlideshow();
 
