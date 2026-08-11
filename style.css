@@ -18,30 +18,67 @@ color:#333;
 overflow-x:hidden;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 
 .navbar{
-background:rgba(15,76,129,.88);
-backdrop-filter:blur(12px);
-transition:.4s;
-padding:15px 0;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+
+    background:transparent;
+
+    padding:18px 0;
+
+    transition:
+        background .4s ease,
+        padding .4s ease,
+        box-shadow .4s ease;
 }
+
+/* Navbar after scrolling */
+
+.navbar.scrolled{
+    background:rgba(15,76,129,.96);
+    backdrop-filter:blur(12px);
+
+    padding:10px 0;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.15);
+}
+
+/* Logo */
 
 .navbar-brand{
-font-size:30px;
-font-weight:700;
-color:#fff!important;
+    color:#fff !important;
+    font-size:28px;
+    font-weight:700;
 }
 
+.navbar-brand img{
+    width:50px;
+    height:auto;
+    margin-right:8px;
+}
+
+/* Navigation links */
+
 .nav-link{
-color:white!important;
-margin-left:15px;
-font-weight:500;
-transition:.3s;
+    color:#fff !important;
+    font-weight:500;
+    margin-left:15px;
+    transition:.3s;
 }
 
 .nav-link:hover{
-color:#FFC107!important;
+    color:#FFD700 !important;
+}
+
+/* Join button */
+
+.navbar .btn{
+    margin-left:15px;
 }
 
 /* ================= HERO SLIDESHOW ================= */
