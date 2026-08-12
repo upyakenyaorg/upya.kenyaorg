@@ -399,7 +399,7 @@ heroDots.forEach((dot,index)=>{
 if(heroSlides.length > 0){
 
     showHeroSlide(0);
-    /* ================= EVENT POPUP ================= */
+/* ================= EVENT POPUP ================= */
 
 function openEvent(title, date, location, time, description){
 
@@ -452,7 +452,3 @@ document.addEventListener("keydown", function(e){
     }
 
 });
-
-    startHeroSlideshow();
-
-}
