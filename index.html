@@ -508,100 +508,233 @@ Creating opportunities for young people through innovative and sustainable progr
 
 <!-- ================= FEATURED PROJECTS ================= -->
 
-<section class="py-5 bg-light">
+<section id="projects" class="projects-section">
 
-<div class="container">
+    <div class="container">
 
-<div class="text-center mb-5">
+        <div class="text-center mb-5">
 
-<h6 class="text-success">
+            <span class="section-label">OUR WORK</span>
 
-OUR IMPACT
+            <h2 class="display-4 fw-bold">
+                Featured Projects
+            </h2>
 
-</h6>
+            <p class="lead">
+                Explore some of the projects and activities through which
+                UPYA creates positive change in our communities.
+            </p>
 
-<h2 class="display-5 fw-bold">
+        </div>
 
-Featured Projects
 
-</h2>
+        <div class="row g-4">
 
-</div>
 
-<div class="row g-4">
+            <!-- PROJECT 1 -->
 
-<div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
 
-<div class="card shadow border-0">
+                <div class="project-card">
 
-<img src="github/IMG_20251002_161248_415.jpg" class="card-img-top">
+                    <div class="project-image">
 
-<div class="card-body">
+                        <img src="images/project1.jpg"
+                             alt="Student Mentorship">
 
-<h4>Youth Mentorship</h4>
+                    </div>
 
-<p>
+                    <div class="project-content">
 
-Empowering secondary school students through mentorship and career guidance.
+                        <span class="project-tag">
+                            MENTORSHIP
+                        </span>
 
-</p>
+                        <h3>
+                            Student Mentorship
+                        </h3>
 
-</div>
+                        <p>
+                            Mentorship, career guidance and personal
+                            development for students.
+                        </p>
 
-</div>
+                        <button
+                            type="button"
+                            class="project-btn"
+                            onclick="openProjectGallery('mentorship')">
 
-</div>
+                            View Project
 
-<div class="col-lg-4">
+                            <i class="fas fa-arrow-right"></i>
 
-<div class="card shadow border-0">
+                        </button>
 
-<img src="images/project2" class="card-img-top">
+                    </div>
 
-<div class="card-body">
+                </div>
 
-<h4>Community Football</h4>
+            </div>
 
-<p>
 
-Promoting peace and youth empowerment through sports tournaments.
+            <!-- PROJECT 2 -->
 
-</p>
+            <div class="col-lg-4 col-md-6">
 
-</div>
+                <div class="project-card">
 
-</div>
+                    <div class="project-image">
 
-</div>
+                        <img src="images/project2.jpg"
+                             alt="Community Football">
 
-<div class="col-lg-4">
+                    </div>
 
-<div class="card shadow border-0">
+                    <div class="project-content">
 
-<img src="images/project3.jpg" class="card-img-top">
+                        <span class="project-tag">
+                            SPORTS
+                        </span>
 
-<div class="card-body">
+                        <h3>
+                            Community Football
+                        </h3>
 
-<h4>Entrepreneurship Summit</h4>
+                        <p>
+                            Using sports to bring young people together,
+                            build teamwork and strengthen communities.
+                        </p>
 
-<p>
+                        <button
+                            type="button"
+                            class="project-btn"
+                            onclick="openProjectGallery('football')">
 
-Helping young people transform ideas into sustainable businesses.
+                            View Project
 
-</p>
+                            <i class="fas fa-arrow-right"></i>
 
-</div>
+                        </button>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        <img src="images/project3.jpg"
+                             alt="Community Outreach">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-tag">
+                            COMMUNITY
+                        </span>
+
+                        <h3>
+                            Community Outreach
+                        </h3>
+
+                        <p>
+                            Bringing young people together to serve and
+                            make a meaningful difference.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="project-btn"
+                            onclick="openProjectGallery('outreach')">
+
+                            View Project
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- ================= PROJECT GALLERY MODAL ================= -->
+
+<div id="projectGalleryModal" class="project-gallery-modal">
+
+    <div class="project-gallery-container">
+
+        <button
+            type="button"
+            class="gallery-close"
+            onclick="closeProjectGallery()">
+
+            &times;
+
+        </button>
+
+
+        <h2 id="projectGalleryTitle">
+            Project Gallery
+        </h2>
+
+        <p id="projectGalleryDescription"></p>
+
+
+        <div class="project-gallery-grid"
+             id="projectGalleryImages">
+
+        </div>
+
+
+        <div class="gallery-navigation">
+
+            <button
+                type="button"
+                onclick="previousProjectPhoto()">
+
+                <i class="fas fa-chevron-left"></i>
+                Previous
+
+            </button>
+
+
+            <span id="galleryCounter">
+                1 / 1
+            </span>
+
+
+            <button
+                type="button"
+                onclick="nextProjectPhoto()">
+
+                Next
+                <i class="fas fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 <!-- ================= UPCOMING EVENTS ================= -->
 
 <section id="events" class="events-section">
