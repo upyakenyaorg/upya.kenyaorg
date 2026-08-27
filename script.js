@@ -452,3 +452,224 @@ document.addEventListener("keydown", function(e){
     }
 
 });
+// ===============================
+// PROJECT GALLERIES
+// ===============================
+
+const projectGalleries = {
+
+    mentorship: {
+
+        title: "Student Mentorship — Nyamgun Secondary",
+
+        description: "October 2025 • Mentorship, career guidance and personal development.",
+
+        images: [
+            "images/mentorship1.jpg",
+            "images/mentorship2.jpg",
+            "images/mentorship3.jpg",
+            "images/mentorship4.jpg",
+            "images/mentorship5.jpg",
+            "images/mentorship6.jpg"
+        ]
+
+    },
+
+
+    football: {
+
+        title: "Community Football",
+
+        description: "Youth sports, teamwork and community engagement.",
+
+        images: [
+            "images/football1.jpg",
+            "images/football2.jpg",
+            "images/football3.jpg",
+            "images/football4.jpg",
+            "images/football5.jpg"
+        ]
+
+    },
+
+
+    outreach: {
+
+        title: "Community Outreach",
+
+        description: "UPYA community service and outreach activities.",
+
+        images: [
+            "images/outreach1.jpg",
+            "images/outreach2.jpg",
+            "images/outreach3.jpg",
+            "images/outreach4.jpg"
+        ]
+
+    }
+
+};
+
+
+let currentProject = null;
+let currentPhoto = 0;
+
+
+function openProjectGallery(project){
+
+    const data = projectGalleries[project];
+
+    if(!data) return;
+
+    currentProject = data;
+
+    currentPhoto = 0;
+
+    document.getElementById("projectGalleryTitle").textContent =
+        data.title;
+
+    document.getElementById("projectGalleryDescription").textContent =
+        data.description;
+
+    const gallery =
+        document.getElementById("projectGalleryImages");
+
+    gallery.innerHTML = "";
+
+    data.images.forEach((image,index)=>{
+
+        const img = document.createElement("img");
+
+        img.src = image;
+
+        img.alt = data.title + " photo " + (index + 1);
+
+        img.onclick = function(){
+
+            currentPhoto = index;
+
+            showProjectPhoto();
+
+        };
+
+        gallery.appendChild(img);
+
+    });
+
+
+    document
+        .getElementById("projectGalleryModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    updateGalleryCounter();
+
+}
+
+
+function closeProjectGallery(){
+
+    document
+        .getElementById("projectGalleryModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function showProjectPhoto(){
+
+    const images =
+        document.querySelectorAll("#projectGalleryImages img");
+
+    if(images.length === 0) return;
+
+    images[currentPhoto].scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+    });
+
+    updateGalleryCounter();
+
+}
+
+
+function nextProjectPhoto(){
+
+    if(!currentProject) return;
+
+    currentPhoto++;
+
+    if(currentPhoto >= currentProject.images.length){
+
+        currentPhoto = 0;
+
+    }
+
+    showProjectPhoto();
+
+}
+
+
+function previousProjectPhoto(){
+
+    if(!currentProject) return;
+
+    currentPhoto--;
+
+    if(currentPhoto < 0){
+
+        currentPhoto =
+            currentProject.images.length - 1;
+
+    }
+
+    showProjectPhoto();
+
+}
+
+
+function updateGalleryCounter(){
+
+    if(!currentProject) return;
+
+    document.getElementById("galleryCounter").textContent =
+
+        (currentPhoto + 1) +
+        " / " +
+        currentProject.images.length;
+
+}
+
+
+// Close by clicking outside
+
+document
+    .getElementById("projectGalleryModal")
+    .addEventListener("click",function(e){
+
+        if(e.target === this){
+
+            closeProjectGallery();
+
+        }
+
+    });
+
+
+// ESC key
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+
+        closeProjectGallery();
+
+    }
+
+});
