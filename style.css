@@ -1,1 +1,458 @@
+/* ==============================
+   UPYA WEBSITE
+   GLOBAL STYLES
+================================ */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#0f172a;
+
+    background:#ffffff;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:9999;
+
+    background:rgba(5,20,40,.88);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
+
+}
+
+.nav-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    height:78px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+/* LOGO */
+
+.logo img{
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.nav-links a{
+
+    color:#ffffff;
+
+    padding:10px 13px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#FFD700;
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+/* MENU BUTTON */
+
+.menu-toggle{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        120px 20px
+        80px;
+
+    background-image:
+        url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:#ffffff;
+
+}
+
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5,20,40,.90),
+            rgba(15,76,129,.70),
+            rgba(5,20,40,.78)
+        );
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+}
+
+
+.hero-small{
+
+    display:inline-block;
+
+    color:#FFD700;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:22px;
+
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(42px,7vw,82px);
+
+    line-height:1.02;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero p{
+
+    max-width:700px;
+
+    margin:
+        0 auto 35px;
+
+    font-size:
+        clamp(17px,2vw,21px);
+
+    line-height:1.7;
+
+    color:#e2e8f0;
+
+}
+
+
+/* BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.btn-primary{
+
+    background:#FFD700;
+
+    color:#111827;
+
+}
+
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(255,215,0,.25);
+
+}
+
+
+.btn-outline{
+
+    border:
+        1px solid
+        rgba(255,255,255,.6);
+
+    color:#ffffff;
+
+}
+
+
+.btn-outline:hover{
+
+    background:#ffffff;
+
+    color:#0F4C81;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* SCROLL */
+
+.hero-scroll{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#cbd5e1;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+}
+
+.hero-scroll i{
+
+    color:#FFD700;
+
+    animation:
+        scrollDown 1.5s
+        infinite;
+
+}
+
+
+@keyframes scrollDown{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(7px);
+    }
+
+}
+
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media(max-width:850px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+
+        left:15px;
+
+        right:15px;
+
+        padding:15px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        background:
+            rgba(5,20,40,.97);
+
+        border-radius:12px;
+
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .logo img{
+        width:55px;
+        height:55px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-small{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+}
