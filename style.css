@@ -456,3 +456,25 @@ a{
     }
 
 }
+/* =========================
+   SCROLLING NAVBAR EFFECT
+========================= */
+
+.navbar {
+    transition: all 0.35s ease;
+}
+
+/* Navbar after scrolling */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(12px);
+}
+
+.navbar.scrolled .nav-links a {
+    color: #051428;
+}
+
+.navbar.scrolled .nav-links a:hover {
+    color: #0F4C81;
+}
