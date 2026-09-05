@@ -1,103 +1,54 @@
-/* ==================================================
-   UPYA NAVBAR + HERO JAVASCRIPT
-================================================== */
+/* =====================================================
+   UPYA WEBSITE JAVASCRIPT
+===================================================== */
 
-
-/* ==================================================
-   NAVBAR SCROLL EFFECT
-================================================== */
-
-const navbar = document.getElementById("navbar");
-
-function updateNavbar() {
-
-    if (window.scrollY <= 30) {
-
-        navbar.classList.remove("scrolled");
-        navbar.classList.add("top");
-
-    } else {
-
-        navbar.classList.add("scrolled");
-        navbar.classList.remove("top");
-
-    }
-}
-
-window.addEventListener("scroll", updateNavbar);
-
-updateNavbar();
-
-
-/* ==================================================
-   MOBILE MENU
-================================================== */
-
+const siteHeader = document.getElementById("siteHeader");
 const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", function () {
 
-    navLinks.classList.toggle("active");
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-    const icon = menuToggle.querySelector("i");
+menuToggle.addEventListener("click", () => {
 
-    if (navLinks.classList.contains("active")) {
+    navLinks.classList.toggle("show");
 
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
+    menuToggle.classList.toggle("active");
+
+});
+
+
+/* =====================================================
+   HEADER SCROLL EFFECT
+===================================================== */
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+        siteHeader.classList.add("scrolled");
 
     } else {
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+        siteHeader.classList.remove("scrolled");
 
     }
 
 });
 
 
-/* Close menu after clicking a link */
+/* =====================================================
+   CLOSE MOBILE MENU WHEN LINK IS CLICKED
+===================================================== */
 
 document.querySelectorAll(".nav-links a").forEach(link => {
 
-    link.addEventListener("click", function () {
+    link.addEventListener("click", () => {
 
-        navLinks.classList.remove("active");
-
-        const icon = menuToggle.querySelector("i");
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+        navLinks.classList.remove("show");
 
     });
 
 });
-
-
-/* ==================================================
-   HERO IMAGE SLIDESHOW
-================================================== */
-
-const heroSlides = document.querySelectorAll(".hero-slide");
-
-let currentSlide = 0;
-
-
-function nextHeroSlide() {
-
-    heroSlides[currentSlide].classList.remove("active");
-
-    currentSlide++;
-
-    if (currentSlide >= heroSlides.length) {
-        currentSlide = 0;
-    }
-
-    heroSlides[currentSlide].classList.add("active");
-}
-
-
-/* Change image every 6 seconds */
-
-setInterval(nextHeroSlide, 6000);
