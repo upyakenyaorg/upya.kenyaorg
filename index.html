@@ -6,14 +6,158 @@
 
     <title>UPYA | Uwezo Pamoja Youths Association</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- WEBSITE CONTENT WILL GO HERE -->
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" id="siteHeader">
+
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <div class="logo-circle">
+                    <img src="images/logo.png" alt="UPYA Logo">
+                </div>
+
+                <div class="logo-text">
+                    <span>UPYA</span>
+                    <small>Uwezo Pamoja Youths Association</small>
+                </div>
+            </a>
 
 
+            <!-- DESKTOP NAVIGATION -->
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html" class="active">
+                        <i class="fas fa-house"></i>
+                        Home
+                    </a>
+                </li>
+
+                <!-- ABOUT -->
+                <li class="dropdown">
+                    <a href="about.html">
+                        About
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#who-we-are">Who We Are</a></li>
+                        <li><a href="about.html#our-story">Our Story</a></li>
+                        <li><a href="about.html#mission">Mission</a></li>
+                        <li><a href="about.html#vision">Vision</a></li>
+                        <li><a href="about.html#values">Core Values</a></li>
+                        <li><a href="about.html#objectives">Objectives</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                    </ul>
+                </li>
+
+
+                <!-- PROGRAMS -->
+                <li class="dropdown">
+                    <a href="programs.html">
+                        Programs
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="programs.html#youth">Youth Empowerment</a></li>
+                        <li><a href="programs.html#education">Education & Mentorship</a></li>
+                        <li><a href="programs.html#health">Health & Wellbeing</a></li>
+                        <li><a href="programs.html#gbv">GBV Awareness</a></li>
+                        <li><a href="programs.html#environment">Environment & Climate</a></li>
+                        <li><a href="programs.html#economic">Economic Empowerment</a></li>
+                        <li><a href="programs.html#community">Community Development</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="impact.html">Impact</a>
+                </li>
+
+                <li>
+                    <a href="events.html">Events</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+
+                <li>
+                    <a href="get-involved.html">Get Involved</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+
+        <!-- COLOURFUL TOP LINE -->
+        <div class="header-colour-line">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- Temporary content -->
+        <section class="starter-section">
+            <h1>Welcome to <span>UPYA</span></h1>
+
+            <p>
+                Uwezo Pamoja Youths Association
+            </p>
+
+            <p>
+                To empower, equip, mentor and nurture tomorrow's world.
+            </p>
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
     <script src="js/script.js"></script>
 
 </body>
