@@ -1,69 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>UPYA — Uwezo Pamoja Youths Association</title>
 
-    <title>UPYA | Uwezo Pamoja Youths Association</title>
-
-    <link rel="stylesheet"
-          href="style.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
 <!-- ================= NAVBAR ================= -->
 
-<header class="navbar">
+<header class="navbar" id="navbar">
 
     <div class="nav-container">
 
         <a href="#home" class="logo">
-
-            <img src="images/upya-logo.png"
-                 alt="UPYA Logo">
-
+            <img src="images/upya-logo.png" alt="UPYA Logo">
         </a>
 
-
-        <nav class="nav-links">
+        <nav class="nav-links" id="navLinks">
 
             <a href="#home">Home</a>
-
             <a href="#about">About</a>
-
             <a href="#programs">Programs</a>
-
             <a href="#projects">Projects</a>
-
             <a href="#events">Events</a>
-
             <a href="#gallery">Gallery</a>
-
             <a href="#membership">Membership</a>
-
             <a href="#contact">Contact</a>
+
+            <a href="#membership" class="nav-join">
+                Join UPYA
+            </a>
 
         </nav>
 
-
-        <button class="menu-toggle"
-                onclick="toggleMenu()"
-                aria-label="Open navigation">
-
+        <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
-
         </button>
 
     </div>
@@ -71,49 +50,67 @@
 </header>
 
 
-
 <!-- ================= HERO ================= -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
+    <!-- Background slideshow -->
+    <div class="hero-slides">
+
+        <div class="hero-slide active"
+             style="background-image: url('images/hero1.jpg');">
+        </div>
+
+        <div class="hero-slide"
+             style="background-image: url('images/hero2.jpg');">
+        </div>
+
+        <div class="hero-slide"
+             style="background-image: url('images/hero3.jpg');">
+        </div>
+
+        <div class="hero-slide"
+             style="background-image: url('images/hero4.jpg');">
+        </div>
+
+    </div>
+
+    <!-- Dark overlay -->
     <div class="hero-overlay"></div>
 
 
+    <!-- Floating Logo -->
+    <div class="floating-logo">
+        <img src="images/upya-logo.png" alt="UPYA">
+    </div>
+
+
+    <!-- Hero Content -->
     <div class="hero-content">
 
-        <span class="hero-small">
+        <span class="hero-label">
             UWEZO PAMOJA YOUTHS ASSOCIATION
         </span>
 
-
         <h1>
             Empowering Youth.<br>
-            Transforming Communities.
+            <span>Transforming Communities.</span>
         </h1>
-
 
         <p>
             To empower, equip, mentor and nurture tomorrow's world.
         </p>
 
-
         <div class="hero-buttons">
 
-            <a href="#about"
-               class="btn btn-primary">
-
+            <a href="#about" class="btn btn-primary">
                 Discover UPYA
-
                 <i class="fas fa-arrow-right"></i>
-
             </a>
 
-
-            <a href="#membership"
-               class="btn btn-outline">
-
+            <a href="#membership" class="btn btn-outline">
                 Join Us
-
+                <i class="fas fa-users"></i>
             </a>
 
         </div>
@@ -121,9 +118,10 @@
     </div>
 
 
-    <div class="hero-scroll">
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
 
-        <span>Scroll to explore</span>
+        <span>SCROLL TO EXPLORE</span>
 
         <i class="fas fa-chevron-down"></i>
 
@@ -132,9 +130,7 @@
 </section>
 
 
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
