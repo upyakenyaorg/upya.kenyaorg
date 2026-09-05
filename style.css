@@ -1,480 +1,741 @@
-/* ==============================
-   UPYA WEBSITE
-   GLOBAL STYLES
-================================ */
+/* ==================================================
+   UPYA WEBSITE — NAVBAR + HERO
+================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    color:#0f172a;
-
-    background:#ffffff;
-}
-
-a{
-    text-decoration:none;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111827;
+    background: #ffffff;
 }
 
 
-
-/* ==============================
+/* ==================================================
    NAVBAR
-================================ */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
-
-    z-index:9999;
-
-    background:rgba(5,20,40,.88);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.1);
-
-}
-
-.nav-container{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    height:78px;
-
-    padding:0 25px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-/* LOGO */
-
-.logo img{
-
-    width:65px;
-
-    height:65px;
-
-    object-fit:contain;
-
-}
-
-
-/* NAV LINKS */
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-.nav-links a{
-
-    color:#ffffff;
-
-    padding:10px 13px;
-
-    border-radius:8px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.nav-links a:hover{
-
-    color:#FFD700;
-
-    background:
-        rgba(255,255,255,.08);
-
-}
-
-
-/* MENU BUTTON */
-
-.menu-toggle{
-
-    display:none;
-
-    border:none;
-
-    background:none;
-
-    color:#ffffff;
-
-    font-size:24px;
-
-    cursor:pointer;
-
-}
-
-
-
-/* ==============================
-   HERO
-================================ */
-
-.hero{
-
-    min-height:100vh;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:
-        120px 20px
-        80px;
-
-    background-image:
-        url("images/hero.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    color:#ffffff;
-
-}
-
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(5,20,40,.90),
-            rgba(15,76,129,.70),
-            rgba(5,20,40,.78)
-        );
-
-}
-
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:900px;
-
-}
-
-
-.hero-small{
-
-    display:inline-block;
-
-    color:#FFD700;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-    margin-bottom:22px;
-
-}
-
-
-.hero h1{
-
-    font-size:
-        clamp(42px,7vw,82px);
-
-    line-height:1.02;
-
-    font-weight:800;
-
-    margin-bottom:25px;
-
-}
-
-
-.hero p{
-
-    max-width:700px;
-
-    margin:
-        0 auto 35px;
-
-    font-size:
-        clamp(17px,2vw,21px);
-
-    line-height:1.7;
-
-    color:#e2e8f0;
-
-}
-
-
-/* BUTTONS */
-
-.hero-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:14px 25px;
-
-    border-radius:50px;
-
-    font-weight:700;
-
-    transition:.3s;
-
-}
-
-
-.btn-primary{
-
-    background:#FFD700;
-
-    color:#111827;
-
-}
-
-
-.btn-primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 12px 30px
-        rgba(255,215,0,.25);
-
-}
-
-
-.btn-outline{
-
-    border:
-        1px solid
-        rgba(255,255,255,.6);
-
-    color:#ffffff;
-
-}
-
-
-.btn-outline:hover{
-
-    background:#ffffff;
-
-    color:#0F4C81;
-
-    transform:translateY(-4px);
-
-}
-
-
-
-/* SCROLL */
-
-.hero-scroll{
-
-    position:absolute;
-
-    bottom:25px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    z-index:2;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:8px;
-
-    color:#cbd5e1;
-
-    font-size:12px;
-
-    letter-spacing:1px;
-
-}
-
-.hero-scroll i{
-
-    color:#FFD700;
-
-    animation:
-        scrollDown 1.5s
-        infinite;
-
-}
-
-
-@keyframes scrollDown{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(7px);
-    }
-
-}
-
-
-
-/* ==============================
-   MOBILE
-================================ */
-
-@media(max-width:850px){
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .nav-links{
-
-        display:none;
-
-        position:absolute;
-
-        top:78px;
-
-        left:15px;
-
-        right:15px;
-
-        padding:15px;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        background:
-            rgba(5,20,40,.97);
-
-        border-radius:12px;
-
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-        text-align:center;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-}
-
-
-@media(max-width:500px){
-
-    .logo img{
-        width:55px;
-        height:55px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .hero-small{
-        font-size:11px;
-        letter-spacing:2px;
-    }
-
-}
-/* =========================
-   SCROLLING NAVBAR EFFECT
-========================= */
+================================================== */
 
 .navbar {
-    transition: all 0.35s ease;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    z-index: 1000;
 
-/* Navbar after scrolling */
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.97);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+    background: rgba(5, 20, 40, 0.92);
+
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.45s ease,
+        height 0.45s ease,
+        box-shadow 0.45s ease,
+        transform 0.45s ease;
 }
 
-.navbar.scrolled .nav-links a {
+
+/* Navbar when scrolling down */
+
+.navbar.scrolled {
+    background: rgba(5, 20, 40, 0.35);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    height: 70px;
+
+    box-shadow: none;
+}
+
+
+/* Navbar at top */
+
+.navbar.top {
+    background: rgba(5, 20, 40, 0.92);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.nav-container {
+    width: 92%;
+    max-width: 1400px;
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 1002;
+}
+
+.logo img {
+    width: 72px;
+    height: 72px;
+
+    object-fit: contain;
+
+    transition:
+        width 0.4s ease,
+        height 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* Smaller navbar logo when scrolling */
+
+.navbar.scrolled .logo img {
+    width: 58px;
+    height: 58px;
+}
+
+
+/* ==================================================
+   NAV LINKS
+================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.nav-links a:not(.nav-join)::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #FFD700;
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Join button */
+
+.nav-join {
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    background: #FFD700;
+
+    color: #051428 !important;
+
+    font-weight: 700 !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.nav-join:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 215, 0, 0.25);
+}
+
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 1002;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+
+/* ==================================================
+   HERO SLIDES
+================================================== */
+
+.hero-slides {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+
+.hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.5s ease-in-out,
+        transform 7s ease;
+
+}
+
+
+.hero-slide.active {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* ==================================================
+   HERO OVERLAY
+================================================== */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 15, 30, 0.92) 0%,
+            rgba(3, 15, 30, 0.70) 45%,
+            rgba(3, 15, 30, 0.35) 100%
+        );
+}
+
+
+/* ==================================================
+   FLOATING LOGO
+================================================== */
+
+.floating-logo {
+
+    position: absolute;
+
+    top: 125px;
+    right: 9%;
+
+    z-index: 3;
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: floatingLogo 4s ease-in-out infinite;
+}
+
+
+.floating-logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border: 1px solid rgba(255, 215, 0, 0.55);
+
+    border-radius: 50%;
+
+    animation: rotateRing 12s linear infinite;
+}
+
+
+.floating-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 10px 25px rgba(0,0,0,0.35));
+}
+
+
+@keyframes floatingLogo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+@keyframes rotateRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================================================
+   HERO CONTENT
+================================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 92%;
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding-top: 80px;
+
+    animation: heroReveal 1.2s ease forwards;
+}
+
+
+.hero-label {
+
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    padding: 8px 15px;
+
+    border-left: 3px solid #FFD700;
+
+    background: rgba(255,255,255,0.08);
+
+    color: #FFD700;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+
+    max-width: 850px;
+
+    font-size: clamp(48px, 6vw, 88px);
+
+    line-height: 1.03;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+
+    color: #FFD700;
+}
+
+
+.hero p {
+
+    max-width: 650px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.88);
+
+    margin-bottom: 35px;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.btn-primary {
+
+    background: #FFD700;
+
     color: #051428;
 }
 
-.navbar.scrolled .nav-links a:hover {
-    color: #0F4C81;
+
+.btn-primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(255,215,0,0.25);
+}
+
+
+.btn-outline {
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    color: white;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(5px);
+}
+
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: #051428;
+
+    transform: translateY(-4px);
+}
+
+
+/* ==================================================
+   SCROLL INDICATOR
+================================================== */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+    left: 4%;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.scroll-indicator i {
+
+    color: #FFD700;
+
+    animation: scrollArrow 1.5s infinite;
+}
+
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* ==================================================
+   HERO ANIMATION
+================================================== */
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: 280px;
+        height: 100vh;
+
+        background: #051428;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        padding: 40px;
+
+        gap: 25px;
+
+        transition: right 0.4s ease;
+
+        box-shadow:
+            -10px 0 40px rgba(0,0,0,0.3);
+    }
+
+
+    .nav-links.active {
+        right: 0;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+
+    .floating-logo {
+
+        width: 90px;
+        height: 90px;
+
+        top: 110px;
+        right: 7%;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(42px, 10vw, 65px);
+    }
+
+
+    .hero p {
+        font-size: 17px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .navbar.scrolled .logo img {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .hero-content {
+
+        padding-top: 70px;
+    }
+
+
+    .floating-logo {
+
+        top: 95px;
+        right: 8%;
+
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+
+        max-width: 90%;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .scroll-indicator {
+
+        bottom: 20px;
+
+        font-size: 8px;
+    }
 }
