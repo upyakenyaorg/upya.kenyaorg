@@ -1,42 +1,103 @@
-/* ==============================
-   UPYA NAVIGATION
-================================ */
+/* ==================================================
+   UPYA NAVBAR + HERO JAVASCRIPT
+================================================== */
 
-function toggleMenu(){
 
-    const nav =
-        document.querySelector(".nav-links");
+/* ==================================================
+   NAVBAR SCROLL EFFECT
+================================================== */
 
-    nav.classList.toggle("active");
+const navbar = document.getElementById("navbar");
 
+function updateNavbar() {
+
+    if (window.scrollY <= 30) {
+
+        navbar.classList.remove("scrolled");
+        navbar.classList.add("top");
+
+    } else {
+
+        navbar.classList.add("scrolled");
+        navbar.classList.remove("top");
+
+    }
+}
+
+window.addEventListener("scroll", updateNavbar);
+
+updateNavbar();
+
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+
+    } else {
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* Close menu after clicking a link */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* ==================================================
+   HERO IMAGE SLIDESHOW
+================================================== */
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+let currentSlide = 0;
+
+
+function nextHeroSlide() {
+
+    heroSlides[currentSlide].classList.remove("active");
+
+    currentSlide++;
+
+    if (currentSlide >= heroSlides.length) {
+        currentSlide = 0;
+    }
+
+    heroSlides[currentSlide].classList.add("active");
 }
 
 
-/* Close mobile menu after clicking */
+/* Change image every 6 seconds */
 
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(function(link){
-
-        link.addEventListener("click",function(){
-
-            document
-                .querySelector(".nav-links")
-                .classList.remove("active");
-
-        });
-
-    });
-/* =========================
-   NAVBAR SCROLL EFFECT
-========================= */
-
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
+setInterval(nextHeroSlide, 6000);
