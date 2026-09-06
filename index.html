@@ -9,6 +9,10 @@
 
     <style>
 
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -21,19 +25,28 @@
             color: #172033;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+
             background: white;
+
             z-index: 1000;
+
             box-shadow: 0 4px 20px rgba(0,0,0,0.10);
         }
 
-        /* NAVBAR */
+
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             height: 80px;
@@ -45,7 +58,10 @@
             padding: 0 4%;
         }
 
-        /* LOGO */
+
+        /* =========================
+           LOGO
+        ========================= */
 
         .logo {
             display: flex;
@@ -90,17 +106,27 @@
             color: #555;
         }
 
-        /* NAVIGATION */
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         .nav-links {
             display: flex;
+
             align-items: center;
 
             list-style: none;
         }
 
-        .nav-links li a {
-            display: block;
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links > li > a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
 
             padding: 30px 10px;
 
@@ -114,20 +140,97 @@
             transition: 0.3s;
         }
 
-        .nav-links li a:hover {
+        .nav-links > li > a:hover {
             color: #1e40af;
             background: #eef4ff;
         }
 
-        .nav-links li a.active {
+        .nav-links > li > a.active {
             color: #1e40af;
         }
 
-        /* COLOURFUL LINE */
+
+        /* =========================
+           DROPDOWN
+        ========================= */
+
+        .dropdown-menu {
+            position: absolute;
+
+            top: 80px;
+            left: 0;
+
+            width: 240px;
+
+            background: white;
+
+            list-style: none;
+
+            border-top: 4px solid #ffd700;
+
+            border-radius: 0 0 12px 12px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(10px);
+
+            transition: all 0.3s ease;
+        }
+
+
+        /* SHOW DROPDOWN */
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        /* DROPDOWN LINKS */
+
+        .dropdown-menu li a {
+            display: block;
+
+            padding: 13px 18px;
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-size: 12px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            transition: 0.25s;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #eef4ff;
+
+            color: #1e40af;
+
+            padding-left: 25px;
+        }
+
+
+        /* =========================
+           COLOURFUL LINE
+        ========================= */
 
         .colour-line {
-            display: flex;
             height: 5px;
+
+            display: flex;
         }
 
         .colour-line span:nth-child(1) {
@@ -150,15 +253,20 @@
             background: #f97316;
         }
 
-        /* HOME */
+
+        /* =========================
+           HOME
+        ========================= */
 
         .home {
             min-height: 100vh;
 
-            padding-top: 100px;
+            padding-top: 85px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
@@ -173,7 +281,7 @@
         }
 
         .home h1 {
-            font-size: 70px;
+            font-size: clamp(45px, 8vw, 90px);
 
             color: #1e40af;
         }
@@ -202,11 +310,15 @@
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
         <nav>
+
 
             <!-- LOGO -->
 
@@ -229,9 +341,14 @@
             </a>
 
 
-            <!-- NAVIGATION -->
+            <!-- =========================
+                 NAVIGATION
+            ========================= -->
 
             <ul class="nav-links">
+
+
+                <!-- HOME -->
 
                 <li>
                     <a href="index.html" class="active">
@@ -239,17 +356,128 @@
                     </a>
                 </li>
 
-                <li>
+
+                <!-- =========================
+                     ABOUT DROPDOWN
+                ========================= -->
+
+                <li class="dropdown">
+
                     <a href="#">
                         ABOUT
+                        <span>▼</span>
                     </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="#">
+                                Who We Are
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Our Story
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Mission
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Vision
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Core Values
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Objectives
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Leadership
+                            </a>
+                        </li>
+
+                    </ul>
+
                 </li>
 
-                <li>
+
+                <!-- =========================
+                     PROGRAMS DROPDOWN
+                ========================= -->
+
+                <li class="dropdown">
+
                     <a href="#">
                         PROGRAMS
+                        <span>▼</span>
                     </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="#">
+                                Youth Empowerment
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Education & Mentorship
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Health & Wellbeing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                GBV Awareness
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Environment & Climate Action
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Economic Empowerment
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Community Development
+                            </a>
+                        </li>
+
+                    </ul>
+
                 </li>
+
+
+                <!-- OTHER NAVIGATION -->
 
                 <li>
                     <a href="#">
@@ -293,6 +521,7 @@
                     </a>
                 </li>
 
+
             </ul>
 
         </nav>
@@ -312,7 +541,9 @@
     </header>
 
 
-    <!-- HOME -->
+    <!-- =========================
+         HOME
+    ========================= -->
 
     <main>
 
@@ -337,6 +568,7 @@
         </section>
 
     </main>
+
 
 </body>
 
