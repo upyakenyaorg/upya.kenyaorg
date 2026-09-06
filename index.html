@@ -1,164 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>UPYA | Uwezo Pamoja Youths Association</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 4%;
+        }
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #1e40af;
+
+            border: 4px solid #ffd700;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo-name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name strong {
+            font-size: 24px;
+            color: #1e40af;
+        }
+
+        .logo-name small {
+            font-size: 8px;
+            color: #555;
+        }
+
+        /* NAVIGATION */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+
+            padding: 30px 10px;
+
+            text-decoration: none;
+
+            color: #172033;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #1e40af;
+            background: #eef4ff;
+        }
+
+        .nav-links li a.active {
+            color: #1e40af;
+        }
+
+        /* COLOURFUL LINE */
+
+        .colour-line {
+            display: flex;
+            height: 5px;
+        }
+
+        .colour-line span:nth-child(1) {
+            flex: 1;
+            background: #1e40af;
+        }
+
+        .colour-line span:nth-child(2) {
+            flex: 1;
+            background: #ffd700;
+        }
+
+        .colour-line span:nth-child(3) {
+            flex: 1;
+            background: #16a34a;
+        }
+
+        .colour-line span:nth-child(4) {
+            flex: 1;
+            background: #f97316;
+        }
+
+        /* HOME */
+
+        .home {
+            min-height: 100vh;
+
+            padding-top: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf2ff,
+                    #ffffff,
+                    #fff8d9
+                );
+        }
+
+        .home h1 {
+            font-size: 70px;
+
+            color: #1e40af;
+        }
+
+        .home h1 span {
+            color: #d6a900;
+        }
+
+        .home p {
+            margin-top: 15px;
+
+            font-size: 18px;
+
+            color: #555;
+        }
+
+        .tagline {
+            color: #1e40af !important;
+
+            font-weight: bold;
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="site-header" id="siteHeader">
+    <!-- HEADER -->
 
-        <nav class="navbar">
+    <header>
+
+        <nav>
 
             <!-- LOGO -->
+
             <a href="index.html" class="logo">
+
                 <div class="logo-circle">
-                    <img src="images/logo.png" alt="UPYA Logo">
+                    UP
                 </div>
 
-                <div class="logo-text">
-                    <span>UPYA</span>
-                    <small>Uwezo Pamoja Youths Association</small>
+                <div class="logo-name">
+
+                    <strong>UPYA</strong>
+
+                    <small>
+                        UWEZO PAMOJA YOUTHS ASSOCIATION
+                    </small>
+
                 </div>
+
             </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
+            <!-- NAVIGATION -->
+
             <ul class="nav-links">
 
                 <li>
                     <a href="index.html" class="active">
-                        <i class="fas fa-house"></i>
-                        Home
+                        HOME
                     </a>
                 </li>
 
-                <!-- ABOUT -->
-                <li class="dropdown">
-                    <a href="about.html">
-                        About
-                        <i class="fas fa-chevron-down"></i>
+                <li>
+                    <a href="#">
+                        ABOUT
                     </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html#who-we-are">Who We Are</a></li>
-                        <li><a href="about.html#our-story">Our Story</a></li>
-                        <li><a href="about.html#mission">Mission</a></li>
-                        <li><a href="about.html#vision">Vision</a></li>
-                        <li><a href="about.html#values">Core Values</a></li>
-                        <li><a href="about.html#objectives">Objectives</a></li>
-                        <li><a href="leadership.html">Leadership</a></li>
-                    </ul>
                 </li>
 
-
-                <!-- PROGRAMS -->
-                <li class="dropdown">
-                    <a href="programs.html">
-                        Programs
-                        <i class="fas fa-chevron-down"></i>
+                <li>
+                    <a href="#">
+                        PROGRAMS
                     </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="programs.html#youth">Youth Empowerment</a></li>
-                        <li><a href="programs.html#education">Education & Mentorship</a></li>
-                        <li><a href="programs.html#health">Health & Wellbeing</a></li>
-                        <li><a href="programs.html#gbv">GBV Awareness</a></li>
-                        <li><a href="programs.html#environment">Environment & Climate</a></li>
-                        <li><a href="programs.html#economic">Economic Empowerment</a></li>
-                        <li><a href="programs.html#community">Community Development</a></li>
-                    </ul>
-                </li>
-
-
-                <li>
-                    <a href="projects.html">Projects</a>
                 </li>
 
                 <li>
-                    <a href="impact.html">Impact</a>
+                    <a href="#">
+                        PROJECTS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="events.html">Events</a>
+                    <a href="#">
+                        IMPACT
+                    </a>
                 </li>
 
                 <li>
-                    <a href="gallery.html">Gallery</a>
+                    <a href="#">
+                        EVENTS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="news.html">News</a>
+                    <a href="#">
+                        GALLERY
+                    </a>
                 </li>
 
                 <li>
-                    <a href="get-involved.html">Get Involved</a>
+                    <a href="#">
+                        NEWS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="#">
+                        GET INVOLVED
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        CONTACT
+                    </a>
                 </li>
 
             </ul>
 
-
-            <!-- MOBILE MENU BUTTON -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
         </nav>
 
 
-        <!-- COLOURFUL TOP LINE -->
-        <div class="header-colour-line">
+        <!-- COLOURFUL LINE -->
+
+        <div class="colour-line">
+
             <span></span>
             <span></span>
             <span></span>
             <span></span>
+
         </div>
 
     </header>
 
 
-    <!-- ================= MAIN ================= -->
+    <!-- HOME -->
+
     <main>
 
-        <!-- Temporary content -->
-        <section class="starter-section">
-            <h1>Welcome to <span>UPYA</span></h1>
+        <section class="home">
 
-            <p>
-                Uwezo Pamoja Youths Association
-            </p>
+            <div>
 
-            <p>
-                To empower, equip, mentor and nurture tomorrow's world.
-            </p>
+                <h1>
+                    Welcome to <span>UPYA</span>
+                </h1>
+
+                <p>
+                    Uwezo Pamoja Youths Association
+                </p>
+
+                <p class="tagline">
+                    To empower, equip, mentor and nurture tomorrow's world.
+                </p>
+
+            </div>
+
         </section>
 
     </main>
 
-
-    <!-- ================= JAVASCRIPT ================= -->
-    <script src="js/script.js"></script>
-
 </body>
+
 </html>
