@@ -1,1 +1,415 @@
+/* =====================================================
+   HERO SECTION
+===================================================== */
 
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+
+/* =====================================================
+   HERO BACKGROUND SLIDES
+===================================================== */
+
+.hero-slide {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    animation: heroSlides 20s infinite;
+}
+
+
+/* IMAGE 1 */
+
+.slide-one {
+    background-image:
+        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85");
+
+    animation-delay: 0s;
+}
+
+
+/* IMAGE 2 */
+
+.slide-two {
+    background-image:
+        url("https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=2000&q=85");
+
+    animation-delay: 5s;
+}
+
+
+/* IMAGE 3 */
+
+.slide-three {
+    background-image:
+        url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=2000&q=85");
+
+    animation-delay: 10s;
+}
+
+
+/* IMAGE 4 */
+
+.slide-four {
+    background-image:
+        url("https://images.unsplash.com/photo-1509099836639-18ba02c7f0b5?auto=format&fit=crop&w=2000&q=85");
+
+    animation-delay: 15s;
+}
+
+
+/* =====================================================
+   SLIDE ANIMATION
+===================================================== */
+
+@keyframes heroSlides {
+
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 22, 60, 0.90) 0%,
+            rgba(7, 22, 60, 0.65) 45%,
+            rgba(7, 22, 60, 0.25) 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin-top: 60px;
+}
+
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-left: 4px solid #ffd700;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #ffd700;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.hero-content h1 {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(42px, 6vw, 78px);
+
+    line-height: 1.05;
+
+    max-width: 850px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+
+.hero-content h1 span {
+    color: #ffd700;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.hero-content p {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.9);
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.btn span {
+    font-size: 20px;
+
+    line-height: 0;
+}
+
+
+/* PRIMARY */
+
+.btn-primary {
+    background: #ffd700;
+
+    color: #172033;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+}
+
+
+.btn-primary:hover {
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* OUTLINE */
+
+.btn-outline {
+    border: 2px solid white;
+
+    color: white;
+
+    background: rgba(255,255,255,0.05);
+}
+
+
+.btn-outline:hover {
+    background: white;
+
+    color: #1e40af;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.scroll-down {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 35px;
+
+    left: 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.scroll-down span {
+    width: 25px;
+
+    height: 40px;
+
+    border: 2px solid rgba(255,255,255,0.7);
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+
+.scroll-down span::after {
+    content: '';
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 8px;
+
+    border-radius: 5px;
+
+    background: #ffd700;
+
+    top: 7px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation: scrollWheel 1.5s infinite;
+}
+
+
+@keyframes scrollWheel {
+
+    0% {
+        top: 7px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 23px;
+        opacity: 0;
+    }
+
+}
+
+
+.scroll-down p {
+    margin: 0;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.75);
+}
+
+
+/* =====================================================
+   HERO DOTS
+===================================================== */
+
+.hero-dots {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 5%;
+
+    bottom: 40px;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.dot {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.5);
+
+    transition: all 0.3s ease;
+}
+
+
+.dot.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #ffd700;
+}
