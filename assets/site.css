@@ -20,7 +20,12 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
 .skip-link:focus { left: 1rem; top: 1rem; z-index: 100; padding: .7rem; background: var(--white); }
 
 .site-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 5vw; color: var(--white); background: var(--green); transition: .3s; }
-.site-header.is-scrolled { color: var(--deep-green); background: #fffffff0; box-shadow: 0 8px 24px #073b2f18; }
+.site-header.is-scrolled {
+  color: var(--white);
+  background: transparent;
+  box-shadow: none;
+  text-shadow: 0 1px 4px #073b2f;
+}
 .brand { display: flex; align-items: center; gap: .6rem; font-weight: 900; letter-spacing: .12em; text-decoration: none; }
 .brand span { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; color: var(--deep-green); background: var(--light-green); border-radius: 50%; font: 1.3rem Georgia, serif; }
 .main-navigation { display: flex; align-items: center; gap: 1.1rem; }
