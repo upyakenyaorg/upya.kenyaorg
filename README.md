@@ -2,7 +2,7 @@
 
 To activate the hero photographs, add three licensed UPYA images to `assets` with these exact filenames:
 
-- `hero-1.jpg`
+- `github/AK1A1634.jpg`
 - `hero-2.jpg`
 - `hero-3.jpg`
 
