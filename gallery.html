@@ -1,600 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Explore UPYA stories, photographs, videos and activities from across our programmes and community work."
-  >
-
-  <title>Gallery & Media | UPYA</title>
+  <meta name="description" content="Explore moments, activities and stories from Uwezo Pamoja Youths Association.">
+  <title>Gallery | UPYA</title>
 
   <link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
 
-  <!-- ==============================
-       CONSTANT HEADER
-       ============================== -->
+  <!-- HEADER -->
 
-  <header class="site-header"></header>
+  <header class="site-header">
+
+```
+<a class="brand" href="index.html">
+  <span>U</span>UPYA
+</a>
+
+<button
+  class="menu-button"
+  type="button"
+  aria-expanded="false"
+  aria-controls="main-navigation">
+  Menu
+</button>
+
+<nav id="main-navigation" class="main-navigation">
+
+  <a href="about.html">About</a>
+  <a href="programmes.html">Programmes</a>
+  <a href="projects.html">Projects</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="news.html">News</a>
+
+  <a class="button button-gold" href="get-involved.html">
+    Join UPYA
+  </a>
+
+</nav>
+```
+
+  </header>
+
+  <!-- GALLERY INTRO -->
+
+  <main>
+
+```
+<section class="section">
+
+  <div class="gallery-intro">
+
+    <p class="eyebrow dark">
+      UPYA Gallery
+    </p>
+
+    <h1>
+      Our people.<br>
+      Our moments.<br>
+      Our movement.
+    </h1>
+
+    <p>
+      A collection of moments from Uwezo Pamoja Youths Association —
+      capturing our programmes, community activities, leadership,
+      service and the young people who make UPYA possible.
+    </p>
+
+  </div>
 
 
-  <main id="main-content">
+  <!-- FILTERS -->
+  <div class="gallery-filters" aria-label="Gallery categories">
 
-    <!-- ==============================
-         GALLERY HERO
-         ============================== -->
+    <button class="gallery-filter active" data-filter="all">
+      All
+    </button>
 
-    <section class="section gallery-hero">
+    <button class="gallery-filter" data-filter="mentorship">
+      Mentorship
+    </button>
 
-      <div class="gallery-intro">
+    <button class="gallery-filter" data-filter="sport">
+      Sport
+    </button>
 
-        <p class="eyebrow dark">
-          UPYA Gallery & Media
-        </p>
+    <button class="gallery-filter" data-filter="environment">
+      Environment
+    </button>
 
-        <h1>
-          Stories in pictures.<br>
-          Moments in motion.
-        </h1>
+    <button class="gallery-filter" data-filter="enterprise">
+      Enterprise
+    </button>
 
-        <p>
-          Explore the people, activities and experiences behind
-          Uwezo Pamoja Youths Association. Every activity has a
-          story — and every story has moments worth remembering.
-        </p>
+    <button class="gallery-filter" data-filter="service">
+      Service
+    </button>
 
+    <button class="gallery-filter" data-filter="leadership">
+      Leadership
+    </button>
+
+  </div>
+
+
+  <!-- GALLERY -->
+  <div class="gallery-grid">
+
+
+    <!-- MENTORSHIP -->
+    <article
+      class="gallery-item"
+      data-category="mentorship"
+      data-caption="Youth mentorship and learning">
+
+      <img
+        src="assets/images/gallery/mentorship-1.jpg"
+        alt="UPYA youth mentorship activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Mentorship</strong>
+        <span>Youth learning and empowerment</span>
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- ==============================
-         FEATURED ACTIVITY
-         ============================== -->
+    <!-- SPORT -->
+    <article
+      class="gallery-item"
+      data-category="sport"
+      data-caption="UPYA community sports activity">
 
-    <section class="section featured-media">
+      <img
+        src="assets/images/gallery/sport-1.jpg"
+        alt="UPYA community sports activity"
+        loading="lazy">
 
-      <div class="section-heading">
-
-        <p class="eyebrow dark">
-          Featured activity
-        </p>
-
-        <h2>
-          From Ideas to Income
-        </h2>
-
+      <div class="gallery-caption">
+        <strong>Sport</strong>
+        <span>Building teamwork through sport</span>
       </div>
 
-
-      <article class="featured-media-card">
-
-        <div class="featured-media-image">
-
-          <img
-            src="github/IMG_20251002_174846_957.jpg"
-            alt="UPYA youth participating in From Ideas to Income"
-          >
-
-        </div>
-
-
-        <div class="featured-media-content">
-
-          <span class="news-category">
-            Entrepreneurship
-          </span>
-
-          <h2>
-            From Ideas to Income
-          </h2>
-
-          <p class="news-date">
-            23 May 2026 · Malela Village
-          </p>
-
-          <p>
-            Young people came together to explore entrepreneurship,
-            financial awareness, personal development and practical
-            ways of turning ideas into meaningful opportunities.
-          </p>
-
-          <div class="media-actions">
-
-            <a
-              class="button"
-              href="gallery/from-ideas-to-income.html"
-            >
-              View Gallery →
-            </a>
-
-            <a
-              class="news-read-more"
-              href="news/from-ideas-to-income.html"
-            >
-              Read the Story →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </section>
-
-
-    <!-- ==============================
-         ACTIVITY ALBUMS
-         ============================== -->
-
-    <section class="section">
-
-      <p class="eyebrow dark">
-        Activity albums
-      </p>
-
-      <h2>
-        Explore our activities
-      </h2>
-
-      <p class="gallery-section-intro">
-        Browse photographs and videos from UPYA activities.
-        Each album connects directly to the story behind the activity.
-      </p>
-
-
-      <div class="media-album-grid">
-
-
-        <!-- FROM IDEAS TO INCOME -->
-
-        <article class="media-album">
-
-          <a
-            href="gallery/from-ideas-to-income.html"
-            class="media-album-image"
-          >
-
-            <img
-              src="github/IMG_20251002_174846_957.jpg"
-              alt="From Ideas to Income activity"
-              loading="lazy"
-            >
-
-            <span class="media-count">
-              Photos + Videos
-            </span>
-
-          </a>
-
-
-          <div class="media-album-content">
-
-            <span class="news-category">
-              Entrepreneurship
-            </span>
-
-            <h3>
-              From Ideas to Income
-            </h3>
-
-            <p class="news-date">
-              23 May 2026 · Malela Village
-            </p>
-
-            <p>
-              Turning ideas, knowledge and ambition into practical
-              possibilities.
-            </p>
-
-            <div class="album-links">
-
-              <a href="gallery/from-ideas-to-income.html">
-                View Gallery →
-              </a>
-
-              <a href="news/from-ideas-to-income.html">
-                Read Story →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- COMMUNITY FOOTBALL -->
-
-        <article class="media-album">
-
-          <a
-            href="gallery/community-football-match.html"
-            class="media-album-image"
-          >
-
-            <img
-              src="github/AK1A5856.jpg"
-              alt="UPYA community football activity"
-              loading="lazy"
-            >
-
-            <span class="media-count">
-              Photos + Videos
-            </span>
-
-          </a>
-
-
-          <div class="media-album-content">
-
-            <span class="news-category">
-              Community
-            </span>
-
-            <h3>
-              Community Football Match
-            </h3>
-
-            <p class="news-date">
-              8 August 2026
-            </p>
-
-            <p>
-              Sport, friendship, mentorship and community connection
-              brought young people together.
-            </p>
-
-            <div class="album-links">
-
-              <a href="gallery/community-football-match.html">
-                View Gallery →
-              </a>
-
-              <a href="news/community-football-match.html">
-                Read Story →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- YOUTH MENTORSHIP -->
-
-        <article class="media-album">
-
-          <a
-            href="gallery/youth-mentorship-session.html"
-            class="media-album-image"
-          >
-
-            <img
-              src="github/IMG_20251002_174846_957.jpg"
-              alt="UPYA youth mentorship session"
-              loading="lazy"
-            >
-
-            <span class="media-count">
-              Photos + Videos
-            </span>
-
-          </a>
-
-
-          <div class="media-album-content">
-
-            <span class="news-category">
-              Mentorship
-            </span>
-
-            <h3>
-              Youth Mentorship Session
-            </h3>
-
-            <p class="news-date">
-              July 2026
-            </p>
-
-            <p>
-              Young people learning, sharing ideas and exploring
-              practical pathways for their future.
-            </p>
-
-            <div class="album-links">
-
-              <a href="gallery/youth-mentorship-session.html">
-                View Gallery →
-              </a>
-
-              <a href="news/youth-mentorship-session.html">
-                Read Story →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- TREE PLANTING -->
-
-        <article class="media-album">
-
-          <a
-            href="gallery/tree-planting-initiative.html"
-            class="media-album-image"
-          >
-
-            <img
-              src="github/AK1A1634.jpg"
-              alt="UPYA tree planting initiative"
-              loading="lazy"
-            >
-
-            <span class="media-count">
-              Photos + Videos
-            </span>
-
-          </a>
-
-
-          <div class="media-album-content">
-
-            <span class="news-category">
-              Environment
-            </span>
-
-            <h3>
-              Tree Planting Initiative
-            </h3>
-
-            <p class="news-date">
-              June 2026
-            </p>
-
-            <p>
-              Young people taking practical action for greener
-              and healthier communities.
-            </p>
-
-            <div class="album-links">
-
-              <a href="gallery/tree-planting-initiative.html">
-                View Gallery →
-              </a>
-
-              <a href="news/tree-planting-initiative.html">
-                Read Story →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
+    </article>
+
+
+    <!-- ENVIRONMENT -->
+    <article
+      class="gallery-item"
+      data-category="environment"
+      data-caption="UPYA environmental activity">
+
+      <img
+        src="assets/images/gallery/environment-1.jpg"
+        alt="UPYA environmental activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Environment</strong>
+        <span>Young people taking action for nature</span>
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- ==============================
-         VIDEO SECTION
-         ============================== -->
+    <!-- ENTERPRISE -->
+    <article
+      class="gallery-item"
+      data-category="enterprise"
+      data-caption="Youth entrepreneurship and enterprise">
 
-    <section class="section media-video-section">
+      <img
+        src="assets/images/gallery/enterprise-1.jpg"
+        alt="UPYA youth enterprise activity"
+        loading="lazy">
 
-      <div class="video-section-heading">
-
-        <p class="eyebrow dark">
-          UPYA on video
-        </p>
-
-        <h2>
-          See the movement in motion.
-        </h2>
-
-        <p>
-          Some moments are better experienced than described.
-          Watch videos from UPYA activities, events and community
-          engagements.
-        </p>
-
+      <div class="gallery-caption">
+        <strong>Enterprise</strong>
+        <span>Turning ideas into opportunities</span>
       </div>
 
-
-      <div class="video-placeholder-grid">
-
-        <article class="video-placeholder">
-
-          <div class="video-placeholder-icon">
-            ▶
-          </div>
-
-          <h3>
-            UPYA Activities
-          </h3>
-
-          <p>
-            Videos from our programmes and community activities
-            will appear here.
-          </p>
-
-          <a
-            href="https://www.youtube.com/@upyakenya"
-            target="_blank"
-            rel="noopener"
-          >
-            Visit UPYA on YouTube →
-          </a>
-
-        </article>
+    </article>
 
 
-        <article class="video-placeholder">
+    <!-- SERVICE -->
+    <article
+      class="gallery-item"
+      data-category="service"
+      data-caption="UPYA community service">
 
-          <div class="video-placeholder-icon">
-            ▶
-          </div>
+      <img
+        src="assets/images/gallery/service-1.jpg"
+        alt="UPYA community service activity"
+        loading="lazy">
 
-          <h3>
-            Event Highlights
-          </h3>
-
-          <p>
-            Follow our event highlights and stories as UPYA
-            continues to grow.
-          </p>
-
-          <a
-            href="https://www.youtube.com/@upyakenya"
-            target="_blank"
-            rel="noopener"
-          >
-            Watch More Videos →
-          </a>
-
-        </article>
-
+      <div class="gallery-caption">
+        <strong>Service</strong>
+        <span>Serving communities together</span>
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- ==============================
-         CATEGORIES
-         ============================== -->
+    <!-- LEADERSHIP -->
+    <article
+      class="gallery-item"
+      data-category="leadership"
+      data-caption="UPYA leadership and youth engagement">
 
-    <section class="section">
+      <img
+        src="assets/images/gallery/leadership-1.jpg"
+        alt="UPYA leadership activity"
+        loading="lazy">
 
-      <p class="eyebrow dark">
-        Explore by category
-      </p>
-
-      <h2>
-        Find the stories that interest you.
-      </h2>
-
-
-      <div
-        class="gallery-filters"
-        aria-label="Gallery categories"
-      >
-
-        <button
-          class="gallery-filter active"
-          type="button"
-          data-filter="all"
-        >
-          All
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="mentorship"
-        >
-          Mentorship
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="sport"
-        >
-          Sport
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="environment"
-        >
-          Environment
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="enterprise"
-        >
-          Enterprise
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="service"
-        >
-          Service
-        </button>
-
-        <button
-          class="gallery-filter"
-          type="button"
-          data-filter="leadership"
-        >
-          Leadership
-        </button>
-
+      <div class="gallery-caption">
+        <strong>Leadership</strong>
+        <span>Building the next generation of leaders</span>
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- ==============================
-         CALL TO ACTION
-         ============================== -->
+  </div>
 
-    <section class="section callout">
+</section>
 
-      <p class="eyebrow">
-        Be part of the story
-      </p>
 
-      <h2>
-        Your story can become part of ours.
-      </h2>
+<!-- CALL TO ACTION -->
+<section class="section callout">
 
-      <p>
-        Join UPYA in empowering young people and transforming
-        communities into centres of lasting positive change.
-      </p>
+  <p class="eyebrow">
+    Be part of the movement
+  </p>
 
-      <a
-        class="button button-gold"
-        href="get-involved.html"
-      >
-        Get Involved
-      </a>
+  <h2>
+    Your story can become part of ours.
+  </h2>
 
-    </section>
+  <p>
+    Join UPYA in empowering young people and transforming
+    communities into centres of lasting positive change.
+  </p>
+
+  <a class="button button-gold" href="get-involved.html">
+    Get Involved
+  </a>
+
+</section>
+```
 
   </main>
 
+  <!-- LIGHTBOX -->
 
-  <!-- ==============================
-       CONSTANT FOOTER
-       ============================== -->
+  <div
+    class="gallery-lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Gallery image viewer">
 
-  <footer></footer>
+```
+<div class="lightbox-content">
 
+  <button
+    class="lightbox-close"
+    type="button"
+    aria-label="Close gallery">
+    ×
+  </button>
 
-  <!-- ==============================
-       UPYA JAVASCRIPT
-       ============================== -->
+  <button
+    class="lightbox-prev"
+    type="button"
+    aria-label="Previous image">
+    ‹
+  </button>
+
+  <img
+    class="lightbox-image"
+    src=""
+    alt="">
+
+  <button
+    class="lightbox-next"
+    type="button"
+    aria-label="Next image">
+    ›
+  </button>
+
+  <div class="lightbox-caption"></div>
+
+</div>
+```
+
+  </div>
+
+  <!-- JAVASCRIPT -->
 
   <script src="assets/site.js"></script>
 
