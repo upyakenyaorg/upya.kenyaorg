@@ -1,28 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Events | UPYA</title>
-    <link rel="stylesheet" href="assets/site.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html"><span>U</span>UPYA</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-      <nav id="main-navigation" class="main-navigation">
-        <a href="about.html">About</a><a href="programmes.html">Programmes</a><a href="projects.html">Projects</a><a href="gallery.html">Gallery</a><a href="leadership.html">Leadership</a><a href="news.html">News</a><a class="button button-gold" href="get-involved.html">Join UPYA</a>
-      </nav>
-    </header>
-    <main class="section">
-      <p class="eyebrow dark">News & events</p>
-      <h1>See what is happening and where to join in.</h1>
-      <div class="card-grid">
-        <article class="card"><h3>Youth Mentorship Forum</h3><p>23 September 2026 · 10:00 AM · Seme</p></article>
-        <article class="card"><h3>Community Football</h3><p>10 October 2026 · 2:00 PM · Malela</p></article>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Read the latest UPYA news, community stories, programme updates, events and impact stories."
+  >
+
+  <title>News & Stories | UPYA</title>
+
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+
+  <!-- CONSTANT HEADER -->
+  <header class="site-header"></header>
+
+
+  <main id="main-content">
+
+    <!-- ==============================
+         NEWS HERO
+         ============================== -->
+
+    <section class="section news-hero">
+
+      <div class="news-intro">
+
+        <p class="eyebrow dark">
+          UPYA News & Stories
+        </p>
+
+        <h1>
+          Stories of people, action and change.
+        </h1>
+
+        <p>
+          Stay informed about our activities, achievements,
+          community impact and upcoming initiatives.
+        </p>
+
       </div>
-    </main>
-    <footer></footer>
-    <script src="assets/site.js"></script>
-  </body>
-</html>
+
+    </section>
+
+
+    <!-- ==============================
+         FEATURED STORY
+         ============================== -->
+
+    <section class="section featured-news">
+
+      <div class="section-heading">
+
+        <p class="eyebrow dark">
+          Featured story
+        </p>
+
+        <h2>
+          The story we are talking about
+        </h2>
+
+      </div>
+
+
+      <article class="featured-story">
+
+        <div class="featured-story-image">
+
+          <img
+            src="github/AK1A1634.jpg"
+            alt="UPYA youth participating in a community activity"
+          >
+
+        </div>
+
+
+        <div class="featured-story-content">
+
+          <span class="news-category">
+            Entrepreneurship
+          </span>
+
+          <h2>
+            From Ideas to Income: Young People Turning Ideas Into Action
+          </h2>
+
+          <p class="news-date">
+            23 May 2026 · Malela Village
+          </p>
+
+          <p>
+            Young people came together for a practical session focused
+            on entrepreneurship, financial awareness, personal development
+            and turning ideas into meaningful opportunities.
+          </p>
+
+          <a
+            class="button"
+            href="news/from-ideas-to-income.html"
+          >
+            Read Full Story →
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ==============================
+         LATEST NEWS
+         ============================== -->
+
+    <section class="section">
+
+      <p class="eyebrow dark">
+        Latest news
+      </p>
+
+      <h2>
+        What's happening at UPYA
+      </h2>
+
+
+      <!-- NEWS FILTERS -->
+
+      <div
+        class="news-filters"
+        aria-label="News categories"
+      >
+
+        <button
+          class="news-filter active"
+          type="button"
+          data-news-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="community"
+        >
+          Community
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="youth"
+        >
+          Youth
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="mentorship"
+        >
+          Mentorship
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="events"
+        >
+          Events
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="environment"
+        >
+          Environment
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="entrepreneurship"
+        >
+          Entrepreneurship
+        </button>
+
+        <button
+          class="news-filter"
+          type="button"
+          data-news-filter="announcements"
+        >
+          Announcements
+        </button>
+
+      </div>
+
+
+      <!-- NEWS GRID -->
+
+      <div class="news-grid">
+
+
+        <!-- STORY 1 -->
+
+        <article
+          class="news-card"
+          data-news-category="community"
+        >
+
+          <a
+            href="news/community-football-match.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/AK1A5856.jpg"
+              alt="UPYA community football activity"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Community
+            </span>
+
+            <h3>
+              UPYA Community Football Match
+            </h3>
+
+            <p class="news-date">
+              8 August 2026
+            </p>
+
+            <p>
+              A day of sport, friendship, mentorship and
+              community connection brought young people together.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/community-football-match.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- STORY 2 -->
+
+        <article
+          class="news-card"
+          data-news-category="mentorship"
+        >
+
+          <a
+            href="news/youth-mentorship-session.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/IMG_20251002_174846_957.jpg"
+              alt="UPYA youth mentorship session"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Mentorship
+            </span>
+
+            <h3>
+              Youth Mentorship Session
+            </h3>
+
+            <p class="news-date">
+              July 2026
+            </p>
+
+            <p>
+              Young people gathered to learn, exchange ideas
+              and explore practical pathways for their future.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/youth-mentorship-session.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- STORY 3 -->
+
+        <article
+          class="news-card"
+          data-news-category="environment"
+        >
+
+          <a
+            href="news/tree-planting-initiative.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/AK1A1634.jpg"
+              alt="UPYA environmental activity"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Environment
+            </span>
+
+            <h3>
+              UPYA Tree Planting Initiative
+            </h3>
+
+            <p class="news-date">
+              June 2026
+            </p>
+
+            <p>
+              Youth volunteers took action to promote environmental
+              responsibility and greener communities.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/tree-planting-initiative.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- STORY 4 -->
+
+        <article
+          class="news-card"
+          data-news-category="entrepreneurship"
+        >
+
+          <a
+            href="news/from-ideas-to-income.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/IMG_20251002_174846_957.jpg"
+              alt="UPYA From Ideas to Income event"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Entrepreneurship
+            </span>
+
+            <h3>
+              From Ideas to Income
+            </h3>
+
+            <p class="news-date">
+              23 May 2026 · Malela Village
+            </p>
+
+            <p>
+              An interactive youth session exploring entrepreneurship,
+              financial awareness and turning ideas into action.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/from-ideas-to-income.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- STORY 5 -->
+
+        <article
+          class="news-card"
+          data-news-category="youth"
+        >
+
+          <a
+            href="news/youth-opportunities.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/AK1A5856.jpg"
+              alt="UPYA youth engagement"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Youth
+            </span>
+
+            <h3>
+              Creating Spaces for Youth Voices
+            </h3>
+
+            <p class="news-date">
+              UPYA Youth Initiative
+            </p>
+
+            <p>
+              UPYA continues creating platforms where young people
+              can share ideas, develop leadership and take action.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/youth-opportunities.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- STORY 6 -->
+
+        <article
+          class="news-card"
+          data-news-category="events"
+        >
+
+          <a
+            href="news/upya-community-event.html"
+            class="news-card-image"
+          >
+
+            <img
+              src="github/AK1A1634.jpg"
+              alt="UPYA community event"
+            >
+
+          </a>
+
+          <div class="news-card-content">
+
+            <span class="news-category">
+              Events
+            </span>
+
+            <h3>
+              UPYA Community Engagement
+            </h3>
+
+            <p class="news-date">
+              2026
+            </p>
+
+            <p>
+              Bringing youth, mentors and community members together
+              through meaningful activities and shared experiences.
+            </p>
+
+            <a
+              class="news-read-more"
+              href="news/upya-community-event.html"
+            >
+              Read More →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         UPCOMING EVENTS
+         ============================== -->
+
+    <section class="section upcoming-news">
+
+      <div>
+
+        <p class="eyebrow dark">
+          What's coming up
+        </p>
+
+        <h2>
+          Upcoming events
+        </h2>
+
+        <p>
+          Don't just read about what happened.
+          Find an opportunity to participate in what comes next.
+        </p>
+
+      </div>
+
+
+      <div class="upcoming-event">
+
+        <span class="event-label">
+          Upcoming Event
+        </span>
+
+        <h3>
+          Youth
