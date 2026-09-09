@@ -327,4 +327,66 @@ width: 100px;
 height: 60px;
 }
 }
+/* ==============================
+   CONSTANT UPYA HEADER & FOOTER
+   ============================== */
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  text-decoration: none;
+}
+
+.site-header .brand img {
+  display: block;
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.site-header .main-navigation a.active-page {
+  font-weight: 900;
+  border-bottom: 2px solid var(--light-green);
+  padding-bottom: .25rem;
+}
+
+
+/* FOOTER LOGO */
+
+.site-footer .footer-brand .brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-footer .footer-brand .brand img {
+  display: block;
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .site-header .brand {
+    width: 80px;
+    height: 50px;
+  }
+
+  .site-header .brand img {
+    width: 80px;
+    height: 50px;
+  }
+
+  .site-footer .footer-brand .brand img {
+    width: 90px;
+    height: 55px;
+  }
+
+}
 
