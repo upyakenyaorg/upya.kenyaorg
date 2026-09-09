@@ -595,3 +595,161 @@ document.addEventListener(
 
   }
 );
+
+/* ==============================
+   UPYA LEADERSHIP PROFILES
+   ============================== */
+
+const leaderProfiles = {
+
+  hillary: {
+    name: "Hillary Onyango",
+    position: "Chairperson",
+    responsibility: "Strategic leadership, organizational direction, representation and community engagement.",
+    philosophy: "Leadership should be rooted in service, responsibility and the commitment to create opportunities for others.",
+    contribution: "Provides strategic direction and supports UPYA's mission of empowering, equipping, mentoring and nurturing tomorrow's world."
+  },
+
+  brian: {
+    name: "Brian Chiambe",
+    position: "Secretary",
+    responsibility: "Organizational coordination, documentation, communication and administrative support.",
+    philosophy: "Effective leadership requires clear communication, organization and teamwork.",
+    contribution: "Supports coordination of UPYA activities, records and communication to strengthen organizational effectiveness."
+  },
+
+  dennis: {
+    name: "Dennis Ouma",
+    position: "Treasurer",
+    responsibility: "Financial accountability, resource management and financial oversight.",
+    philosophy: "Trust grows when resources are handled responsibly and transparently.",
+    contribution: "Supports responsible management of UPYA resources and promotes accountability in organizational activities."
+  }
+
+};
+
+
+const leaderModal =
+  document.querySelector(".leader-modal");
+
+const modalName =
+  document.querySelector("#modal-name");
+
+const modalPosition =
+  document.querySelector("#modal-position");
+
+const modalDetails =
+  document.querySelector("#modal-details");
+
+const modalClose =
+  document.querySelector(".leader-modal-close");
+
+
+document.querySelectorAll(
+  ".leader-profile-button"
+).forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    const leader =
+      leaderProfiles[
+        button.dataset.leader
+      ];
+
+    if (!leader || !leaderModal) return;
+
+    modalName.textContent =
+      leader.name;
+
+    modalPosition.textContent =
+      leader.position;
+
+    modalDetails.innerHTML = `
+      <div class="profile-detail">
+        <strong>Position</strong>
+        <p>${leader.position}</p>
+      </div>
+
+      <div class="profile-detail">
+        <strong>Areas of Responsibility</strong>
+        <p>${leader.responsibility}</p>
+      </div>
+
+      <div class="profile-detail">
+        <strong>Leadership Philosophy</strong>
+        <p>${leader.philosophy}</p>
+      </div>
+
+      <div class="profile-detail">
+        <strong>Contribution to UPYA</strong>
+        <p>${leader.contribution}</p>
+      </div>
+    `;
+
+    leaderModal.classList.add("open");
+
+    leaderModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.style.overflow =
+      "hidden";
+
+  });
+
+});
+
+
+function closeLeaderModal() {
+
+  if (!leaderModal) return;
+
+  leaderModal.classList.remove(
+    "open"
+  );
+
+  leaderModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+modalClose?.addEventListener(
+  "click",
+  closeLeaderModal
+);
+
+
+leaderModal?.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === leaderModal
+    ) {
+      closeLeaderModal();
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key === "Escape" &&
+      leaderModal?.classList.contains("open")
+    ) {
+      closeLeaderModal();
+    }
+
+  }
+);
