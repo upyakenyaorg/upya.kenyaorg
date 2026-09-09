@@ -66,3 +66,123 @@ dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index
 if (slides.length > 1) {
   window.setInterval(() => showSlide(activeSlide + 1), 6000);
 }
+
+/* ==============================
+   UPYA GALLERY
+   ============================== */
+
+const galleryItems = [...document.querySelectorAll(".gallery-item")];
+const galleryFilters = [...document.querySelectorAll(".gallery-filter")];
+const lightbox = document.querySelector(".gallery-lightbox");
+const lightboxImage = document.querySelector(".lightbox-image");
+const lightboxCaption = document.querySelector(".lightbox-caption");
+const lightboxClose = document.querySelector(".lightbox-close");
+const lightboxPrev = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
+
+let currentGalleryIndex = 0;
+let visibleGalleryItems = galleryItems;
+
+function openGallery(index) {
+  if (!lightbox || !visibleGalleryItems.length) return;
+
+  currentGalleryIndex = index;
+
+  const item = visibleGalleryItems[currentGalleryIndex];
+  const image = item.querySelector("img");
+
+  if (!image) return;
+
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
+  lightboxCaption.textContent = item.dataset.caption || image.alt || "";
+
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeGallery() {
+  if (!lightbox) return;
+
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+}
+
+function changeGalleryImage(direction) {
+  if (!visibleGalleryItems.length) return;
+
+  currentGalleryIndex =
+    (currentGalleryIndex + direction + visibleGalleryItems.length) %
+    visibleGalleryItems.length;
+
+  openGallery(currentGalleryIndex);
+}
+
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const index = visibleGalleryItems.indexOf(item);
+    openGallery(index);
+  });
+});
+
+galleryFilters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    const category = filter.dataset.filter;
+
+    galleryFilters.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    filter.classList.add("active");
+
+    galleryItems.forEach((item) => {
+      const itemCategory = item.dataset.category;
+
+      if (category === "all" || itemCategory === category) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    visibleGalleryItems = galleryItems.filter((item) => {
+      return category === "all" || item.dataset.category === category;
+    });
+  });
+});
+
+lightboxClose?.addEventListener("click", closeGallery);
+
+lightboxPrev?.addEventListener("click", () => {
+  changeGalleryImage(-1);
+});
+
+lightboxNext?.addEventListener("click", () => {
+  changeGalleryImage(1);
+});
+
+lightbox?.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    closeGallery();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!lightbox?.classList.contains("open")) return;
+
+  if (event.key === "Escape") {
+    closeGallery();
+  }
+
+  if (event.key === "ArrowLeft") {
+    changeGalleryImage(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    changeGalleryImage(1);
+  }
+});
