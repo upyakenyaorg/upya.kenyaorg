@@ -1,491 +1,597 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ==============================
+   UPYA ICONS
+   ============================== */
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const iconStylesheet = document.createElement("link");
 
-  <meta
-    name="description"
-    content="UPYA News & Stories — updates, activities, impact stories, announcements and upcoming events."
-  >
+iconStylesheet.rel = "stylesheet";
+iconStylesheet.href =
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 
-  <title>News & Stories | UPYA</title>
+document.head.append(iconStylesheet);
 
-  <link rel="stylesheet" href="assets/site.css">
-</head>
 
-<body>
+/* ==============================
+   UPYA CONSTANT HEADER
+   ============================== */
 
-  <!-- Constant UPYA Header -->
-  <header class="site-header"></header>
+const header = document.querySelector(".site-header");
 
+if (header) {
+  header.innerHTML = `
+    <a class="brand" href="index.html" aria-label="UPYA home">
+      <img
+        src="github/1757253126804-removebg-preview - Copy.png"
+        alt="UPYA logo">
+    </a>
 
-  <main id="main-content">
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation">
+      Menu
+    </button>
 
-    <!-- =================================
-         NEWS HERO
-         ================================= -->
+    <nav
+      id="main-navigation"
+      class="main-navigation"
+      aria-label="Main navigation">
 
-    <section class="section">
-      <div class="gallery-intro">
+      <a href="about.html">About</a>
 
-        <p class="eyebrow dark">
-          UPYA News & Stories
-        </p>
+      <a href="programmes.html">Programmes</a>
 
-        <h1>
-          Stories of action, impact and community.
-        </h1>
+      <a href="projects.html">Projects</a>
 
-        <p>
-          Stay informed about UPYA activities, achievements,
-          community impact and upcoming initiatives.
-        </p>
+      <a href="gallery.html">Gallery</a>
 
-      </div>
-    </section>
+      <a href="leadership.html">Leadership</a>
 
-
-    <!-- =================================
-         FEATURED STORY
-         ================================= -->
-
-    <section class="section">
-
-      <p class="eyebrow dark">
-        Featured story
-      </p>
-
-      <div class="news-featured">
-
-        <div class="news-featured-image">
-          <img
-            src="github/AK1A1634.jpg"
-            alt="UPYA youth activity"
-          >
-        </div>
-
-        <div class="news-featured-content">
-
-          <span class="news-category">
-            FEATURED STORY
-          </span>
-
-          <h2>
-            UPYA Hosts Youth Entrepreneurship & Mentorship Session
-          </h2>
-
-          <p class="news-date">
-            September 2026 · Seme
-          </p>
-
-          <p>
-            Young people came together for an engaging session
-            focused on entrepreneurship, skills development,
-            mentorship and turning ideas into meaningful action.
-          </p>
-
-          <div class="news-actions">
-
-            <a
-              class="button"
-              href="story.html?id=entrepreneurship-mentorship"
-            >
-              Read Full Story
-            </a>
-
-            <a
-              class="hero-link"
-              href="gallery.html?story=entrepreneurship-mentorship"
-            >
-              View Photos & Videos →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================
-         UPCOMING EVENTS
-         ================================= -->
-
-    <section class="section upcoming-section">
-
-      <p class="eyebrow dark">
-        What's coming up
-      </p>
-
-      <h2>
-        Upcoming Events
-      </h2>
-
-      <div class="card-grid">
-
-        <article class="card event-card">
-
-          <span class="news-category">
-            UPCOMING EVENT
-          </span>
-
-          <h3>
-            Youth Empowerment Forum
-          </h3>
-
-          <p>
-            📅 23 September 2026
-          </p>
-
-          <p>
-            🕙 10:00 AM
-          </p>
-
-          <p>
-            📍 Seme
-          </p>
-
-          <a
-            class="hero-link"
-            href="get-involved.html"
-          >
-            Learn More →
-          </a>
-
-        </article>
-
-
-        <article class="card event-card">
-
-          <span class="news-category">
-            UPCOMING EVENT
-          </span>
-
-          <h3>
-            Community Football
-          </h3>
-
-          <p>
-            📅 10 October 2026
-          </p>
-
-          <p>
-            🕑 2:00 PM
-          </p>
-
-          <p>
-            📍 Malela
-          </p>
-
-          <a
-            class="hero-link"
-            href="get-involved.html"
-          >
-            Get Involved →
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================
-         IMPACT STORIES
-         ================================= -->
-
-    <section class="section">
-
-      <p class="eyebrow dark">
-        Impact stories
-      </p>
-
-      <h2>
-        From participation to possibility.
-      </h2>
-
-      <p class="large-copy">
-        Discover how young people are turning knowledge,
-        mentorship and opportunities into action.
-      </p>
-
-
-      <div class="card-grid">
-
-        <article class="card">
-
-          <span class="news-category">
-            IMPACT STORY
-          </span>
-
-          <h3>
-            From Participant to Possibility
-          </h3>
-
-          <p>
-            A story of how mentorship, knowledge and
-            opportunity can inspire young people to take
-            meaningful steps toward their goals.
-          </p>
-
-          <a
-            class="button"
-            href="story.html?id=participant-to-possibility"
-          >
-            Read Story
-          </a>
-
-          <a
-            class="hero-link"
-            href="gallery.html?story=participant-to-possibility"
-          >
-            See the Story in Photos →
-          </a>
-
-        </article>
-
-
-        <article class="card">
-
-          <span class="news-category">
-            COMMUNITY ACTION
-          </span>
-
-          <h3>
-            Young People Taking Action
-          </h3>
-
-          <p>
-            Follow UPYA's community activities and discover
-            the people behind the work.
-          </p>
-
-          <a
-            class="button"
-            href="story.html?id=community-action"
-          >
-            Read Story
-          </a>
-
-          <a
-            class="hero-link"
-            href="gallery.html?story=community-action"
-          >
-            View Documentation →
-          </a>
-
-        </article>
-
-
-        <article class="card">
-
-          <span class="news-category">
-            MENTORSHIP
-          </span>
-
-          <h3>
-            Mentorship That Moves Beyond the Classroom
-          </h3>
-
-          <p>
-            Explore conversations, lessons and experiences
-            that help young people develop confidence and
-            practical skills.
-          </p>
-
-          <a
-            class="button"
-            href="story.html?id=mentorship"
-          >
-            Read Story
-          </a>
-
-          <a
-            class="hero-link"
-            href="gallery.html?story=mentorship"
-          >
-            View Photos & Videos →
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================
-         ANNOUNCEMENTS
-         ================================= -->
-
-    <section class="section announcement-section">
-
-      <p class="eyebrow dark">
-        Announcements
-      </p>
-
-      <h2>
-        Official UPYA Updates
-      </h2>
-
-      <div class="card-grid">
-
-        <article class="card">
-          <h3>
-            Programme Announcements
-          </h3>
-
-          <p>
-            Important updates about new and ongoing UPYA
-            programmes.
-          </p>
-
-          <a
-            class="hero-link"
-            href="story.html?id=programme-announcement"
-          >
-            Read Announcement →
-          </a>
-        </article>
-
-
-        <article class="card">
-          <h3>
-            Partnership Announcements
-          </h3>
-
-          <p>
-            Updates about organisations, mentors and partners
-            working with UPYA.
-          </p>
-
-          <a
-            class="hero-link"
-            href="story.html?id=partnership-announcement"
-          >
-            Read Announcement →
-          </a>
-        </article>
-
-
-        <article class="card">
-          <h3>
-            Opportunities & Volunteer Calls
-          </h3>
-
-          <p>
-            Discover opportunities to participate, volunteer
-            and contribute to UPYA activities.
-          </p>
-
-          <a
-            class="hero-link"
-            href="get-involved.html"
-          >
-            Get Involved →
-          </a>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================
-         STORIES + GALLERY CONNECTION
-         ================================= -->
-
-    <section class="section callout">
-
-      <p class="eyebrow">
-        One activity. One complete story.
-      </p>
-
-      <h2>
-        Read it. See it. Experience the moment.
-      </h2>
-
-      <p>
-        Every major UPYA activity can connect its written story
-        directly to photographs and videos documenting the same
-        activity.
-      </p>
+      <a href="news.html">News</a>
 
       <a
         class="button button-gold"
-        href="gallery.html"
-      >
-        Explore UPYA Stories
+        href="get-involved.html">
+        Join UPYA
       </a>
 
-    </section>
+    </nav>
+  `;
+}
 
 
-    <!-- =================================
-         STAY CONNECTED
-         ================================= -->
+/* ==============================
+   UPYA CONSTANT FOOTER
+   ============================== */
 
-    <section class="section newsletter-section">
+const footer = document.querySelector("footer");
 
-      <p class="eyebrow dark">
-        Stay connected
+if (footer) {
+  footer.className = "site-footer";
+
+  footer.innerHTML = `
+    <div>
+      <a class="brand" href="index.html">
+        <span>U</span>UPYA
+      </a>
+
+      <p>
+        Empowering youth, transforming communities.
       </p>
+    </div>
 
-      <h2>
-        Stay Connected With UPYA
-      </h2>
+    <div class="footer-links">
+      <strong>Explore</strong>
 
-      <p class="large-copy">
-        Get updates about our programmes, opportunities and
-        community activities.
-      </p>
+      <a href="about.html">About UPYA</a>
 
-      <form
-        class="newsletter-form"
-        action="#"
-        method="post"
-      >
+      <a href="programmes.html">Programmes</a>
 
-        <label
-          for="newsletter-email"
-          class="sr-only"
-        >
-          Email Address
-        </label>
+      <a href="projects.html">Projects</a>
 
-        <input
-          id="newsletter-email"
-          type="email"
-          name="email"
-          placeholder="Your email address"
-          required
-        >
+      <a href="gallery.html">Gallery</a>
 
-        <button
-          class="button"
-          type="submit"
-        >
-          Subscribe
-        </button>
+      <a href="leadership.html">Leadership</a>
 
-      </form>
+      <a href="news.html">News</a>
 
-    </section>
+      <a href="get-involved.html">Get Involved</a>
+    </div>
 
-  </main>
+    <div class="footer-links">
+      <strong>Contact</strong>
+
+      <a href="mailto:upya.kenyaorg@gmail.com">
+        upya.kenyaorg@gmail.com
+      </a>
+
+      <a href="tel:+254742717363">
+        +254 742 717 363
+      </a>
+
+      <span>
+        Nyamgun Junction, Seme
+      </span>
+    </div>
+
+    <div
+      class="socials"
+      aria-label="UPYA social media">
+
+      <a
+        class="youtube"
+        href="https://www.youtube.com/@upyakenya"
+        aria-label="UPYA on YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a
+        class="facebook"
+        href="https://www.facebook.com/profile.php?id=100082027299079"
+        aria-label="UPYA on Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+      <a
+        class="tiktok"
+        href="https://www.tiktok.com"
+        aria-label="UPYA on TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/upya_kenya"
+        aria-label="UPYA on Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a
+        class="twitter"
+        href="https://x.com"
+        aria-label="UPYA on X">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+
+    </div>
+
+    <small>
+      © 2026 Uwezo Pamoja Youths Association.
+      All rights reserved.
+    </small>
+  `;
+}
 
 
-  <!-- Constant UPYA Footer -->
-  <footer></footer>
+/* ==============================
+   HEADER SCROLL EFFECT
+   ============================== */
+
+const updateHeader = () => {
+  header?.classList.toggle(
+    "is-scrolled",
+    window.scrollY > 12
+  );
+};
+
+window.addEventListener(
+  "scroll",
+  updateHeader,
+  { passive: true }
+);
+
+updateHeader();
 
 
-  <script src="assets/site.js"></script>
+/* ==============================
+   MOBILE NAVIGATION
+   ============================== */
 
-</body>
+const menuButton =
+  document.querySelector(".menu-button");
 
-</html>
+const navigation =
+  document.querySelector(".main-navigation");
+
+menuButton?.addEventListener("click", () => {
+
+  const isOpen =
+    navigation.classList.toggle("open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  menuButton.textContent =
+    isOpen ? "Close" : "Menu";
+});
+
+
+/* ==============================
+   HERO SLIDESHOW
+   ============================== */
+
+const slides = [
+  ...document.querySelectorAll(".hero-slide")
+];
+
+const dots = [
+  ...document.querySelectorAll(".slide-dots button")
+];
+
+let activeSlide = 0;
+
+function showSlide(index) {
+
+  if (!slides.length) return;
+
+  activeSlide =
+    (index + slides.length) %
+    slides.length;
+
+  slides.forEach(
+    (slide, position) => {
+
+      slide.classList.toggle(
+        "active",
+        position === activeSlide
+      );
+
+    }
+  );
+
+  dots.forEach(
+    (dot, position) => {
+
+      dot.classList.toggle(
+        "active",
+        position === activeSlide
+      );
+
+    }
+  );
+}
+
+
+dots.forEach(
+  (dot, index) => {
+
+    dot.addEventListener(
+      "click",
+      () => showSlide(index)
+    );
+
+  }
+);
+
+
+if (slides.length > 1) {
+
+  window.setInterval(
+    () => showSlide(activeSlide + 1),
+    6000
+  );
+
+}
+
+
+/* ==============================
+   UPYA GALLERY
+   ============================== */
+
+const galleryItems = [
+  ...document.querySelectorAll(".gallery-item")
+];
+
+const galleryFilters = [
+  ...document.querySelectorAll(".gallery-filter")
+];
+
+const lightbox =
+  document.querySelector(".gallery-lightbox");
+
+const lightboxImage =
+  document.querySelector(".lightbox-image");
+
+const lightboxCaption =
+  document.querySelector(".lightbox-caption");
+
+const lightboxClose =
+  document.querySelector(".lightbox-close");
+
+const lightboxPrev =
+  document.querySelector(".lightbox-prev");
+
+const lightboxNext =
+  document.querySelector(".lightbox-next");
+
+
+let currentGalleryIndex = 0;
+
+let visibleGalleryItems =
+  galleryItems;
+
+
+/* ==============================
+   OPEN GALLERY
+   ============================== */
+
+function openGallery(index) {
+
+  if (
+    !lightbox ||
+    !visibleGalleryItems.length
+  ) {
+    return;
+  }
+
+  currentGalleryIndex = index;
+
+  const item =
+    visibleGalleryItems[
+      currentGalleryIndex
+    ];
+
+  const image =
+    item.querySelector("img");
+
+  if (!image) return;
+
+  if (lightboxImage) {
+
+    lightboxImage.src =
+      image.src;
+
+    lightboxImage.alt =
+      image.alt;
+
+  }
+
+  if (lightboxCaption) {
+
+    lightboxCaption.textContent =
+      item.dataset.caption ||
+      image.alt ||
+      "";
+
+  }
+
+  lightbox.classList.add("open");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+
+/* ==============================
+   CLOSE GALLERY
+   ============================== */
+
+function closeGallery() {
+
+  if (!lightbox) return;
+
+  lightbox.classList.remove(
+    "open"
+  );
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+}
+
+
+/* ==============================
+   CHANGE GALLERY IMAGE
+   ============================== */
+
+function changeGalleryImage(
+  direction
+) {
+
+  if (
+    !visibleGalleryItems.length
+  ) {
+    return;
+  }
+
+  currentGalleryIndex =
+    (
+      currentGalleryIndex +
+      direction +
+      visibleGalleryItems.length
+    ) %
+    visibleGalleryItems.length;
+
+  openGallery(
+    currentGalleryIndex
+  );
+}
+
+
+/* ==============================
+   GALLERY ITEMS
+   ============================== */
+
+galleryItems.forEach(
+  (item) => {
+
+    item.addEventListener(
+      "click",
+      () => {
+
+        const index =
+          visibleGalleryItems.indexOf(
+            item
+          );
+
+        openGallery(index);
+
+      }
+    );
+
+  }
+);
+
+
+/* ==============================
+   GALLERY FILTERS
+   ============================== */
+
+galleryFilters.forEach(
+  (filter) => {
+
+    filter.addEventListener(
+      "click",
+      () => {
+
+        const category =
+          filter.dataset.filter;
+
+        galleryFilters.forEach(
+          (button) => {
+
+            button.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+        filter.classList.add(
+          "active"
+        );
+
+
+        galleryItems.forEach(
+          (item) => {
+
+            const itemCategory =
+              item.dataset.category;
+
+            if (
+              category === "all" ||
+              itemCategory === category
+            ) {
+
+              item.style.display = "";
+
+            } else {
+
+              item.style.display =
+                "none";
+
+            }
+
+          }
+        );
+
+
+        visibleGalleryItems =
+          galleryItems.filter(
+            (item) => {
+
+              return (
+                category === "all" ||
+                item.dataset.category ===
+                  category
+              );
+
+            }
+          );
+
+      }
+    );
+
+  }
+);
+
+
+/* ==============================
+   GALLERY CONTROLS
+   ============================== */
+
+lightboxClose?.addEventListener(
+  "click",
+  closeGallery
+);
+
+
+lightboxPrev?.addEventListener(
+  "click",
+  () => {
+    changeGalleryImage(-1);
+  }
+);
+
+
+lightboxNext?.addEventListener(
+  "click",
+  () => {
+    changeGalleryImage(1);
+  }
+);
+
+
+/* ==============================
+   CLOSE LIGHTBOX BY BACKGROUND
+   ============================== */
+
+lightbox?.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === lightbox
+    ) {
+      closeGallery();
+    }
+
+  }
+);
+
+
+/* ==============================
+   KEYBOARD CONTROLS
+   ============================== */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      !lightbox?.classList.contains(
+        "open"
+      )
+    ) {
+      return;
+    }
+
+
+    if (event.key === "Escape") {
+      closeGallery();
+    }
+
+
+    if (event.key === "ArrowLeft") {
+      changeGalleryImage(-1);
+    }
+
+
+    if (event.key === "ArrowRight") {
+      changeGalleryImage(1);
+    }
+
+  }
+);
