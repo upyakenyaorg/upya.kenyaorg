@@ -828,4 +828,52 @@ if (leadershipSlides.length > 1) {
 
 }
 
+/* ==============================
+   UPYA NEWS FILTERS
+   ============================== */
+
+const newsFilters = [
+  ...document.querySelectorAll(".news-filter")
+];
+
+const newsCards = [
+  ...document.querySelectorAll(".news-card")
+];
+
+newsFilters.forEach((filter) => {
+
+  filter.addEventListener("click", () => {
+
+    const category =
+      filter.dataset.newsFilter;
+
+    newsFilters.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    filter.classList.add("active");
+
+    newsCards.forEach((card) => {
+
+      const cardCategory =
+        card.dataset.newsCategory;
+
+      if (
+        category === "all" ||
+        cardCategory === category
+      ) {
+
+        card.style.display = "";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
 
