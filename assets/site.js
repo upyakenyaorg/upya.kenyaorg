@@ -12,17 +12,18 @@ document.head.append(iconStylesheet);
 
 
 /* ==============================
-   UPYA CONSTANT HEADER
+   UPYA HEADER
    ============================== */
 
 const header = document.querySelector(".site-header");
 
 if (header) {
+
   header.innerHTML = `
     <a class="brand" href="index.html" aria-label="UPYA home">
       <img
         src="github/1757253126804-removebg-preview - Copy.png"
-        alt="UPYA logo">
+        alt="Uwezo Pamoja Youths Association logo">
     </a>
 
     <button
@@ -38,16 +39,12 @@ if (header) {
       class="main-navigation"
       aria-label="Main navigation">
 
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-
       <a href="programmes.html">Programmes</a>
-
       <a href="projects.html">Projects</a>
-
       <a href="gallery.html">Gallery</a>
-
       <a href="leadership.html">Leadership</a>
-
       <a href="news.html">News</a>
 
       <a
@@ -58,6 +55,26 @@ if (header) {
 
     </nav>
   `;
+
+  /* Highlight current page */
+
+  const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+  const navigationLinks =
+    header.querySelectorAll(".main-navigation a");
+
+  navigationLinks.forEach((link) => {
+
+    const linkPage =
+      link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active-page");
+      link.setAttribute("aria-current", "page");
+    }
+
+  });
 }
 
 
@@ -68,38 +85,70 @@ if (header) {
 const footer = document.querySelector("footer");
 
 if (footer) {
+
   footer.className = "site-footer";
 
   footer.innerHTML = `
-    <div>
-      <a class="brand" href="index.html">
-        <span>U</span>UPYA
+
+    <div class="footer-brand">
+
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="UPYA home">
+
+        <img
+          src="github/1757253126804-removebg-preview - Copy.png"
+          alt="Uwezo Pamoja Youths Association logo">
+
       </a>
 
       <p>
         Empowering youth, transforming communities.
       </p>
+
     </div>
 
+
     <div class="footer-links">
+
       <strong>Explore</strong>
 
-      <a href="about.html">About UPYA</a>
+      <a href="index.html">Home</a>
 
-      <a href="programmes.html">Programmes</a>
+      <a href="about.html">
+        About UPYA
+      </a>
 
-      <a href="projects.html">Projects</a>
+      <a href="programmes.html">
+        Programmes
+      </a>
 
-      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">
+        Projects
+      </a>
 
-      <a href="leadership.html">Leadership</a>
+      <a href="gallery.html">
+        Gallery
+      </a>
 
-      <a href="news.html">News</a>
+      <a href="leadership.html">
+        Leadership
+      </a>
 
-      <a href="get-involved.html">Get Involved</a>
+      <a href="news.html">
+        News
+      </a>
+
+      <a href="get-involved.html">
+        Get Involved
+      </a>
+
     </div>
 
+
     <div class="footer-links">
+
       <strong>Contact</strong>
 
       <a href="mailto:upya.kenyaorg@gmail.com">
@@ -113,7 +162,9 @@ if (footer) {
       <span>
         Nyamgun Junction, Seme
       </span>
+
     </div>
+
 
     <div
       class="socials"
@@ -156,10 +207,12 @@ if (footer) {
 
     </div>
 
+
     <small>
       © 2026 Uwezo Pamoja Youths Association.
       All rights reserved.
     </small>
+
   `;
 }
 
@@ -169,10 +222,12 @@ if (footer) {
    ============================== */
 
 const updateHeader = () => {
+
   header?.classList.toggle(
     "is-scrolled",
     window.scrollY > 12
   );
+
 };
 
 window.addEventListener(
@@ -194,19 +249,23 @@ const menuButton =
 const navigation =
   document.querySelector(".main-navigation");
 
-menuButton?.addEventListener("click", () => {
+menuButton?.addEventListener(
+  "click",
+  () => {
 
-  const isOpen =
-    navigation.classList.toggle("open");
+    const isOpen =
+      navigation.classList.toggle("open");
 
-  menuButton.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
+    menuButton.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
 
-  menuButton.textContent =
-    isOpen ? "Close" : "Menu";
-});
+    menuButton.textContent =
+      isOpen ? "Close" : "Menu";
+
+  }
+);
 
 
 /* ==============================
@@ -218,7 +277,9 @@ const slides = [
 ];
 
 const dots = [
-  ...document.querySelectorAll(".slide-dots button")
+  ...document.querySelectorAll(
+    ".slide-dots button"
+  )
 ];
 
 let activeSlide = 0;
@@ -252,8 +313,8 @@ function showSlide(index) {
 
     }
   );
-}
 
+}
 
 dots.forEach(
   (dot, index) => {
@@ -265,7 +326,6 @@ dots.forEach(
 
   }
 );
-
 
 if (slides.length > 1) {
 
@@ -282,31 +342,46 @@ if (slides.length > 1) {
    ============================== */
 
 const galleryItems = [
-  ...document.querySelectorAll(".gallery-item")
+  ...document.querySelectorAll(
+    ".gallery-item"
+  )
 ];
 
 const galleryFilters = [
-  ...document.querySelectorAll(".gallery-filter")
+  ...document.querySelectorAll(
+    ".gallery-filter"
+  )
 ];
 
 const lightbox =
-  document.querySelector(".gallery-lightbox");
+  document.querySelector(
+    ".gallery-lightbox"
+  );
 
 const lightboxImage =
-  document.querySelector(".lightbox-image");
+  document.querySelector(
+    ".lightbox-image"
+  );
 
 const lightboxCaption =
-  document.querySelector(".lightbox-caption");
+  document.querySelector(
+    ".lightbox-caption"
+  );
 
 const lightboxClose =
-  document.querySelector(".lightbox-close");
+  document.querySelector(
+    ".lightbox-close"
+  );
 
 const lightboxPrev =
-  document.querySelector(".lightbox-prev");
+  document.querySelector(
+    ".lightbox-prev"
+  );
 
 const lightboxNext =
-  document.querySelector(".lightbox-next");
-
+  document.querySelector(
+    ".lightbox-next"
+  );
 
 let currentGalleryIndex = 0;
 
@@ -367,6 +442,7 @@ function openGallery(index) {
 
   document.body.style.overflow =
     "hidden";
+
 }
 
 
@@ -389,6 +465,7 @@ function closeGallery() {
 
   document.body.style.overflow =
     "";
+
 }
 
 
@@ -417,6 +494,7 @@ function changeGalleryImage(
   openGallery(
     currentGalleryIndex
   );
+
 }
 
 
@@ -473,7 +551,6 @@ galleryFilters.forEach(
           "active"
         );
 
-
         galleryItems.forEach(
           (item) => {
 
@@ -496,7 +573,6 @@ galleryFilters.forEach(
 
           }
         );
-
 
         visibleGalleryItems =
           galleryItems.filter(
@@ -527,14 +603,12 @@ lightboxClose?.addEventListener(
   closeGallery
 );
 
-
 lightboxPrev?.addEventListener(
   "click",
   () => {
     changeGalleryImage(-1);
   }
 );
-
 
 lightboxNext?.addEventListener(
   "click",
@@ -578,16 +652,13 @@ document.addEventListener(
       return;
     }
 
-
     if (event.key === "Escape") {
       closeGallery();
     }
 
-
     if (event.key === "ArrowLeft") {
       changeGalleryImage(-1);
     }
-
 
     if (event.key === "ArrowRight") {
       changeGalleryImage(1);
