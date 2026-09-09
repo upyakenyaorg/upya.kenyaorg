@@ -296,19 +296,35 @@ padding: 1rem;
 }
 
 /* ==============================
-NAVIGATION LOGO
+UPYA NAVIGATION LOGO
 ============================== */
 
 .site-header .brand {
 display: flex;
 align-items: center;
+width: 78px;
+height: 48px;
 text-decoration: none;
 }
 
 .site-header .brand img {
 display: block;
-width: 70px;
-height: 45px;
+width: 78px;
+height: 48px;
 object-fit: contain;
+object-position: center;
+}
+
+/* Keep the logo compact on smaller screens */
+@media (max-width: 800px) {
+.site-header .brand {
+width: 68px;
+height: 42px;
+}
+
+.site-header .brand img {
+width: 68px;
+height: 42px;
+}
 }
 
