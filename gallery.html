@@ -1,7 +1,309 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gallery | UPYA</title><link rel="stylesheet" href="assets/site.css"></head>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore moments, activities and stories from Uwezo Pamoja Youths Association.">
+  <title>Gallery | UPYA</title>
+
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+
 <body>
-  <header class="site-header"><a class="brand" href="index.html"><span>U</span>UPYA</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button><nav id="main-navigation" class="main-navigation"><a href="about.html">About</a><a href="programmes.html">Programmes</a><a href="projects.html">Projects</a><a href="gallery.html">Gallery</a><a href="leadership.html">Leadership</a><a href="news.html">News</a><a class="button button-gold" href="get-involved.html">Join UPYA</a></nav></header>
-  <main class="section"><p class="eyebrow dark">UPYA gallery</p><h1>Our people. Our moments. Our movement.</h1><p>Replace these cards with verified photographs from UPYA activities before publishing.</p><div class="gallery-preview"><span>Mentorship</span><span>Sport</span><span>Environment</span><span>Enterprise</span><span>Service</span><span>Leadership</span></div></main>
-  <footer></footer><script src="assets/site.js"></script>
-</body></html>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+```
+<a class="brand" href="index.html">
+  <span>U</span>UPYA
+</a>
+
+<button
+  class="menu-button"
+  type="button"
+  aria-expanded="false"
+  aria-controls="main-navigation">
+  Menu
+</button>
+
+<nav id="main-navigation" class="main-navigation">
+
+  <a href="about.html">About</a>
+  <a href="programmes.html">Programmes</a>
+  <a href="projects.html">Projects</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="news.html">News</a>
+
+  <a class="button button-gold" href="get-involved.html">
+    Join UPYA
+  </a>
+
+</nav>
+```
+
+  </header>
+
+  <!-- GALLERY INTRO -->
+
+  <main>
+
+```
+<section class="section">
+
+  <div class="gallery-intro">
+
+    <p class="eyebrow dark">
+      UPYA Gallery
+    </p>
+
+    <h1>
+      Our people.<br>
+      Our moments.<br>
+      Our movement.
+    </h1>
+
+    <p>
+      A collection of moments from Uwezo Pamoja Youths Association —
+      capturing our programmes, community activities, leadership,
+      service and the young people who make UPYA possible.
+    </p>
+
+  </div>
+
+
+  <!-- FILTERS -->
+  <div class="gallery-filters" aria-label="Gallery categories">
+
+    <button class="gallery-filter active" data-filter="all">
+      All
+    </button>
+
+    <button class="gallery-filter" data-filter="mentorship">
+      Mentorship
+    </button>
+
+    <button class="gallery-filter" data-filter="sport">
+      Sport
+    </button>
+
+    <button class="gallery-filter" data-filter="environment">
+      Environment
+    </button>
+
+    <button class="gallery-filter" data-filter="enterprise">
+      Enterprise
+    </button>
+
+    <button class="gallery-filter" data-filter="service">
+      Service
+    </button>
+
+    <button class="gallery-filter" data-filter="leadership">
+      Leadership
+    </button>
+
+  </div>
+
+
+  <!-- GALLERY -->
+  <div class="gallery-grid">
+
+
+    <!-- MENTORSHIP -->
+    <article
+      class="gallery-item"
+      data-category="mentorship"
+      data-caption="Youth mentorship and learning">
+
+      <img
+        src="assets/images/gallery/mentorship-1.jpg"
+        alt="UPYA youth mentorship activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Mentorship</strong>
+        <span>Youth learning and empowerment</span>
+      </div>
+
+    </article>
+
+
+    <!-- SPORT -->
+    <article
+      class="gallery-item"
+      data-category="sport"
+      data-caption="UPYA community sports activity">
+
+      <img
+        src="assets/images/gallery/sport-1.jpg"
+        alt="UPYA community sports activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Sport</strong>
+        <span>Building teamwork through sport</span>
+      </div>
+
+    </article>
+
+
+    <!-- ENVIRONMENT -->
+    <article
+      class="gallery-item"
+      data-category="environment"
+      data-caption="UPYA environmental activity">
+
+      <img
+        src="assets/images/gallery/environment-1.jpg"
+        alt="UPYA environmental activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Environment</strong>
+        <span>Young people taking action for nature</span>
+      </div>
+
+    </article>
+
+
+    <!-- ENTERPRISE -->
+    <article
+      class="gallery-item"
+      data-category="enterprise"
+      data-caption="Youth entrepreneurship and enterprise">
+
+      <img
+        src="assets/images/gallery/enterprise-1.jpg"
+        alt="UPYA youth enterprise activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Enterprise</strong>
+        <span>Turning ideas into opportunities</span>
+      </div>
+
+    </article>
+
+
+    <!-- SERVICE -->
+    <article
+      class="gallery-item"
+      data-category="service"
+      data-caption="UPYA community service">
+
+      <img
+        src="assets/images/gallery/service-1.jpg"
+        alt="UPYA community service activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Service</strong>
+        <span>Serving communities together</span>
+      </div>
+
+    </article>
+
+
+    <!-- LEADERSHIP -->
+    <article
+      class="gallery-item"
+      data-category="leadership"
+      data-caption="UPYA leadership and youth engagement">
+
+      <img
+        src="assets/images/gallery/leadership-1.jpg"
+        alt="UPYA leadership activity"
+        loading="lazy">
+
+      <div class="gallery-caption">
+        <strong>Leadership</strong>
+        <span>Building the next generation of leaders</span>
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="section callout">
+
+  <p class="eyebrow">
+    Be part of the movement
+  </p>
+
+  <h2>
+    Your story can become part of ours.
+  </h2>
+
+  <p>
+    Join UPYA in empowering young people and transforming
+    communities into centres of lasting positive change.
+  </p>
+
+  <a class="button button-gold" href="get-involved.html">
+    Get Involved
+  </a>
+
+</section>
+```
+
+  </main>
+
+  <!-- LIGHTBOX -->
+
+  <div
+    class="gallery-lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Gallery image viewer">
+
+```
+<div class="lightbox-content">
+
+  <button
+    class="lightbox-close"
+    type="button"
+    aria-label="Close gallery">
+    ×
+  </button>
+
+  <button
+    class="lightbox-prev"
+    type="button"
+    aria-label="Previous image">
+    ‹
+  </button>
+
+  <img
+    class="lightbox-image"
+    src=""
+    alt="">
+
+  <button
+    class="lightbox-next"
+    type="button"
+    aria-label="Next image">
+    ›
+  </button>
+
+  <div class="lightbox-caption"></div>
+
+</div>
+```
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script src="assets/site.js"></script>
+
+</body>
+</html>
