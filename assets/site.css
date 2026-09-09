@@ -277,6 +277,19 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
   }
 
   .gallery-lightbox {
+    /* Navigation logo */
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-header .brand img {
+  display: block;
+  width: 95px;
+  height: 55px;
+  object-fit: contain;
+}
     padding: 1rem;
   }
 }
