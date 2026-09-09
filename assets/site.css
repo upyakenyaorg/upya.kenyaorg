@@ -266,19 +266,39 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
   }
 }
 
+@media (max-width: 800px) {
+.gallery-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.lightbox-prev {
+left: .5rem;
+}
+
+.lightbox-next {
+right: .5rem;
+}
+}
+
 @media (max-width: 460px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
+.gallery-grid {
+grid-template-columns: 1fr;
+}
 
-  .gallery-item,
-  .gallery-item img {
-    min-height: 240px;
-  }
+.gallery-item,
+.gallery-item img {
+min-height: 240px;
+}
 
-  .gallery-lightbox {
+.gallery-lightbox {
+padding: 1rem;
+}
+}
 
-  /* Navigation logo */
+/* ==============================
+NAVIGATION LOGO
+============================== */
+
 .site-header .brand {
 display: flex;
 align-items: center;
@@ -287,7 +307,8 @@ text-decoration: none;
 
 .site-header .brand img {
 display: block;
-width: 58px;
-height: 38px;
+width: 70px;
+height: 45px;
 object-fit: contain;
 }
+
