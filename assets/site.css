@@ -697,4 +697,293 @@ height: 60px;
 
 }
 
+/* ==============================
+   UPYA NEWS & STORIES
+   ============================== */
+
+.news-hero {
+  background: var(--white);
+}
+
+.news-intro {
+  max-width: 850px;
+}
+
+.news-intro h1 {
+  margin: .5rem 0 1rem;
+}
+
+.news-intro > p:last-child {
+  max-width: 700px;
+  font-size: 1.15rem;
+}
+
+
+/* ==============================
+   FEATURED STORY
+   ============================== */
+
+.featured-news {
+  background: #e8f3eb;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin-top: .5rem;
+}
+
+.featured-story {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--white);
+}
+
+.featured-story-image {
+  min-height: 430px;
+  overflow: hidden;
+}
+
+.featured-story-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.featured-story:hover .featured-story-image img {
+  transform: scale(1.03);
+}
+
+.featured-story-content {
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.featured-story-content h2 {
+  margin: .7rem 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+
+/* ==============================
+   NEWS FILTERS
+   ============================== */
+
+.news-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin: 2rem 0;
+}
+
+.news-filter {
+  padding: .65rem 1rem;
+  color: var(--deep-green);
+  background: var(--white);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-weight: 800;
+  transition: .25s;
+}
+
+.news-filter:hover,
+.news-filter.active {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+
+/* ==============================
+   NEWS GRID
+   ============================== */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.news-card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #073b2f18;
+}
+
+.news-card-image {
+  display: block;
+  height: 230px;
+  overflow: hidden;
+}
+
+.news-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.news-card:hover .news-card-image img {
+  transform: scale(1.06);
+}
+
+.news-card-content {
+  padding: 1.4rem;
+}
+
+.news-category {
+  display: inline-block;
+  margin-bottom: .5rem;
+  color: var(--green);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.news-card h3 {
+  margin: .2rem 0 .4rem;
+  font-size: 1.55rem;
+}
+
+.news-date {
+  margin: .3rem 0 1rem;
+  color: #63776d;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.news-read-more {
+  display: inline-block;
+  margin-top: .7rem;
+  color: var(--green);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.news-read-more:hover {
+  text-decoration: underline;
+}
+
+
+/* ==============================
+   UPCOMING EVENTS
+   ============================== */
+
+.upcoming-news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: var(--light-green);
+}
+
+.upcoming-event {
+  padding: 2rem;
+  background: var(--deep-green);
+  color: var(--white);
+}
+
+.event-label {
+  color: var(--light-green);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.upcoming-event h3 {
+  margin: .7rem 0;
+  font-size: 2rem;
+}
+
+
+/* ==============================
+   IMPACT STORY
+   ============================== */
+
+.impact-story {
+  background:
+    linear-gradient(#073b2fd9, #073b2fd9),
+    url("../github/AK1A1634.jpg") center / cover;
+  color: var(--white);
+}
+
+.impact-story-content {
+  max-width: 700px;
+}
+
+.impact-story h2 {
+  margin: .5rem 0 1rem;
+}
+
+
+/* ==============================
+   ANNOUNCEMENTS
+   ============================== */
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* ==============================
+   RESPONSIVE NEWS
+   ============================== */
+
+@media (max-width: 800px) {
+
+  .featured-story {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-story-image {
+    min-height: 300px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upcoming-news {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 460px) {
+
+  .news-grid,
+  .announcement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-story-image {
+    min-height: 240px;
+  }
+
+  .news-filters {
+    gap: .45rem;
+  }
+
+  .news-filter {
+    padding: .55rem .75rem;
+    font-size: .85rem;
+  }
+
+}
+
 
