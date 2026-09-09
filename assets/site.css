@@ -318,13 +318,13 @@ object-position: center;
 /* Keep the logo compact on smaller screens */
 @media (max-width: 800px) {
 .site-header .brand {
-width: 68px;
-height: 42px;
+width: 100px;
+height: 60px;
 }
 
 .site-header .brand img {
-width: 68px;
-height: 42px;
+width: 100px;
+height: 60px;
 }
 }
 
