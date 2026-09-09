@@ -2,44 +2,350 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="UPYA Hosts Youth Entrepreneurship Session in Malela Village."
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>UPYA Hosts Youth Entrepreneurship Session | UPYA</title>
 
-  <link
-    rel="stylesheet"
-    href="assets/site.css">
+  <link rel="stylesheet" href="assets/site.css">
+
+  <style>
+    /* ==============================
+       NEWS ARTICLE PAGE
+       ============================== */
+
+    .article-hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      color: white;
+      background: #073b2f;
+    }
+
+    .article-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          #073b2ff5 0%,
+          #073b2f99 45%,
+          #073b2f22 100%
+        );
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 7rem 5vw 4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .45rem .8rem;
+      color: var(--deep-green);
+      background: var(--light-green);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 900px;
+      margin: 0 0 1rem;
+      color: white;
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #e9f5ee;
+      font-weight: 700;
+    }
+
+    /* ARTICLE BODY */
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 4rem;
+      max-width: 1150px;
+      margin: auto;
+      padding: 5rem 5vw;
+    }
+
+    .article-content {
+      max-width: 800px;
+    }
+
+    .article-introduction {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      font-weight: 600;
+      color: var(--deep-green);
+    }
+
+    .article-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .article-content ul {
+      padding-left: 1.4rem;
+    }
+
+    /* SUPPORTING PHOTO */
+
+    .article-photo {
+      margin: 3rem 0;
+    }
+
+    .article-photo img {
+      display: block;
+      width: 100%;
+      max-height: 550px;
+      object-fit: cover;
+    }
+
+    .article-photo figcaption {
+      padding-top: .7rem;
+      color: #60776d;
+      font-size: .85rem;
+    }
+
+    /* SIDEBAR */
+
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .sidebar-box {
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      background: var(--white);
+      border-top: 4px solid var(--green);
+    }
+
+    .sidebar-box h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .sidebar-box p {
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .sidebar-box a {
+      display: block;
+      margin-top: .7rem;
+      font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .sidebar-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* WHAT HAPPENED */
+
+    .story-points {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .story-point {
+      padding: 1.2rem 1.3rem;
+      background: #eef7f0;
+      border-left: 4px solid var(--green);
+    }
+
+    .story-point strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    /* IMPACT BOX */
+
+    .impact-box {
+      margin: 3rem 0;
+      padding: 2rem;
+      color: white;
+      background: var(--green);
+    }
+
+    .impact-box h2 {
+      margin-top: 0;
+    }
+
+    .impact-box p {
+      margin-bottom: 0;
+    }
+
+    /* ARTICLE FOOTER ACTIONS */
+
+    .article-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* RELATED NEWS */
+
+    .related-news {
+      padding: 5rem 5vw;
+      background: #e7f2e9;
+    }
+
+    .related-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .related-card {
+      overflow: hidden;
+      background: white;
+    }
+
+    .related-card img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .related-card-content {
+      padding: 1.3rem;
+    }
+
+    .related-card-content small {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .related-card-content h3 {
+      margin: .5rem 0;
+      font-size: 1.5rem;
+    }
+
+    .related-card-content a {
+      font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 460px) {
+
+      .article-hero {
+        min-height: 500px;
+      }
+
+      .article-hero-content {
+        padding-bottom: 2.5rem;
+      }
+
+      .article-layout {
+        padding-top: 3rem;
+      }
+
+      .article-content p,
+      .article-content li {
+        font-size: 1rem;
+      }
+
+    }
+  </style>
 
 </head>
+
 
 <body>
 
 
-  <!-- CONSTANT HEADER -->
+  <!-- ==============================
+       HEADER
+       site.js creates the navigation
+       ============================== -->
 
   <header class="site-header"></header>
 
 
+  <!-- ==============================
+       ARTICLE HERO
+       ============================== -->
+
   <main>
 
+    <section class="article-hero">
 
-    <!-- ARTICLE HEADER -->
+      <img
+        class="article-hero-image"
+        src="github/AK1A1634.jpg"
+        alt="UPYA youth entrepreneurship session">
 
-    <article class="news-article">
+      <div class="article-hero-overlay"></div>
 
-      <header class="article-header">
+      <div class="article-hero-content">
 
-        <span class="news-category">
+        <span class="article-category">
           Youth Empowerment
         </span>
 
@@ -47,200 +353,387 @@
           UPYA Hosts Youth Entrepreneurship Session
         </h1>
 
-        <p class="article-meta">
-          23 May 2026 | Malela Village
+        <div class="article-meta">
+
+          <span>
+            <i class="fa-regular fa-calendar"></i>
+            23 May 2026
+          </span>
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Malela Village, Seme
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ARTICLE CONTENT
+         ============================== -->
+
+    <section class="article-layout">
+
+
+      <article class="article-content">
+
+
+        <p class="article-introduction">
+          Uwezo Pamoja Youths Association (UPYA) brought
+          young people together in Malela Village for a
+          practical entrepreneurship and financial
+          empowerment session designed to encourage young
+          people to turn ideas into meaningful opportunities.
         </p>
 
-      </header>
+
+        <h2>
+          Full Story
+        </h2>
+
+        <p>
+          The session, held on 23 May 2026, created an
+          opportunity for young people to share ideas,
+          learn from one another and explore practical
+          approaches to entrepreneurship.
+        </p>
+
+        <p>
+          The programme focused on the belief that young
+          people can become active contributors to the
+          development of their communities when they are
+          equipped with knowledge, confidence, mentorship
+          and opportunities.
+        </p>
+
+        <p>
+          Participants engaged in conversations around
+          identifying opportunities, developing ideas,
+          understanding financial responsibility and
+          building sustainable initiatives within their
+          communities.
+        </p>
 
 
-      <!-- MAIN PHOTOGRAPH -->
+        <!-- SUPPORTING IMAGE -->
 
-      <figure class="article-main-image">
-
-        <img
-          src="github/AK1A1634.jpg"
-          alt="Young people participating in the UPYA entrepreneurship session">
-
-        <figcaption>
-          Young people during the UPYA youth entrepreneurship session.
-        </figcaption>
-
-      </figure>
-
-
-      <!-- ARTICLE CONTENT -->
-
-      <div class="article-content">
-
-
-        <section>
-
-          <h2>
-            Introduction
-          </h2>
-
-          <p>
-            Uwezo Pamoja Youths Association brought young people
-            together in Malela Village for a practical conversation
-            on entrepreneurship, financial literacy and opportunities
-            for young people.
-          </p>
-
-          <p>
-            The session created an opportunity for participants to
-            share ideas, learn from one another and explore practical
-            ways of turning ideas into sustainable opportunities.
-          </p>
-
-        </section>
-
-
-        <section>
-
-          <h2>
-            Full Story
-          </h2>
-
-          <p>
-            The event, themed
-            <strong>From Ideas to Income</strong>,
-            focused on helping young people understand how ideas
-            can be developed into practical initiatives.
-          </p>
-
-          <p>
-            Participants engaged in conversations around
-            entrepreneurship, financial management, identifying
-            opportunities and working together to solve challenges
-            within their communities.
-          </p>
-
-          <p>
-            The gathering also provided a platform for young people
-            to connect, ask questions and learn from experiences
-            shared by other participants and community members.
-          </p>
-
-        </section>
-
-
-        <section>
-
-          <h2>
-            What Happened
-          </h2>
-
-          <ul>
-
-            <li>
-              Youth participated in entrepreneurship discussions.
-            </li>
-
-            <li>
-              Participants explored practical income-generating ideas.
-            </li>
-
-            <li>
-              The session encouraged financial awareness.
-            </li>
-
-            <li>
-              Young people shared experiences and ideas.
-            </li>
-
-            <li>
-              Participants discussed the importance of teamwork
-              and community support.
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!-- ARTICLE PHOTO -->
-
-        <figure class="article-inline-image">
+        <figure class="article-photo">
 
           <img
             src="github/IMG_20251002_174846_957.jpg"
-            alt="UPYA youth engaging during a community activity">
+            alt="UPYA community activity">
+
+          <figcaption>
+            UPYA continues to create spaces where young
+            people can learn, connect and take action.
+          </figcaption>
 
         </figure>
 
 
-        <section>
+        <!-- WHAT HAPPENED -->
+
+        <h2>
+          What Happened
+        </h2>
+
+        <div class="story-points">
+
+          <div class="story-point">
+
+            <strong>
+              Youth Engagement
+            </strong>
+
+            Young people came together to discuss
+            opportunities, challenges and ideas that
+            can improve their livelihoods.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Entrepreneurship
+            </strong>
+
+            Participants explored how simple ideas can
+            be developed into practical community
+            initiatives.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Financial Awareness
+            </strong>
+
+            The discussions encouraged responsible
+            financial thinking and planning.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Networking
+            </strong>
+
+            The event created an opportunity for
+            participants to meet, share experiences
+            and build relationships.
+
+          </div>
+
+        </div>
+
+
+        <!-- IMPACT -->
+
+        <div class="impact-box">
 
           <h2>
             Impact
           </h2>
 
           <p>
-            The session contributed to creating a space where young
-            people could think about their potential, exchange ideas
-            and identify practical pathways towards economic
-            participation.
+            Beyond the event itself, UPYA aims to ensure
+            that youth empowerment becomes a continuous
+            process. The organisation continues to create
+            platforms for mentorship, learning,
+            collaboration and community action.
           </p>
 
-          <p>
-            Beyond the individual participants, conversations like
-            these strengthen a culture of young people supporting
-            one another and taking responsibility for community
-            development.
-          </p>
-
-        </section>
+        </div>
 
 
-        <section>
+        <!-- WHAT'S NEXT -->
 
-          <h2>
-            What's Next
-          </h2>
+        <h2>
+          What's Next?
+        </h2>
 
-          <p>
-            UPYA will continue creating opportunities for young
-            people to access mentorship, skills, entrepreneurship
-            conversations and community-based programmes.
-          </p>
+        <p>
+          UPYA will continue creating opportunities for
+          young people to participate in mentorship,
+          entrepreneurship, leadership, education,
+          climate action and community development
+          activities.
+        </p>
 
-          <p>
-            The association welcomes young people, mentors,
-            organisations and partners who want to contribute to
-            practical youth development.
-          </p>
-
-        </section>
+        <p>
+          Young people who would like to participate in
+          future activities are encouraged to follow UPYA's
+          updates and get involved in upcoming programmes.
+        </p>
 
 
-        <!-- ARTICLE ACTIONS -->
+        <!-- ACTIONS -->
 
         <div class="article-actions">
 
           <a
             href="news.html"
             class="button">
+
             ← Back to News
+
           </a>
 
           <a
             href="get-involved.html"
             class="button button-gold">
+
             Get Involved
+
+          </a>
+
+          <a
+            href="gallery.html"
+            class="button">
+
+            View Gallery
+
           </a>
 
         </div>
 
 
+      </article>
+
+
+      <!-- ==============================
+           SIDEBAR
+           ============================== -->
+
+      <aside class="article-sidebar">
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            About This Story
+          </h3>
+
+          <p>
+            This story highlights UPYA's work in youth
+            empowerment and entrepreneurship.
+          </p>
+
+          <a href="programmes.html">
+            Explore Programmes →
+          </a>
+
+        </div>
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            Explore UPYA
+          </h3>
+
+          <a href="projects.html">
+            Our Projects
+          </a>
+
+          <a href="gallery.html">
+            Photo Gallery
+          </a>
+
+          <a href="leadership.html">
+            Our Leadership
+          </a>
+
+          <a href="get-involved.html">
+            Join UPYA
+          </a>
+
+        </div>
+
+
+      </aside>
+
+
+    </section>
+
+
+    <!-- ==============================
+         RELATED NEWS
+         ============================== -->
+
+    <section class="related-news">
+
+      <div class="related-inner">
+
+        <p class="eyebrow dark">
+          Continue Reading
+        </p>
+
+        <h2>
+          More From UPYA
+        </h2>
+
+
+        <div class="related-grid">
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A5856.jpg"
+              alt="UPYA youth mentorship">
+
+            <div class="related-card-content">
+
+              <small>
+                Mentorship
+              </small>
+
+              <h3>
+                Youth Mentorship Forum
+              </h3>
+
+              <a href="news.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A1634.jpg"
+              alt="UPYA community activity">
+
+            <div class="related-card-content">
+
+              <small>
+                Community
+              </small>
+
+              <h3>
+                Community Action With UPYA
+              </h3>
+
+              <a href="news.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/IMG_20251002_174846_957.jpg"
+              alt="UPYA youth activities">
+
+            <div class="related-card-content">
+
+              <small>
+                Youth Leadership
+              </small>
+
+              <h3>
+                Building Young Leaders
+              </h3>
+
+              <a href="news.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
       </div>
 
-    </article>
+    </section>
 
   </main>
 
 
-  <!-- CONSTANT FOOTER -->
+  <!-- ==============================
+       FOOTER
+       site.js creates the footer
+       ============================== -->
 
   <footer></footer>
 
@@ -248,4 +741,5 @@
   <script src="assets/site.js"></script>
 
 </body>
+
 </html>
