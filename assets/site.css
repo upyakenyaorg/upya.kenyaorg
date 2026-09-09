@@ -390,3 +390,355 @@ height: 60px;
 
 }
 
+/* ==============================
+   UPYA LEADERSHIP PAGE
+   ============================== */
+
+.leadership-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 5rem 5vw;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, #073b2fee, #073b2fbb, #073b2f55),
+    url("../github/AK1A1634.jpg") center/cover;
+}
+
+.leadership-hero-content {
+  max-width: 780px;
+}
+
+.leadership-hero h1 {
+  margin: .5rem 0 1.2rem;
+}
+
+.leadership-hero p:not(.eyebrow) {
+  max-width: 650px;
+  font-size: 1.2rem;
+}
+
+.leadership-section-heading {
+  max-width: 850px;
+  margin-bottom: 3rem;
+}
+
+.leadership-section-heading h2 {
+  margin: .5rem 0 1rem;
+}
+
+.leadership-section-heading > p:last-child {
+  max-width: 700px;
+  font-size: 1.05rem;
+}
+
+
+/* ==============================
+   CHAIRPERSON MESSAGE
+   ============================== */
+
+.leadership-message {
+  display: grid;
+  grid-template-columns: .8fr 1.5fr;
+  gap: 8%;
+  align-items: start;
+}
+
+.message-card {
+  position: relative;
+  padding: 3rem;
+  color: var(--deep-green);
+  background: var(--white);
+  border-left: 5px solid var(--green);
+  box-shadow: 0 15px 45px #073b2f12;
+}
+
+.message-mark {
+  color: var(--light-green);
+  font: 5rem/.6 Georgia, serif;
+}
+
+.message-card p {
+  font-size: 1.05rem;
+}
+
+.message-signature {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.message-signature strong {
+  font-size: 1.1rem;
+}
+
+.message-signature span {
+  color: var(--green);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+
+/* ==============================
+   LEADERSHIP TEAM
+   ============================== */
+
+.leadership-team {
+  background: #eaf4ed;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.leader-card {
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 12px 35px #073b2f10;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px #073b2f1c;
+}
+
+.leader-photo {
+  display: grid;
+  height: 250px;
+  place-items: center;
+  color: var(--white);
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--deep-green)
+  );
+}
+
+.leader-photo span {
+  display: grid;
+  width: 115px;
+  height: 115px;
+  place-items: center;
+  border: 3px solid var(--light-green);
+  border-radius: 50%;
+  font: 2.2rem Georgia, serif;
+}
+
+.leader-info {
+  padding: 1.7rem;
+}
+
+.leader-role {
+  margin: 0;
+  color: var(--green);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.leader-info h3 {
+  margin: .35rem 0 .8rem;
+  font-size: 1.7rem;
+}
+
+
+/* ==============================
+   ORGANIZATION
+   ============================== */
+
+.organization-section {
+  background: var(--white);
+}
+
+.organization-chart {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.organization-level {
+  display: flex;
+  justify-content: center;
+}
+
+.organization-box {
+  display: flex;
+  min-width: 220px;
+  padding: 1.4rem;
+  flex-direction: column;
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--green);
+}
+
+.organization-top {
+  background: var(--deep-green);
+  color: var(--white);
+  border-top-color: var(--light-green);
+}
+
+.organization-icon {
+  margin-bottom: .6rem;
+  color: var(--green);
+  font-size: 1.5rem;
+}
+
+.organization-top .organization-icon {
+  color: var(--light-green);
+}
+
+.organization-box strong {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.organization-box small {
+  margin-top: .3rem;
+  opacity: .8;
+}
+
+.organization-line {
+  width: 2px;
+  height: 35px;
+  margin: 0 auto;
+  background: var(--line);
+}
+
+.organization-team {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+}
+
+.organization-team::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: 25%;
+  left: 25%;
+  height: 2px;
+  background: var(--line);
+}
+
+
+/* ==============================
+   LEADERSHIP VALUES
+   ============================== */
+
+.leadership-values {
+  background: var(--paper);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.value-card {
+  position: relative;
+  min-height: 220px;
+  padding: 1.5rem;
+  background: var(--white);
+  border-top: 4px solid var(--green);
+}
+
+.value-card > span {
+  color: var(--light-green);
+  font: 2.5rem Georgia, serif;
+}
+
+.value-card h3 {
+  margin: .8rem 0;
+  font-size: 1.4rem;
+}
+
+
+/* ==============================
+   GOVERNANCE
+   ============================== */
+
+.governance-section {
+  color: var(--white);
+  background: var(--deep-green);
+}
+
+.governance-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 10%;
+}
+
+.governance-section .eyebrow {
+  color: var(--light-green);
+}
+
+.governance-section h2 {
+  margin-top: .5rem;
+}
+
+.governance-text {
+  font-size: 1.08rem;
+}
+
+.governance-text p:first-child {
+  margin-top: 0;
+}
+
+
+/* ==============================
+   RESPONSIVE LEADERSHIP
+   ============================== */
+
+@media (max-width: 900px) {
+
+  .leadership-message,
+  .governance-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .leadership-hero {
+    min-height: 450px;
+  }
+
+  .leadership-grid,
+  .values-grid,
+  .organization-team {
+    grid-template-columns: 1fr;
+  }
+
+  .organization-team {
+    gap: 1rem;
+  }
+
+  .organization-team::before {
+    display: none;
+  }
+
+  .message-card {
+    padding: 2rem;
+  }
+
+}
