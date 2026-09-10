@@ -109,44 +109,6 @@ if (footer) {
 
     </div>
 
-
-    <div class="footer-links">
-
-      <strong>Explore</strong>
-
-      <a href="index.html">Home</a>
-
-      <a href="about.html">
-        About UPYA
-      </a>
-
-      <a href="programmes.html">
-        Programmes
-      </a>
-
-      <a href="projects.html">
-        Projects
-      </a>
-
-      <a href="gallery.html">
-        Gallery
-      </a>
-
-      <a href="leadership.html">
-        Leadership
-      </a>
-
-      <a href="news.html">
-        News
-      </a>
-
-      <a href="get-involved.html">
-        Get Involved
-      </a>
-
-    </div>
-
-
     <div class="footer-links">
 
       <strong>Contact</strong>
