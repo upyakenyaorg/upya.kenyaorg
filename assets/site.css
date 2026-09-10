@@ -393,6 +393,13 @@ height: 60px;
   object-fit: contain;
 }
 
+.site-footer small {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+  color: #dcece3;
+  border-top: 1px solid #ffffff2e;
+  text-align: center;
+}
 
 /* MOBILE */
 
