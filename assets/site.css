@@ -1847,3 +1847,254 @@ height: 60px;
   }
 
 }
+/* ==============================
+   UPYA ALBUM PAGE
+   ============================== */
+
+.album-hero {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 6rem 5vw;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, #073b2fee, #073b2f99, #073b2f25),
+    url("../assets/images/gallery/from-ideas-to-income.jpg")
+    center / cover;
+}
+
+.album-hero-content {
+  max-width: 760px;
+}
+
+.album-hero h1 {
+  margin: .5rem 0 1rem;
+}
+
+.album-hero-content > p:not(.eyebrow):not(.album-date) {
+  max-width: 650px;
+  font-size: 1.15rem;
+}
+
+.album-date {
+  color: var(--light-green);
+  font-weight: 900;
+}
+
+.album-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+
+.event-details {
+  background: #e8f3eb;
+}
+
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.event-detail-card {
+  padding: 1.5rem;
+  background: var(--white);
+  border-top: 4px solid var(--green);
+}
+
+.detail-icon {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  margin-bottom: 1rem;
+  color: var(--deep-green);
+  background: var(--light-green);
+}
+
+.event-detail-card h3 {
+  margin-bottom: .4rem;
+}
+
+.event-detail-card p {
+  margin: 0;
+}
+
+.activity-section {
+  background: var(--white);
+}
+
+.activity-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.activity-list li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-weight: 700;
+}
+
+.activity-list i {
+  color: var(--green);
+}
+
+.album-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.album-photo {
+  height: 280px;
+  overflow: hidden;
+  background: #dfe9e2;
+  cursor: pointer;
+}
+
+.album-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.album-photo:hover img {
+  transform: scale(1.06);
+}
+
+.album-outcomes {
+  background: #e8f3eb;
+}
+
+.related-content {
+  text-align: center;
+}
+
+.related-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* ALBUM LIGHTBOX */
+
+.album-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  padding: 2rem;
+  background: #073b2ff5;
+}
+
+.album-lightbox.open {
+  display: grid;
+}
+
+.album-lightbox-content {
+  position: relative;
+  width: min(1100px, 95vw);
+  max-height: 90vh;
+  text-align: center;
+}
+
+.album-lightbox-image {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.album-lightbox-caption {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.album-lightbox-close,
+.album-lightbox-prev,
+.album-lightbox-next {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  color: var(--white);
+  background: #073b2fcc;
+  border: 1px solid #ffffff55;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.album-lightbox-close {
+  top: -3.5rem;
+  right: 0;
+}
+
+.album-lightbox-prev {
+  top: 50%;
+  left: -4rem;
+  transform: translateY(-50%);
+}
+
+.album-lightbox-next {
+  top: 50%;
+  right: -4rem;
+  transform: translateY(-50%);
+}
+
+
+@media (max-width: 900px) {
+
+  .event-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .album-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .album-hero {
+    min-height: 500px;
+  }
+
+  .album-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .event-detail-grid,
+  .album-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .album-photo {
+    height: 250px;
+  }
+
+  .album-lightbox-prev {
+    left: .5rem;
+  }
+
+  .album-lightbox-next {
+    right: .5rem;
+  }
+
+}
