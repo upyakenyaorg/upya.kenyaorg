@@ -1528,44 +1528,73 @@ height: 60px;
 }
 
 
-/* STORY */
-
-.story-section {
-  background: #eaf5ee;
-}
-
-.story-timeline {
-  max-width: 950px;
-  margin: 3rem auto 0;
-  border-left: 3px solid var(--green);
-}
-
-.timeline-item {
-  position: relative;
+```css
+.story-content {
   display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 1.5rem;
-  padding: 0 0 3rem 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
 }
 
-.timeline-number {
-  position: absolute;
-  left: -23px;
-  display: grid;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  color: var(--deep-green);
-  background: var(--light-green);
-  border: 4px solid #eaf5ee;
-  border-radius: 50%;
-  font-weight: 900;
+.story-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+  border-left: 6px solid #1e40af;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
 }
 
-.timeline-item h3 {
-  margin-top: 0;
-  font-size: 1.7rem;
+.story-card:nth-child(2) {
+  border-left-color: #ffd700;
+  background: linear-gradient(135deg, #fffdf0, #fff8cc);
 }
+
+.story-card:nth-child(3) {
+  border-left-color: #16a34a;
+  background: linear-gradient(135deg, #f1fff5, #e5f9eb);
+}
+
+.story-card:nth-child(4) {
+  border-left-color: #7c3aed;
+  background: linear-gradient(135deg, #faf7ff, #f1eaff);
+}
+
+.story-card:nth-child(5) {
+  border-left-color: #ea580c;
+  background: linear-gradient(135deg, #fff8f1, #ffead8);
+}
+
+.story-card:nth-child(6) {
+  border-left-color: #0891b2;
+  background: linear-gradient(135deg, #f0fdff, #dff8fc);
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.story-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #1e40af;
+}
+
+.story-card p {
+  margin: 0;
+  line-height: 1.8;
+  color: #374151;
+  font-size: 16px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .story-content {
+    grid-template-columns: 1fr;
+  }
+}
+```
 
 
 /* MISSION + VISION */
