@@ -743,3 +743,214 @@ if (counters.length) {
   });
 
 }
+/* ==============================
+   UPYA ALBUM LIGHTBOX
+   ============================== */
+
+const albumPhotos = [
+  ...document.querySelectorAll(".album-photo")
+];
+
+const albumLightbox =
+  document.querySelector(".album-lightbox");
+
+const albumLightboxImage =
+  document.querySelector(".album-lightbox-image");
+
+const albumLightboxCaption =
+  document.querySelector(".album-lightbox-caption");
+
+const albumLightboxClose =
+  document.querySelector(".album-lightbox-close");
+
+const albumLightboxPrev =
+  document.querySelector(".album-lightbox-prev");
+
+const albumLightboxNext =
+  document.querySelector(".album-lightbox-next");
+
+let currentAlbumPhoto = 0;
+
+
+/* ==============================
+   OPEN ALBUM PHOTO
+   ============================== */
+
+function openAlbumPhoto(index) {
+
+  if (
+    !albumLightbox ||
+    !albumPhotos.length
+  ) {
+    return;
+  }
+
+  currentAlbumPhoto = index;
+
+  const photo =
+    albumPhotos[currentAlbumPhoto];
+
+  const image =
+    photo.querySelector("img");
+
+  if (!image) return;
+
+  albumLightboxImage.src =
+    image.src;
+
+  albumLightboxImage.alt =
+    image.alt;
+
+  albumLightboxCaption.textContent =
+    photo.dataset.caption ||
+    image.alt ||
+    "";
+
+  albumLightbox.classList.add("open");
+
+  albumLightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+
+/* ==============================
+   CLOSE ALBUM PHOTO
+   ============================== */
+
+function closeAlbumPhoto() {
+
+  if (!albumLightbox) return;
+
+  albumLightbox.classList.remove(
+    "open"
+  );
+
+  albumLightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+}
+
+
+/* ==============================
+   CHANGE ALBUM PHOTO
+   ============================== */
+
+function changeAlbumPhoto(direction) {
+
+  if (!albumPhotos.length) {
+    return;
+  }
+
+  currentAlbumPhoto =
+    (
+      currentAlbumPhoto +
+      direction +
+      albumPhotos.length
+    ) %
+    albumPhotos.length;
+
+  openAlbumPhoto(
+    currentAlbumPhoto
+  );
+}
+
+
+/* ==============================
+   PHOTO CLICK
+   ============================== */
+
+albumPhotos.forEach(
+  (photo, index) => {
+
+    photo.addEventListener(
+      "click",
+      () => {
+        openAlbumPhoto(index);
+      }
+    );
+
+  }
+);
+
+
+/* ==============================
+   LIGHTBOX BUTTONS
+   ============================== */
+
+albumLightboxClose?.addEventListener(
+  "click",
+  closeAlbumPhoto
+);
+
+albumLightboxPrev?.addEventListener(
+  "click",
+  () => {
+    changeAlbumPhoto(-1);
+  }
+);
+
+albumLightboxNext?.addEventListener(
+  "click",
+  () => {
+    changeAlbumPhoto(1);
+  }
+);
+
+
+/* ==============================
+   CLOSE BY BACKGROUND
+   ============================== */
+
+albumLightbox?.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === albumLightbox
+    ) {
+      closeAlbumPhoto();
+    }
+
+  }
+);
+
+
+/* ==============================
+   KEYBOARD CONTROLS
+   ============================== */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      !albumLightbox?.classList.contains(
+        "open"
+      )
+    ) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeAlbumPhoto();
+    }
+
+    if (event.key === "ArrowLeft") {
+      changeAlbumPhoto(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      changeAlbumPhoto(1);
+    }
+
+  }
+);
