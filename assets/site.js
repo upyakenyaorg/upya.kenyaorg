@@ -667,22 +667,25 @@ document.addEventListener(
   }
 );
 /* ==============================
-   ABOUT PAGE IMPACT COUNTERS
+   ANIMATED IMPACT COUNTERS
    ============================== */
 
-const impactNumbers = [
-  ...document.querySelectorAll(".impact-number")
-];
+const counters = document.querySelectorAll(".counter");
 
-function animateImpactNumber(element) {
+const animateCounter = (counter) => {
 
   const target =
-    Number(element.dataset.target) || 0;
+    Number(counter.dataset.target);
+
+  const suffix =
+    counter.dataset.suffix || "";
 
   const duration = 1800;
-  const startTime = performance.now();
 
-  function updateNumber(currentTime) {
+  const startTime =
+    performance.now();
+
+  function updateCounter(currentTime) {
 
     const elapsed =
       currentTime - startTime;
@@ -696,22 +699,24 @@ function animateImpactNumber(element) {
     const currentValue =
       Math.floor(target * easedProgress);
 
-    element.textContent =
-      currentValue.toLocaleString();
+    counter.textContent =
+      currentValue.toLocaleString() + suffix;
 
     if (progress < 1) {
-      requestAnimationFrame(updateNumber);
+      requestAnimationFrame(updateCounter);
     }
 
   }
 
-  requestAnimationFrame(updateNumber);
-}
+  requestAnimationFrame(updateCounter);
+};
 
 
-if (impactNumbers.length) {
+/* Start counters when they enter the screen */
 
-  const impactObserver =
+if (counters.length) {
+
+  const counterObserver =
     new IntersectionObserver(
       (entries, observer) => {
 
@@ -719,13 +724,9 @@ if (impactNumbers.length) {
 
           if (entry.isIntersecting) {
 
-            animateImpactNumber(
-              entry.target
-            );
+            animateCounter(entry.target);
 
-            observer.unobserve(
-              entry.target
-            );
+            observer.unobserve(entry.target);
 
           }
 
@@ -737,9 +738,8 @@ if (impactNumbers.length) {
       }
     );
 
-
-  impactNumbers.forEach((number) => {
-    impactObserver.observe(number);
+  counters.forEach((counter) => {
+    counterObserver.observe(counter);
   });
 
 }
