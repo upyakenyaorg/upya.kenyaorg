@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Community Action With UPYA | UPYA</title>
+
+  <link rel="stylesheet" href="assets/site.css">
+
+  <style>
+    /* ==============================
+       UPYA NEWS ARTICLE
+       ============================== */
+
+    .article-hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      color: white;
+      background: #073b2f;
+    }
+
+    .article-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          #073b2ff5 0%,
+          #073b2f99 45%,
+          #073b2f22 100%
+        );
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 7rem 5vw 4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .45rem .8rem;
+      color: var(--deep-green);
+      background: var(--light-green);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 900px;
+      margin: 0 0 1rem;
+      color: white;
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #e9f5ee;
+      font-weight: 700;
+    }
+
+    /* ARTICLE LAYOUT */
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 4rem;
+      max-width: 1150px;
+      margin: auto;
+      padding: 5rem 5vw;
+    }
+
+    .article-content {
+      max-width: 800px;
+    }
+
+    .article-introduction {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .article-content ul {
+      padding-left: 1.4rem;
+    }
+
+    /* ARTICLE PHOTOS */
+
+    .article-photo {
+      margin: 3rem 0;
+    }
+
+    .article-photo img {
+      display: block;
+      width: 100%;
+      max-height: 550px;
+      object-fit: cover;
+    }
+
+    .article-photo figcaption {
+      padding-top: .7rem;
+      color: #60776d;
+      font-size: .85rem;
+    }
+
+    /* SIDEBAR */
+
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .sidebar-box {
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      background: var(--white);
+      border-top: 4px solid var(--green);
+    }
+
+    .sidebar-box h3 {
+      margin-top: 0;
+    }
+
+    .sidebar-box p {
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .sidebar-box a {
+      display: block;
+      margin-top: .7rem;
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .sidebar-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* STORY POINTS */
+
+    .story-points {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .story-point {
+      padding: 1.2rem 1.3rem;
+      background: #eef7f0;
+      border-left: 4px solid var(--green);
+    }
+
+    .story-point strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    /* IMPACT */
+
+    .impact-box {
+      margin: 3rem 0;
+      padding: 2rem;
+      color: white;
+      background: var(--green);
+    }
+
+    .impact-box h2 {
+      margin-top: 0;
+    }
+
+    .impact-box p {
+      margin-bottom: 0;
+    }
+
+    /* ACTION BUTTONS */
+
+    .article-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* RELATED NEWS */
+
+    .related-news {
+      padding: 5rem 5vw;
+      background: #e7f2e9;
+    }
+
+    .related-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .related-card {
+      overflow: hidden;
+      background: white;
+    }
+
+    .related-card img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .related-card-content {
+      padding: 1.3rem;
+    }
+
+    .related-card-content small {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .related-card-content h3 {
+      margin: .5rem 0;
+    }
+
+    .related-card-content a {
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 460px) {
+
+      .article-hero {
+        min-height: 500px;
+      }
+
+      .article-hero-content {
+        padding-bottom: 2.5rem;
+      }
+
+      .article-layout {
+        padding-top: 3rem;
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+
+  <header class="site-header"></header>
+
+
+  <main>
+
+
+    <!-- ==============================
+         ARTICLE HERO
+         ============================== -->
+
+    <section class="article-hero">
+
+      <img
+        class="article-hero-image"
+        src="github/AK1A1634.jpg"
+        alt="UPYA community action activity">
+
+      <div class="article-hero-overlay"></div>
+
+      <div class="article-hero-content">
+
+        <span class="article-category">
+          Community Development
+        </span>
+
+        <h1>
+          Community Action With UPYA
+        </h1>
+
+        <div class="article-meta">
+
+          <span>
+            <i class="fa-regular fa-calendar"></i>
+            UPYA Community Activities
+          </span>
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Seme
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ARTICLE CONTENT
+         ============================== -->
+
+    <section class="article-layout">
+
+
+      <article class="article-content">
+
+
+        <p class="article-introduction">
+
+          UPYA believes that meaningful change begins when
+          communities come together to identify challenges,
+          share ideas and take practical action. Through
+          community activities, young people are encouraged
+          to become active participants in transforming
+          their communities.
+
+        </p>
+
+
+        <h2>
+          Full Story
+        </h2>
+
+        <p>
+
+          Community development is one of the important
+          areas of work for Uwezo Pamoja Youths Association.
+          UPYA seeks to create opportunities where young
+          people can move beyond discussions and participate
+          in practical activities that contribute to their
+          communities.
+
+        </p>
+
+        <p>
+
+          These activities bring together young people,
+          community members and other stakeholders around
+          issues that affect everyday life.
+
+        </p>
+
+        <p>
+
+          Through teamwork and shared responsibility,
+          participants are encouraged to understand that
+          positive change does not always require large
+          resources. Small actions, when organised and
+          sustained, can contribute to meaningful community
+          impact.
+
+        </p>
+
+
+        <!-- SUPPORTING PHOTO -->
+
+        <figure class="article-photo">
+
+          <img
+            src="github/IMG_20251002_174846_957.jpg"
+            alt="UPYA members participating in a community activity">
+
+          <figcaption>
+
+            UPYA youth participating in community-focused
+            activities.
+
+          </figcaption>
+
+        </figure>
+
+
+        <!-- WHAT HAPPENED -->
+
+        <h2>
+          What Happened
+        </h2>
+
+
+        <div class="story-points">
+
+
+          <div class="story-point">
+
+            <strong>
+              Community Engagement
+            </strong>
+
+            Young people were encouraged to participate
+            actively in identifying community needs and
+            possible solutions.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Teamwork
+            </strong>
+
+            Participants worked together and shared
+            responsibilities while carrying out
+            community activities.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Youth Participation
+            </strong>
+
+            The activities created opportunities for
+            young people to contribute their skills,
+            ideas and energy.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Community Awareness
+            </strong>
+
+            The initiative encouraged conversations about
+            issues affecting communities and the importance
+            of collective action.
+
+          </div>
+
+
+        </div>
+
+
+        <!-- IMPACT -->
+
+        <div class="impact-box">
+
+          <h2>
+            Impact
+          </h2>
+
+          <p>
+
+            Community action helps strengthen relationships,
+            encourage responsibility and give young people
+            practical experience in working with others.
+            UPYA's approach is centred on creating a culture
+            where young people see themselves as contributors
+            to positive community change.
+
+          </p>
+
+        </div>
+
+
+        <!-- WHAT'S NEXT -->
+
+        <h2>
+          What's Next?
+        </h2>
+
+        <p>
+
+          UPYA will continue supporting initiatives that
+          encourage young people to participate in community
+          development and respond to challenges affecting
+          their communities.
+
+        </p>
+
+        <p>
+
+          Future activities will continue to promote
+          teamwork, volunteering, mentorship, leadership
+          and practical community action.
+
+        </p>
+
+
+        <!-- ACTIONS -->
+
+        <div class="article-actions">
+
+          <a
+            href="news.html"
+            class="button">
+
+            ← Back to News
+
+          </a>
+
+
+          <a
+            href="gallery.html"
+            class="button">
+
+            View Gallery
+
+          </a>
+
+
+          <a
+            href="get-involved.html"
+            class="button button-gold">
+
+            Get Involved
+
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+      <!-- ==============================
+           SIDEBAR
+           ============================== -->
+
+      <aside class="article-sidebar">
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            About This Story
+          </h3>
+
+          <p>
+
+            This story highlights UPYA's commitment to
+            community participation and practical youth-led
+            development.
+
+          </p>
+
+          <a href="projects.html">
+            Explore Our Projects →
+          </a>
+
+        </div>
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            Explore UPYA
+          </h3>
+
+          <a href="programmes.html">
+            Our Programmes
+          </a>
+
+          <a href="projects.html">
+            Our Projects
+          </a>
+
+          <a href="gallery.html">
+            Photo Gallery
+          </a>
+
+          <a href="get-involved.html">
+            Join UPYA
+          </a>
+
+        </div>
+
+
+      </aside>
+
+
+    </section>
+
+
+    <!-- ==============================
+         RELATED STORIES
+         ============================== -->
+
+    <section class="related-news">
+
+      <div class="related-inner">
+
+        <p class="eyebrow dark">
+          Continue Reading
+        </p>
+
+        <h2>
+          More From UPYA
+        </h2>
+
+
+        <div class="related-grid">
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A1634.jpg"
+              alt="UPYA entrepreneurship session">
+
+            <div class="related-card-content">
+
+              <small>
+                Youth Empowerment
+              </small>
+
+              <h3>
+                Youth Entrepreneurship Session
+              </h3>
+
+              <a href="news-youth-entrepreneurship.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A5856.jpg"
+              alt="UPYA mentorship forum">
+
+            <div class="related-card-content">
+
+              <small>
+                Mentorship
+              </small>
+
+              <h3>
+                Youth Mentorship Forum
+              </h3>
+
+              <a href="news-mentorship.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/IMG_20251002_174846_957.jpg"
+              alt="UPYA youth leadership">
+
+            <div class="related-card-content">
+
+              <small>
+                Leadership
+              </small>
+
+              <h3>
+                Building Young Leaders
+              </h3>
+
+              <a href="news-youth-leadership.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer></footer>
+
+
+  <script src="assets/site.js"></script>
+
+</body>
+
+</html>
