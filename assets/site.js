@@ -666,3 +666,80 @@ document.addEventListener(
 
   }
 );
+/* ==============================
+   ABOUT PAGE IMPACT COUNTERS
+   ============================== */
+
+const impactNumbers = [
+  ...document.querySelectorAll(".impact-number")
+];
+
+function animateImpactNumber(element) {
+
+  const target =
+    Number(element.dataset.target) || 0;
+
+  const duration = 1800;
+  const startTime = performance.now();
+
+  function updateNumber(currentTime) {
+
+    const elapsed =
+      currentTime - startTime;
+
+    const progress =
+      Math.min(elapsed / duration, 1);
+
+    const easedProgress =
+      1 - Math.pow(1 - progress, 3);
+
+    const currentValue =
+      Math.floor(target * easedProgress);
+
+    element.textContent =
+      currentValue.toLocaleString();
+
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber);
+    }
+
+  }
+
+  requestAnimationFrame(updateNumber);
+}
+
+
+if (impactNumbers.length) {
+
+  const impactObserver =
+    new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            animateImpactNumber(
+              entry.target
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+  impactNumbers.forEach((number) => {
+    impactObserver.observe(number);
+  });
+
+}
