@@ -45,10 +45,6 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
 .eyebrow.dark { color: var(--green); }
 .hero-actions { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; }
 .hero-link { font-weight: 800; }
-.floating-logo { position: absolute; top: 50%; right: 7vw; z-index: 2; display: grid; place-content: center; width: clamp(9rem, 16vw, 14rem); aspect-ratio: 1; color: var(--white); background: #073b2f99; border: 2px solid var(--light-green); border-radius: 50%; box-shadow: 0 20px 60px #0008; text-align: center; text-decoration: none; transform: translateY(-50%) rotate(8deg); }
-.floating-logo span { color: var(--light-green); font: clamp(3rem, 7vw, 6rem)/.75 Georgia, serif; }
-.floating-logo b { letter-spacing: .13em; }
-.floating-logo small { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
 .slide-dots { position: absolute; right: 5vw; bottom: 2rem; z-index: 2; display: flex; gap: .55rem; }
 .slide-dots button { width: .75rem; height: .75rem; padding: 0; background: transparent; border: 1px solid var(--white); border-radius: 50%; }
 .slide-dots button.active { background: var(--light-green); border-color: var(--light-green); }
