@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Youth Mentorship Forum | UPYA</title>
+
+  <link rel="stylesheet" href="assets/site.css">
+
+  <style>
+    /* ==============================
+       UPYA NEWS ARTICLE
+       ============================== */
+
+    .article-hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      color: white;
+      background: #073b2f;
+    }
+
+    .article-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          #073b2ff5 0%,
+          #073b2f99 45%,
+          #073b2f22 100%
+        );
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 7rem 5vw 4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .45rem .8rem;
+      color: var(--deep-green);
+      background: var(--light-green);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 900px;
+      margin: 0 0 1rem;
+      color: white;
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #e9f5ee;
+      font-weight: 700;
+    }
+
+    /* ARTICLE */
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 4rem;
+      max-width: 1150px;
+      margin: auto;
+      padding: 5rem 5vw;
+    }
+
+    .article-content {
+      max-width: 800px;
+    }
+
+    .article-introduction {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .article-content ul {
+      padding-left: 1.4rem;
+    }
+
+    /* PHOTOS */
+
+    .article-photo {
+      margin: 3rem 0;
+    }
+
+    .article-photo img {
+      display: block;
+      width: 100%;
+      max-height: 550px;
+      object-fit: cover;
+    }
+
+    .article-photo figcaption {
+      padding-top: .7rem;
+      color: #60776d;
+      font-size: .85rem;
+    }
+
+    /* SIDEBAR */
+
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .sidebar-box {
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      background: var(--white);
+      border-top: 4px solid var(--green);
+    }
+
+    .sidebar-box h3 {
+      margin-top: 0;
+    }
+
+    .sidebar-box p {
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .sidebar-box a {
+      display: block;
+      margin-top: .7rem;
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .sidebar-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* STORY POINTS */
+
+    .story-points {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .story-point {
+      padding: 1.2rem 1.3rem;
+      background: #eef7f0;
+      border-left: 4px solid var(--green);
+    }
+
+    .story-point strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    /* IMPACT */
+
+    .impact-box {
+      margin: 3rem 0;
+      padding: 2rem;
+      color: white;
+      background: var(--green);
+    }
+
+    .impact-box h2 {
+      margin-top: 0;
+    }
+
+    .impact-box p {
+      margin-bottom: 0;
+    }
+
+    /* ACTIONS */
+
+    .article-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* RELATED STORIES */
+
+    .related-news {
+      padding: 5rem 5vw;
+      background: #e7f2e9;
+    }
+
+    .related-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .related-card {
+      overflow: hidden;
+      background: white;
+    }
+
+    .related-card img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .related-card-content {
+      padding: 1.3rem;
+    }
+
+    .related-card-content small {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .related-card-content h3 {
+      margin: .5rem 0;
+    }
+
+    .related-card-content a {
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 460px) {
+
+      .article-hero {
+        min-height: 500px;
+      }
+
+      .article-hero-content {
+        padding-bottom: 2.5rem;
+      }
+
+      .article-layout {
+        padding-top: 3rem;
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header"></header>
+
+
+  <!-- ==============================
+       ARTICLE HERO
+       ============================== -->
+
+  <main>
+
+    <section class="article-hero">
+
+      <img
+        class="article-hero-image"
+        src="github/AK1A5856.jpg"
+        alt="UPYA youth mentorship activity">
+
+      <div class="article-hero-overlay"></div>
+
+      <div class="article-hero-content">
+
+        <span class="article-category">
+          Mentorship
+        </span>
+
+        <h1>
+          Youth Mentorship Forum
+        </h1>
+
+        <div class="article-meta">
+
+          <span>
+            <i class="fa-regular fa-calendar"></i>
+            23 September 2026
+          </span>
+
+          <span>
+            <i class="fa-solid fa-clock"></i>
+            10:00 AM
+          </span>
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Seme
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ARTICLE BODY
+         ============================== -->
+
+    <section class="article-layout">
+
+
+      <article class="article-content">
+
+
+        <p class="article-introduction">
+
+          UPYA's Youth Mentorship Forum brings young people
+          together with mentors and community voices to
+          encourage learning, personal development,
+          leadership and responsible participation in
+          community development.
+
+        </p>
+
+
+        <h2>
+          Full Story
+        </h2>
+
+        <p>
+
+          The Youth Mentorship Forum provides a platform
+          where young people can interact, ask questions,
+          exchange experiences and learn from people with
+          different experiences and perspectives.
+
+        </p>
+
+        <p>
+
+          Through open conversations and practical guidance,
+          the forum seeks to help young people understand
+          their potential and make informed decisions about
+          education, careers, entrepreneurship, leadership
+          and their role in society.
+
+        </p>
+
+        <p>
+
+          UPYA believes that mentorship should not be a
+          one-time conversation. It should create lasting
+          relationships through which young people can
+          continue learning, receiving guidance and
+          supporting one another.
+
+        </p>
+
+
+        <!-- SUPPORTING PHOTO -->
+
+        <figure class="article-photo">
+
+          <img
+            src="github/AK1A1634.jpg"
+            alt="Young people participating in a UPYA activity">
+
+          <figcaption>
+
+            Creating spaces where young people can learn,
+            connect and share experiences.
+
+          </figcaption>
+
+        </figure>
+
+
+        <!-- WHAT HAPPENED -->
+
+        <h2>
+          What Happened
+        </h2>
+
+        <div class="story-points">
+
+
+          <div class="story-point">
+
+            <strong>
+              Mentorship Conversations
+            </strong>
+
+            Participants engaged in conversations
+            focused on personal growth, education,
+            careers and leadership.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Sharing Experiences
+            </strong>
+
+            Young people had an opportunity to share
+            their experiences, questions and challenges.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Leadership Development
+            </strong>
+
+            The forum encouraged participants to think
+            about responsible leadership and community
+            participation.
+
+          </div>
+
+
+          <div class="story-point">
+
+            <strong>
+              Networking
+            </strong>
+
+            The event created opportunities for young
+            people to connect with mentors and other
+            participants.
+
+          </div>
+
+
+        </div>
+
+
+        <!-- IMPACT -->
+
+        <div class="impact-box">
+
+          <h2>
+            Impact
+          </h2>
+
+          <p>
+
+            Mentorship gives young people access to
+            knowledge, encouragement and perspectives
+            that can help them navigate important
+            decisions. UPYA seeks to build a culture
+            where young people learn from one another
+            and from experienced members of society.
+
+          </p>
+
+        </div>
+
+
+        <!-- WHAT'S NEXT -->
+
+        <h2>
+          What's Next?
+        </h2>
+
+        <p>
+
+          UPYA plans to continue developing mentorship
+          opportunities that connect young people with
+          experienced professionals, community leaders,
+          educators and other positive role models.
+
+        </p>
+
+        <p>
+
+          The organisation will also continue encouraging
+          young people to become mentors themselves by
+          sharing knowledge and experiences with others.
+
+        </p>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="article-actions">
+
+          <a
+            href="news.html"
+            class="button">
+
+            ← Back to News
+
+          </a>
+
+
+          <a
+            href="gallery.html"
+            class="button">
+
+            View Gallery
+
+          </a>
+
+
+          <a
+            href="get-involved.html"
+            class="button button-gold">
+
+            Get Involved
+
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+      <!-- ==============================
+           SIDEBAR
+           ============================== -->
+
+      <aside class="article-sidebar">
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            About This Story
+          </h3>
+
+          <p>
+
+            This story highlights UPYA's commitment to
+            youth mentorship, leadership development
+            and community learning.
+
+          </p>
+
+          <a href="programmes.html">
+            Explore Programmes →
+          </a>
+
+        </div>
+
+
+        <div class="sidebar-box">
+
+          <h3>
+            Explore UPYA
+          </h3>
+
+          <a href="projects.html">
+            Our Projects
+          </a>
+
+          <a href="gallery.html">
+            Photo Gallery
+          </a>
+
+          <a href="leadership.html">
+            Our Leadership
+          </a>
+
+          <a href="get-involved.html">
+            Join UPYA
+          </a>
+
+        </div>
+
+
+      </aside>
+
+
+    </section>
+
+
+    <!-- ==============================
+         RELATED NEWS
+         ============================== -->
+
+    <section class="related-news">
+
+      <div class="related-inner">
+
+        <p class="eyebrow dark">
+          Continue Reading
+        </p>
+
+        <h2>
+          More From UPYA
+        </h2>
+
+
+        <div class="related-grid">
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A1634.jpg"
+              alt="UPYA entrepreneurship activity">
+
+            <div class="related-card-content">
+
+              <small>
+                Youth Empowerment
+              </small>
+
+              <h3>
+                Youth Entrepreneurship Session
+              </h3>
+
+              <a href="news-youth-entrepreneurship.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/AK1A5856.jpg"
+              alt="UPYA community activity">
+
+            <div class="related-card-content">
+
+              <small>
+                Community
+              </small>
+
+              <h3>
+                Community Action With UPYA
+              </h3>
+
+              <a href="news-community-action.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="related-card">
+
+            <img
+              src="github/IMG_20251002_174846_957.jpg"
+              alt="UPYA youth leadership">
+
+            <div class="related-card-content">
+
+              <small>
+                Leadership
+              </small>
+
+              <h3>
+                Building Young Leaders
+              </h3>
+
+              <a href="news-youth-leadership.html">
+                Read More →
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer></footer>
+
+
+  <script src="assets/site.js"></script>
+
+</body>
+
+</html>
