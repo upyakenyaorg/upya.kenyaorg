@@ -2127,3 +2127,108 @@ height: 60px;
 
 }
 
+/* ==============================
+   UPYA PROGRAMMES PAGE
+   ============================== */
+
+.programmes-hero {
+  min-height: 560px;
+  background:
+    linear-gradient(90deg, #073b2feb, #073b2f99, #073b2f22),
+    url("../github/AK1A1634.jpg") center/cover no-repeat;
+}
+
+.programmes-intro {
+  max-width: 900px;
+}
+
+.programmes-intro h2 {
+  max-width: 850px;
+  margin-bottom: 1.5rem;
+}
+
+.programmes-section {
+  background: var(--paper);
+}
+
+.programmes-section > h2 {
+  margin-top: .4rem;
+  margin-bottom: 2.5rem;
+}
+
+.programmes-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.programme-card {
+  position: relative;
+  padding: 2rem;
+  border-top: 5px solid var(--green);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.programme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #073b2f18;
+}
+
+.programme-number {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  margin-bottom: 1rem;
+  color: var(--deep-green);
+  background: var(--light-green);
+  font-weight: 900;
+  border-radius: 50%;
+}
+
+.programme-card h3 {
+  margin-top: .2rem;
+  margin-bottom: .8rem;
+  font-size: 1.7rem;
+}
+
+.programme-card p {
+  color: #315449;
+}
+
+.programme-card ul {
+  margin: 1.2rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--deep-green);
+}
+
+.programme-card li {
+  margin-bottom: .35rem;
+}
+
+.programme-card li::marker {
+  color: var(--green);
+}
+
+@media (max-width: 800px) {
+
+  .programmes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .programmes-hero {
+    min-height: 500px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .programmes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programmes-hero {
+    min-height: 480px;
+  }
+
+}
