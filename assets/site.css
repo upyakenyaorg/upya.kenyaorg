@@ -2236,3 +2236,64 @@ height: 60px;
   }
 
 }
+/* ==============================
+   FLOATING HERO LOGO
+   ============================== */
+
+.floating-logo {
+  position: absolute;
+  top: 50%;
+  right: 7vw;
+  z-index: 5;
+
+  display: grid;
+  place-items: center;
+
+  width: 180px;
+  height: 180px;
+
+  padding: 1rem;
+
+  background: #073b2f99;
+  border: 2px solid var(--light-green);
+  border-radius: 50%;
+
+  box-shadow: 0 20px 60px #0008;
+
+  text-decoration: none;
+
+  transform: translateY(-50%) rotate(5deg);
+}
+
+.floating-logo img {
+  display: block;
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .floating-logo {
+    width: 130px;
+    height: 130px;
+    right: 2rem;
+  }
+
+  .floating-logo img {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+@media (max-width: 460px) {
+  .floating-logo {
+    width: 100px;
+    height: 100px;
+    right: 1rem;
+  }
+
+  .floating-logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
