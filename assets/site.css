@@ -363,8 +363,8 @@ height: 60px;
 
 .site-header .brand img {
   display: block;
-  width: 100px;
-  height: 60px;
+  width: 68px;
+  height: 42px;
   object-fit: contain;
 }
 
@@ -385,8 +385,8 @@ height: 60px;
 
 .site-footer .footer-brand .brand img {
   display: block;
-  width: 100px;
-  height: 60px;
+  width: 80px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -2243,7 +2243,7 @@ height: 60px;
 .floating-logo {
   position: absolute;
   top: 50%;
-  right: 7vw;
+  right: 2vw;
   z-index: 5;
 
   display: grid;
@@ -2263,6 +2263,13 @@ height: 60px;
   text-decoration: none;
 
   transform: translateY(-50%) rotate(5deg);
+
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.floating-logo:hover {
+  transform: translateY(-50%) rotate(0deg) scale(1.05);
+  box-shadow: 0 25px 70px #0009;
 }
 
 .floating-logo img {
@@ -2272,28 +2279,50 @@ height: 60px;
   object-fit: contain;
 }
 
+
+/* ==============================
+   TABLET
+   ============================== */
+
 @media (max-width: 800px) {
+
   .floating-logo {
+    top: 25%;
+    right: 1rem;
+
     width: 130px;
     height: 130px;
-    right: 2rem;
+
+    padding: .7rem;
   }
 
   .floating-logo img {
     width: 105px;
     height: 105px;
   }
+
 }
 
+
+/* ==============================
+   MOBILE
+   ============================== */
+
 @media (max-width: 460px) {
+
   .floating-logo {
+    top: 22%;
+    right: .5rem;
+
     width: 100px;
     height: 100px;
-    right: 1rem;
+
+    padding: .5rem;
   }
 
   .floating-logo img {
     width: 80px;
     height: 80px;
   }
+
 }
