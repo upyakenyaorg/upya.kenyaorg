@@ -81,7 +81,7 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
   .main-navigation.open { display: flex; }
   .impact-stats, .card-grid, .two-columns, .gallery-teaser { grid-template-columns: 1fr 1fr; }
   .site-footer { grid-template-columns: 1fr 1fr; }
-.floating-logo small { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+
 
 
 
