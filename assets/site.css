@@ -81,12 +81,11 @@ h2 { font-size: clamp(2.3rem, 5vw, 4.3rem); }
   .main-navigation.open { display: flex; }
   .impact-stats, .card-grid, .two-columns, .gallery-teaser { grid-template-columns: 1fr 1fr; }
   .site-footer { grid-template-columns: 1fr 1fr; }
- .floating-logo {
-  position: absolute;
-  top: 50%;
-  right: 2vw;
-  z-index: 5;
-}
+.floating-logo small { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+.slide-dots { position: absolute; right: 5vw; bottom: 2rem; z-index: 2; display: flex; gap: .55rem; }
+.slide-dots button { width: .75rem; height: .75rem; padding: 0; background: transparent; border: 1px solid var(--white); border-radius: 50%; }
+.slide-dots button.active { background: var(--light-green); border-color: var(--light-green); }
+
 
 @media (max-width: 460px) {
   .impact-stats, .card-grid, .two-columns, .gallery-teaser, .site-footer { grid-template-columns: 1fr; }
