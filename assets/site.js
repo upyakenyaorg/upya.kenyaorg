@@ -555,3 +555,76 @@ document.addEventListener(
 
   }
 );
+
+/* ==============================
+   ANIMATED IMPACT COUNTERS
+   ============================== */
+
+const counters = document.querySelectorAll(".counter");
+
+const animateCounter = (counter) => {
+
+  const target = Number(counter.dataset.target);
+  const suffix = counter.dataset.suffix || "";
+
+  const duration = 1800;
+  const startTime = performance.now();
+
+  function updateCounter(currentTime) {
+
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    /* Smooth ease-out animation */
+    const easedProgress =
+      1 - Math.pow(1 - progress, 3);
+
+    const currentValue =
+      Math.floor(target * easedProgress);
+
+    counter.textContent =
+      currentValue.toLocaleString() + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.textContent =
+        target.toLocaleString() + suffix;
+    }
+  }
+
+  requestAnimationFrame(updateCounter);
+};
+
+
+/* Start counters when they enter the screen */
+
+if (counters.length) {
+
+  const counterObserver =
+    new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            animateCounter(entry.target);
+
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+  counters.forEach((counter) => {
+    counterObserver.observe(counter);
+  });
+
+}
