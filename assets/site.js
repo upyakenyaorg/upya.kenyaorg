@@ -2,7 +2,10 @@
    UPYA SHARED WEBSITE SYSTEM
    ============================== */
 
-/* ---------- FONT AWESOME ---------- */
+
+/* ==============================
+   FONT AWESOME
+   ============================== */
 
 const iconStylesheet = document.createElement("link");
 
@@ -20,6 +23,7 @@ document.head.appendChild(iconStylesheet);
 const header = document.querySelector(".site-header");
 
 if (header) {
+
   header.innerHTML = `
     <a class="brand" href="index.html" aria-label="UPYA home">
       <img
@@ -52,12 +56,15 @@ if (header) {
 
       <a href="news.html">News</a>
 
-      <a class="button button-gold" href="get-involved.html">
+      <a
+        class="button button-gold"
+        href="get-involved.html">
         Join UPYA
       </a>
 
     </nav>
   `;
+
 
   /* ---------- ACTIVE PAGE ---------- */
 
@@ -68,12 +75,14 @@ if (header) {
     header.querySelectorAll(".main-navigation a");
 
   navigationLinks.forEach((link) => {
+
     const linkPage =
       link.getAttribute("href");
 
     if (linkPage === currentPage) {
       link.classList.add("active");
     }
+
   });
 
 
@@ -84,6 +93,7 @@ if (header) {
 
   const navigation =
     header.querySelector(".main-navigation");
+
 
   menuButton?.addEventListener("click", () => {
 
@@ -97,7 +107,33 @@ if (header) {
 
     menuButton.textContent =
       isOpen ? "Close" : "Menu";
+
   });
+
+
+  /* ---------- CLOSE MOBILE MENU AFTER CLICK ---------- */
+
+  navigation
+    ?.querySelectorAll("a")
+    .forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        navigation.classList.remove("open");
+
+        menuButton?.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        if (menuButton) {
+          menuButton.textContent = "Menu";
+        }
+
+      });
+
+    });
+
 }
 
 
@@ -114,6 +150,7 @@ const updateHeader = () => {
     "is-scrolled",
     window.scrollY > 12
   );
+
 };
 
 window.addEventListener(
@@ -129,7 +166,8 @@ updateHeader();
    SHARED FOOTER
    ============================== */
 
-const footer = document.querySelector("footer");
+const footer =
+  document.querySelector("footer");
 
 if (footer) {
 
@@ -137,14 +175,21 @@ if (footer) {
 
   footer.innerHTML = `
 
-    <div>
-      <a class="brand" href="index.html">
+    <div class="footer-brand">
+
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="UPYA home">
+
         <span>U</span>UPYA
+
       </a>
 
       <p>
         Empowering youth, transforming communities.
       </p>
+
     </div>
 
 
@@ -152,17 +197,29 @@ if (footer) {
 
       <strong>Explore</strong>
 
-      <a href="about.html">About UPYA</a>
+      <a href="about.html">
+        About UPYA
+      </a>
 
-      <a href="programmes.html">Programmes</a>
+      <a href="programmes.html">
+        Programmes
+      </a>
 
-      <a href="projects.html">Projects</a>
+      <a href="projects.html">
+        Projects
+      </a>
 
-      <a href="gallery.html">Gallery</a>
+      <a href="gallery.html">
+        Gallery
+      </a>
 
-      <a href="leadership.html">Leadership</a>
+      <a href="leadership.html">
+        Leadership
+      </a>
 
-      <a href="news.html">News</a>
+      <a href="news.html">
+        News
+      </a>
 
     </div>
 
@@ -193,6 +250,8 @@ if (footer) {
       <a
         class="youtube"
         href="https://www.youtube.com/@upyakenya"
+        target="_blank"
+        rel="noopener"
         aria-label="UPYA on YouTube">
 
         <i class="fa-brands fa-youtube"></i>
@@ -203,6 +262,8 @@ if (footer) {
       <a
         class="facebook"
         href="https://www.facebook.com/profile.php?id=100082027299079"
+        target="_blank"
+        rel="noopener"
         aria-label="UPYA on Facebook">
 
         <i class="fa-brands fa-facebook-f"></i>
@@ -213,6 +274,8 @@ if (footer) {
       <a
         class="tiktok"
         href="https://www.tiktok.com"
+        target="_blank"
+        rel="noopener"
         aria-label="UPYA on TikTok">
 
         <i class="fa-brands fa-tiktok"></i>
@@ -223,6 +286,8 @@ if (footer) {
       <a
         class="instagram"
         href="https://www.instagram.com/upya_kenya"
+        target="_blank"
+        rel="noopener"
         aria-label="UPYA on Instagram">
 
         <i class="fa-brands fa-instagram"></i>
@@ -233,6 +298,8 @@ if (footer) {
       <a
         class="twitter"
         href="https://x.com"
+        target="_blank"
+        rel="noopener"
         aria-label="UPYA on X">
 
         <i class="fa-brands fa-x-twitter"></i>
@@ -248,6 +315,7 @@ if (footer) {
     </small>
 
   `;
+
 }
 
 
@@ -266,7 +334,10 @@ let activeSlide = 0;
 
 function showSlide(index) {
 
-  if (!slides.length) return;
+  if (!slides.length) {
+    return;
+  }
+
 
   activeSlide =
     (index + slides.length) %
@@ -295,6 +366,8 @@ function showSlide(index) {
 }
 
 
+/* ---------- SLIDE DOTS ---------- */
+
 dots.forEach((dot, index) => {
 
   dot.addEventListener(
@@ -304,6 +377,8 @@ dots.forEach((dot, index) => {
 
 });
 
+
+/* ---------- AUTOMATIC SLIDESHOW ---------- */
 
 if (slides.length > 1) {
 
@@ -347,13 +422,21 @@ const lightboxNext =
 let currentGalleryIndex = 0;
 
 let visibleGalleryItems =
-  galleryItems;
+  [...galleryItems];
 
+
+/* ---------- OPEN GALLERY ---------- */
 
 function openGallery(index) {
 
-  if (!lightbox || !visibleGalleryItems.length)
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxCaption ||
+    !visibleGalleryItems.length
+  ) {
     return;
+  }
 
 
   currentGalleryIndex = index;
@@ -362,16 +445,27 @@ function openGallery(index) {
   const item =
     visibleGalleryItems[currentGalleryIndex];
 
+
+  if (!item) {
+    return;
+  }
+
+
   const image =
     item.querySelector("img");
 
 
-  if (!image) return;
+  if (!image) {
+    return;
+  }
 
 
-  lightboxImage.src = image.src;
+  lightboxImage.src =
+    image.src;
 
-  lightboxImage.alt = image.alt;
+  lightboxImage.alt =
+    image.alt;
+
 
   lightboxCaption.textContent =
     item.dataset.caption ||
@@ -389,12 +483,17 @@ function openGallery(index) {
 
   document.body.style.overflow =
     "hidden";
+
 }
 
 
+/* ---------- CLOSE GALLERY ---------- */
+
 function closeGallery() {
 
-  if (!lightbox) return;
+  if (!lightbox) {
+    return;
+  }
 
 
   lightbox.classList.remove("open");
@@ -407,13 +506,17 @@ function closeGallery() {
 
   document.body.style.overflow =
     "";
+
 }
 
 
+/* ---------- CHANGE IMAGE ---------- */
+
 function changeGalleryImage(direction) {
 
-  if (!visibleGalleryItems.length)
+  if (!visibleGalleryItems.length) {
     return;
+  }
 
 
   currentGalleryIndex =
@@ -425,9 +528,14 @@ function changeGalleryImage(direction) {
     visibleGalleryItems.length;
 
 
-  openGallery(currentGalleryIndex);
+  openGallery(
+    currentGalleryIndex
+  );
+
 }
 
+
+/* ---------- GALLERY ITEM CLICK ---------- */
 
 galleryItems.forEach((item) => {
 
@@ -438,13 +546,17 @@ galleryItems.forEach((item) => {
       const index =
         visibleGalleryItems.indexOf(item);
 
-      openGallery(index);
+      if (index !== -1) {
+        openGallery(index);
+      }
 
     }
   );
 
 });
 
+
+/* ---------- GALLERY FILTERS ---------- */
 
 galleryFilters.forEach((filter) => {
 
@@ -456,15 +568,23 @@ galleryFilters.forEach((filter) => {
         filter.dataset.filter;
 
 
+      /* Active button */
+
       galleryFilters.forEach((button) => {
 
-        button.classList.remove("active");
+        button.classList.remove(
+          "active"
+        );
 
       });
 
 
-      filter.classList.add("active");
+      filter.classList.add(
+        "active"
+      );
 
+
+      /* Filter gallery */
 
       galleryItems.forEach((item) => {
 
@@ -472,21 +592,18 @@ galleryFilters.forEach((filter) => {
           item.dataset.category;
 
 
-        if (
+        const shouldShow =
           category === "all" ||
-          itemCategory === category
-        ) {
+          itemCategory === category;
 
-          item.style.display = "";
 
-        } else {
-
-          item.style.display = "none";
-
-        }
+        item.style.display =
+          shouldShow ? "" : "none";
 
       });
 
+
+      /* Update visible items */
 
       visibleGalleryItems =
         galleryItems.filter((item) => {
@@ -498,11 +615,18 @@ galleryFilters.forEach((filter) => {
 
         });
 
+
+      /* Reset gallery position */
+
+      currentGalleryIndex = 0;
+
     }
   );
 
 });
 
+
+/* ---------- LIGHTBOX BUTTONS ---------- */
 
 lightboxClose?.addEventListener(
   "click",
@@ -522,6 +646,8 @@ lightboxNext?.addEventListener(
 );
 
 
+/* ---------- CLOSE BY CLICKING BACKDROP ---------- */
+
 lightbox?.addEventListener(
   "click",
   (event) => {
@@ -534,97 +660,174 @@ lightbox?.addEventListener(
 );
 
 
+/* ---------- KEYBOARD CONTROLS ---------- */
+
 document.addEventListener(
   "keydown",
   (event) => {
 
-    if (!lightbox?.classList.contains("open"))
+    if (
+      !lightbox ||
+      !lightbox.classList.contains("open")
+    ) {
       return;
+    }
 
 
-    if (event.key === "Escape")
+    if (event.key === "Escape") {
       closeGallery();
+    }
 
 
-    if (event.key === "ArrowLeft")
+    if (event.key === "ArrowLeft") {
       changeGalleryImage(-1);
+    }
 
 
-    if (event.key === "ArrowRight")
+    if (event.key === "ArrowRight") {
       changeGalleryImage(1);
+    }
 
   }
 );
+
 
 /* ==============================
    ANIMATED IMPACT COUNTERS
    ============================== */
 
-const counters = document.querySelectorAll(".counter");
+const counters =
+  document.querySelectorAll(".counter");
+
 
 const animateCounter = (counter) => {
 
-  const target = Number(counter.dataset.target);
-  const suffix = counter.dataset.suffix || "";
+  const target =
+    Number(counter.dataset.target);
 
-  const duration = 1800;
-  const startTime = performance.now();
+
+  const suffix =
+    counter.dataset.suffix || "";
+
+
+  if (
+    Number.isNaN(target)
+  ) {
+    return;
+  }
+
+
+  const duration =
+    1800;
+
+
+  const startTime =
+    performance.now();
+
 
   function updateCounter(currentTime) {
 
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
+    const elapsed =
+      currentTime - startTime;
+
+
+    const progress =
+      Math.min(
+        elapsed / duration,
+        1
+      );
+
 
     /* Smooth ease-out animation */
+
     const easedProgress =
-      1 - Math.pow(1 - progress, 3);
+      1 -
+      Math.pow(
+        1 - progress,
+        3
+      );
+
 
     const currentValue =
-      Math.floor(target * easedProgress);
+      Math.floor(
+        target * easedProgress
+      );
+
 
     counter.textContent =
-      currentValue.toLocaleString() + suffix;
+      currentValue.toLocaleString() +
+      suffix;
+
 
     if (progress < 1) {
-      requestAnimationFrame(updateCounter);
+
+      requestAnimationFrame(
+        updateCounter
+      );
+
     } else {
+
       counter.textContent =
-        target.toLocaleString() + suffix;
+        target.toLocaleString() +
+        suffix;
+
     }
+
   }
 
-  requestAnimationFrame(updateCounter);
+
+  requestAnimationFrame(
+    updateCounter
+  );
+
 };
 
 
-/* Start counters when they enter the screen */
+/* ==============================
+   START COUNTERS WHEN VISIBLE
+   ============================== */
 
 if (counters.length) {
 
   const counterObserver =
     new IntersectionObserver(
+
       (entries, observer) => {
 
         entries.forEach((entry) => {
 
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
 
-            animateCounter(entry.target);
+            animateCounter(
+              entry.target
+            );
 
-            observer.unobserve(entry.target);
+
+            observer.unobserve(
+              entry.target
+            );
+
           }
 
         });
 
       },
+
       {
         threshold: 0.4
       }
+
     );
 
 
   counters.forEach((counter) => {
-    counterObserver.observe(counter);
+
+    counterObserver.observe(
+      counter
+    );
+
   });
 
 }
