@@ -2638,3 +2638,273 @@ h2 {
   }
 
 }
+
+/* ==============================
+   UPYA PEOPLE / LEADERS PAGE
+   ============================== */
+
+.people-intro {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.people-intro-content {
+  max-width: 850px;
+}
+
+.people-intro h1 {
+  margin: .5rem 0 1.2rem;
+}
+
+.people-intro p:not(.eyebrow) {
+  max-width: 720px;
+  font-size: 1.15rem;
+  color: #4c6359;
+}
+
+.people-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.leadership-section-heading {
+  max-width: 850px;
+  margin-bottom: 3rem;
+}
+
+.leadership-section-heading h2 {
+  margin: .4rem 0 1rem;
+}
+
+.leadership-section-heading > p:last-child {
+  max-width: 720px;
+  color: #4c6359;
+}
+
+
+/* ==============================
+   PEOPLE GRID
+   ============================== */
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+
+
+/* ==============================
+   PERSON CARD
+   ============================== */
+
+.person-card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 35px #073b2f0d;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px #073b2f18;
+}
+
+.person-photo {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  color: var(--white);
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--deep-green)
+    );
+  font: 4rem Georgia, serif;
+}
+
+.person-photo i {
+  font-size: 4rem;
+  color: var(--light-green);
+}
+
+.person-photo-chair {
+  background:
+    linear-gradient(
+      135deg,
+      var(--deep-green),
+      var(--green)
+    );
+}
+
+.person-photo-secretary {
+  background:
+    linear-gradient(
+      135deg,
+      #155f8a,
+      var(--deep-green)
+    );
+}
+
+.person-photo-treasurer {
+  background:
+    linear-gradient(
+      135deg,
+      #8b6b16,
+      var(--deep-green)
+    );
+}
+
+.person-content {
+  padding: 1.5rem;
+}
+
+.person-role {
+  margin: 0 0 .4rem;
+  color: var(--green);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.person-content h3 {
+  margin: 0 0 .8rem;
+  font-size: 1.65rem;
+}
+
+.person-content p:last-child {
+  margin-bottom: 0;
+  color: #52685f;
+}
+
+
+/* ==============================
+   FEATURED PERSON
+   ============================== */
+
+.featured-person {
+  border-top: 5px solid var(--gold);
+}
+
+.featured-person .person-content {
+  padding-bottom: 1.8rem;
+}
+
+
+/* ==============================
+   VACANT POSITIONS
+   ============================== */
+
+.position-vacant {
+  background: #f0f6f2;
+}
+
+.position-vacant .person-photo {
+  color: var(--green);
+  background: #dfeee5;
+}
+
+.position-vacant .person-photo i {
+  color: var(--green);
+}
+
+
+/* ==============================
+   STRUCTURE HIGHLIGHT
+   ============================== */
+
+.structure-highlight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 850px;
+  padding: 1.8rem;
+  background: var(--white);
+  border-left: 5px solid var(--green);
+  box-shadow: 0 10px 30px #073b2f0d;
+}
+
+.structure-icon {
+  display: grid;
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  color: var(--deep-green);
+  background: var(--light-green);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.structure-highlight h3 {
+  margin: 0 0 .3rem;
+}
+
+.structure-highlight p {
+  margin: 0;
+  color: #52685f;
+}
+
+
+/* ==============================
+   PROGRAMME / ROLE CARDS
+   ============================== */
+
+.role-card {
+  border-top: 4px solid var(--green);
+}
+
+.role-icon {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  color: var(--green);
+  background: #e4f1e9;
+  font-size: 3rem;
+}
+
+.field-section {
+  background: #edf6f0;
+}
+
+.advisors-section {
+  background: var(--white);
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 900px) {
+
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people-intro {
+    padding-top: 4rem;
+  }
+
+  .structure-highlight {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .person-photo {
+    min-height: 230px;
+  }
+
+}
