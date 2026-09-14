@@ -2908,3 +2908,61 @@ h2 {
   }
 
 }
+/* ==============================
+   HERO SCROLL BUTTON
+   ============================== */
+
+.hero-scroll {
+  position: absolute;
+  left: 5vw;
+  bottom: 2rem;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+
+  color: var(--white);
+  text-decoration: none;
+
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  opacity: .9;
+  transition: .25s;
+}
+
+.hero-scroll i {
+  font-size: 1rem;
+  animation: heroScrollBounce 1.6s infinite;
+}
+
+.hero-scroll:hover {
+  color: var(--light-green);
+  opacity: 1;
+}
+
+@keyframes heroScrollBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .hero-scroll {
+    left: 5vw;
+    bottom: 1.5rem;
+    font-size: .68rem;
+  }
+
+}
