@@ -3124,3 +3124,160 @@ h2 {
   }
 
 }
+
+/* ==============================
+   UPYA GET INVOLVED FORM
+   ============================== */
+
+.form-heading {
+  max-width: 750px;
+  margin-bottom: 3rem;
+}
+
+.form-heading h2 {
+  margin: .4rem 0 1rem;
+}
+
+.form-heading p {
+  max-width: 650px;
+}
+
+
+/* ---------- DONATION BOX ---------- */
+
+.donation-box {
+  max-width: 850px;
+  margin-top: 3rem;
+  padding: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 15px 40px #073b2f12;
+}
+
+.donation-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.4rem;
+  color: var(--deep-green);
+  background: var(--light-green);
+}
+
+.donation-box-header strong {
+  font-size: 1.15rem;
+}
+
+.donation-box-header i {
+  font-size: 1.2rem;
+}
+
+.donation-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
+.donation-details div {
+  display: grid;
+  gap: .25rem;
+  padding: 1.2rem;
+  background: var(--white);
+}
+
+.donation-details strong {
+  color: var(--green);
+  font-size: .75rem;
+  letter-spacing: .08em;
+}
+
+.donation-details span {
+  font-weight: 700;
+}
+
+.donation-note {
+  margin: 0;
+  padding: 1rem 1.4rem;
+  color: var(--deep-green);
+  background: #eef8f0;
+}
+
+
+/* ---------- FORM ---------- */
+
+.upya-form {
+  max-width: 850px;
+  padding: 2rem;
+  background: var(--white);
+  border-top: 5px solid var(--green);
+  box-shadow: 0 15px 40px #073b2f12;
+}
+
+.form-group {
+  display: grid;
+  gap: .45rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.upya-form label {
+  color: var(--deep-green);
+  font-weight: 800;
+}
+
+.upya-form input,
+.upya-form select,
+.upya-form textarea {
+  width: 100%;
+  padding: .9rem 1rem;
+  color: var(--deep-green);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+.upya-form input:focus,
+.upya-form select:focus,
+.upya-form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #087a5220;
+}
+
+.upya-form textarea {
+  resize: vertical;
+}
+
+.form-submit {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  margin-top: .5rem;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  .donation-details {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .upya-form {
+    padding: 1.25rem;
+  }
+
+}
