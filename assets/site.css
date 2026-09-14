@@ -3512,3 +3512,188 @@ h2 {
   }
 
 }
+```css
+/* =========================================
+   GET INVOLVED PAGE
+   ========================================= */
+
+.get-involved-intro {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.get-involved-intro p {
+  max-width: 780px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/* DONATION */
+
+.donation-section {
+  background: var(--paper);
+}
+
+.donation-box {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  color: var(--white);
+  background: var(--green);
+  border-radius: 4px;
+  box-shadow: 0 15px 35px #073b2f1c;
+}
+
+.donation-box-header {
+  max-width: 700px;
+}
+
+.donation-box h2 {
+  margin-bottom: .7rem;
+}
+
+.donation-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 2rem;
+  overflow: hidden;
+  background: #ffffff40;
+}
+
+.donation-detail {
+  padding: 1.2rem;
+  background: var(--deep-green);
+}
+
+.donation-detail span {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--light-green);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.donation-detail strong {
+  font-size: 1.05rem;
+}
+
+.donation-note {
+  margin-top: 1.5rem;
+  color: #effff7;
+}
+
+
+/* INVOLVEMENT CARDS */
+
+.involvement-section {
+  background: var(--white);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.involvement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  background: var(--paper);
+  border-top: 4px solid var(--green);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.involvement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px #073b2f14;
+}
+
+.involvement-card h3 {
+  margin-top: 1.2rem;
+}
+
+.involvement-card p {
+  margin-bottom: 1.5rem;
+  color: #526a60;
+}
+
+.involvement-card .button {
+  margin-top: auto;
+}
+
+.involvement-icon {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  color: var(--white);
+  background: var(--green);
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+
+
+/* WHO CAN GET INVOLVED */
+
+.who-can-section {
+  background: var(--paper);
+}
+
+.involvement-list {
+  display: grid;
+  gap: .9rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.involvement-list li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-weight: 700;
+}
+
+.involvement-list i {
+  color: var(--green);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  .involvement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-details {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .donation-box {
+    padding: 1.5rem;
+  }
+
+  .involvement-card {
+    padding: 1.5rem;
+  }
+
+}
+```
+
