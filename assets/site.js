@@ -831,3 +831,28 @@ if (counters.length) {
   });
 
 }
+
+/* ==============================
+   GET INVOLVED FORM
+   ============================== */
+
+const involvementButtons =
+  [...document.querySelectorAll("[data-interest]")];
+
+const interestSelect =
+  document.querySelector("#interest");
+
+involvementButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    const selectedInterest =
+      button.dataset.interest;
+
+    if (interestSelect) {
+      interestSelect.value = selectedInterest;
+    }
+
+  });
+
+});
