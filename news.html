@@ -26,13 +26,40 @@
 
   <main>
 
+
     <!-- ==============================
-         NEWS HERO
+         CONSTANT UPYA HERO
          ============================== -->
 
-    <section class="news-hero">
+    <section class="hero" aria-label="UPYA News and Stories">
 
-      <div class="news-hero-content">
+      <!-- HERO SLIDES -->
+      <div class="hero-slides" aria-hidden="true">
+
+        <div
+          class="hero-slide active"
+          style="background-image: url('github/AK1A1634.jpg');">
+        </div>
+
+        <div
+          class="hero-slide"
+          style="background-image: url('github/IMG_20251002_174846_957.jpg');">
+        </div>
+
+        <div
+          class="hero-slide"
+          style="background-image: url('github/AK1A5856.jpg');">
+        </div>
+
+      </div>
+
+
+      <!-- HERO OVERLAY -->
+      <div class="hero-overlay"></div>
+
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
 
         <p class="eyebrow">
           UPYA News & Stories
@@ -46,6 +73,59 @@
           Discover the latest activities, events, announcements
           and stories from Uwezo Pamoja Youths Association.
         </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="button button-gold"
+            href="#latest-news">
+            Latest News
+          </a>
+
+          <a
+            class="hero-link"
+            href="#upcoming-events">
+            Upcoming Events →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- FLOATING UPYA LOGO -->
+      <a
+        class="floating-logo"
+        href="about.html"
+        aria-label="Learn about UPYA">
+
+        <span>U</span>
+        <b>UPYA</b>
+        <small>Youth in action</small>
+
+      </a>
+
+
+      <!-- SLIDE CONTROLS -->
+      <div
+        class="slide-dots"
+        aria-label="Hero slideshow controls">
+
+        <button
+          class="active"
+          type="button"
+          aria-label="Show community action">
+        </button>
+
+        <button
+          type="button"
+          aria-label="Show mentorship">
+        </button>
+
+        <button
+          type="button"
+          aria-label="Show environment action">
+        </button>
 
       </div>
 
@@ -61,6 +141,7 @@
       <div class="news-section-heading">
 
         <div>
+
           <p class="eyebrow dark">
             Featured story
           </p>
@@ -68,6 +149,7 @@
           <h2>
             Stories making an impact
           </h2>
+
         </div>
 
       </div>
@@ -121,7 +203,9 @@
          LATEST NEWS
          ============================== -->
 
-    <section class="section news-background">
+    <section
+      class="section news-background"
+      id="latest-news">
 
       <div class="news-section-heading">
 
@@ -176,9 +260,9 @@
             </p>
 
             <a
-             <a href="news-youth-entrepreneurship.html" class="read-more">
-  Read More →
-</a>
+              href="news-youth-entrepreneurship.html"
+              class="read-more">
+              Read More →
             </a>
 
           </div>
@@ -410,7 +494,9 @@
          UPCOMING EVENTS
          ============================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      id="upcoming-events">
 
       <div class="news-section-heading">
 
@@ -431,6 +517,8 @@
 
       <div class="events-grid">
 
+
+        <!-- EVENT 1 -->
 
         <article class="event-card">
 
@@ -469,6 +557,8 @@
 
         </article>
 
+
+        <!-- EVENT 2 -->
 
         <article class="event-card">
 
@@ -529,6 +619,7 @@
 
 
       <div class="testimonial-grid">
+
 
         <article class="testimonial-card">
 
@@ -596,6 +687,7 @@
           </strong>
 
         </article>
+
 
       </div>
 
@@ -831,6 +923,7 @@
           and community activities.
         </p>
 
+
         <form
           class="newsletter-form"
           action="#"
@@ -871,7 +964,12 @@
   <footer></footer>
 
 
+  <!-- ==============================
+       UPYA SHARED JAVASCRIPT
+       ============================== -->
+
   <script src="assets/site.js"></script>
 
 </body>
+
 </html>
