@@ -25,13 +25,40 @@
 
   <!-- ==============================
        GALLERY HERO
+       SAME ANIMATION SYSTEM AS HOME
        ============================== -->
 
   <main>
 
-    <section class="gallery-hero">
+    <section class="hero" aria-label="UPYA Gallery">
 
-      <div class="gallery-hero-content">
+      <!-- HERO SLIDES -->
+      <div class="hero-slides" aria-hidden="true">
+
+        <div
+          class="hero-slide active"
+          style="background-image: url('github/FB_IMG_1789049325338.jpg');">
+        </div>
+
+        <div
+          class="hero-slide"
+          style="background-image: url('github/1762834750425.jpg');">
+        </div>
+
+        <div
+          class="hero-slide"
+          style="background-image: url('github/FB_IMG_1789049283961.jpg');">
+        </div>
+
+      </div>
+
+
+      <!-- HERO OVERLAY -->
+      <div class="hero-overlay"></div>
+
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
 
         <p class="eyebrow">
           Uwezo Pamoja Youths Association
@@ -61,6 +88,47 @@
           </a>
 
         </div>
+
+      </div>
+
+
+      <!-- OPTIONAL FLOATING LOGO -->
+      <a
+        class="floating-logo"
+        href="about.html"
+        aria-label="Learn about UPYA">
+
+        <span>U</span>
+
+        <b>UPYA</b>
+
+        <small>
+          Youth in action
+        </small>
+
+      </a>
+
+
+      <!-- HERO SLIDE CONTROLS -->
+      <div
+        class="slide-dots"
+        aria-label="Gallery slideshow controls">
+
+        <button
+          class="active"
+          type="button"
+          aria-label="Show gallery image one">
+        </button>
+
+        <button
+          type="button"
+          aria-label="Show gallery image two">
+        </button>
+
+        <button
+          type="button"
+          aria-label="Show gallery image three">
+        </button>
 
       </div>
 
@@ -97,7 +165,8 @@
         <!-- ALBUM 1 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="events"
           href="album-from-ideas-to-income.html">
 
           <div class="album-image">
@@ -140,7 +209,8 @@
         <!-- ALBUM 2 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="programmes"
           href="album-youth-mentorship.html">
 
           <div class="album-image">
@@ -183,7 +253,8 @@
         <!-- ALBUM 3 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="community"
           href="album-community-outreach.html">
 
           <div class="album-image">
@@ -226,7 +297,8 @@
         <!-- ALBUM 4 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="climate"
           href="album-climate-action.html">
 
           <div class="album-image">
@@ -269,7 +341,8 @@
         <!-- ALBUM 5 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="sports"
           href="album-sports-youth.html">
 
           <div class="album-image">
@@ -312,7 +385,8 @@
         <!-- ALBUM 6 -->
 
         <a
-          class="album-card"
+          class="album-card gallery-item"
+          data-category="youth"
           href="album-leadership-community.html">
 
           <div class="album-image">
@@ -372,7 +446,13 @@
           Find the stories that interest you.
         </h2>
 
+        <p>
+          Browse UPYA's activities by programme,
+          event, project and community area.
+        </p>
+
       </div>
+
 
       <div class="gallery-filters">
 
@@ -463,6 +543,9 @@
 
       <div class="media-grid">
 
+
+        <!-- YOUTUBE -->
+
         <a
           class="media-card"
           href="https://www.youtube.com/@upyakenya"
@@ -474,7 +557,10 @@
           </div>
 
           <div>
-            <h3>Videos</h3>
+
+            <h3>
+              Videos
+            </h3>
 
             <p>
               Watch UPYA activities, events and stories.
@@ -483,10 +569,13 @@
             <strong>
               Visit YouTube →
             </strong>
+
           </div>
 
         </a>
 
+
+        <!-- INTERVIEWS -->
 
         <div class="media-card">
 
@@ -513,6 +602,8 @@
 
         </div>
 
+
+        <!-- INSTAGRAM -->
 
         <a
           class="media-card"
@@ -542,6 +633,8 @@
 
         </a>
 
+
+        <!-- MEDIA FEATURES -->
 
         <div class="media-card">
 
@@ -609,6 +702,10 @@
 
   <footer></footer>
 
+
+  <!-- ==============================
+       UPYA SHARED JAVASCRIPT
+       ============================== -->
 
   <script src="assets/site.js"></script>
 
